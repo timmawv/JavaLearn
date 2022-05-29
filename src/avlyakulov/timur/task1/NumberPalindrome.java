@@ -11,8 +11,8 @@ public class NumberPalindrome {
         for (int i = 0; i < len; ++i) {
             mas[i] = in.nextInt();
         }
-        for (int i : mas) {
-
+        for (Integer i : mas) {
+            String temp = i.toString();
         }
     }
 }
