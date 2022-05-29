@@ -17,7 +17,6 @@ public class FloorSumNeighboring {
                 elem[i-1] = mas[i];
             }
         }
-        System.out.println();
         return elem;
     }
 
