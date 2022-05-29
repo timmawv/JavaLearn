@@ -15,9 +15,6 @@ public class SameNumbers {
             int hun = i / 100;
             int ten = (i - hun * 100)/10;
             int un = i - hun * 100 - ten * 10;
-            System.out.print(hun + " ");
-            System.out.print(ten + " ");
-            System.out.print(un + " ");
             if (hun != ten && hun != un && ten != un)
                 System.out.print(i + " ");
         }
