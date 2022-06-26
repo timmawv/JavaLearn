@@ -1,4 +1,4 @@
-package avlyakulov.timur.task1;
+package avlyakulov.timur.chapter_1;
 
 import java.util.Scanner;
 //Числа в порядке убывания частоты встречаемости чисел. (ДОДЕЛАТЬ)

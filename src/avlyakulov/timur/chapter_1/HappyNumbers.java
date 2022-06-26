@@ -1,4 +1,4 @@
-package avlyakulov.timur.task1;
+package avlyakulov.timur.chapter_1;
 
 //«Счастливые» числа.
 public class HappyNumbers {

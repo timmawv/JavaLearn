@@ -1,4 +1,4 @@
-package avlyakulov.timur.task1;
+package avlyakulov.timur.chapter_1;
 //Все трехзначные числа, в десятичной записи которых нет одинаковых цифр
 
 import java.util.Scanner;

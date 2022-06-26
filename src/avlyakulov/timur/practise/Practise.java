@@ -1,4 +1,4 @@
-package avlyakulov.timur.past;
+package avlyakulov.timur.practise;
 /*
 Заполните массив случайным числами и выведите максимальное, минимальное и среднее значение
 Для генерации случайного числа используйте метод Math.random(),

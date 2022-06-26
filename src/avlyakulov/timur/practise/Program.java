@@ -1,4 +1,4 @@
-package avlyakulov.timur.past;
+package avlyakulov.timur.practise;
 //работа с многопоточностью
 
 class JThread extends Thread {
