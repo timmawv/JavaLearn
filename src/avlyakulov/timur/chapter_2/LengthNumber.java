@@ -18,9 +18,9 @@ public class LengthNumber {
         for (int i = 0; i < mas.length - 1; ++i) {
             max = mas[0];
             min = mas[0];
-            if (max < mas[i + 1])
+            if (mas[i + 1] > max )
                 max = mas[i + 1];
-            if (min > mas[i + 1])
+            if ( mas[i + 1] < min)
                 min = mas[i + 1];
         }
             System.out.println("Number: " + max + ", Length: " + String.valueOf(max).length());
