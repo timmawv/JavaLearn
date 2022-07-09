@@ -23,6 +23,7 @@ public class LengthNumber {
             if ( mas[i + 1] < min)
                 min = mas[i + 1];
         }
+
             System.out.println("Number: " + max + ", Length: " + String.valueOf(max).length());
             System.out.println("Number: " + min + ", Length: " + String.valueOf(min).length());
     }
