@@ -17,14 +17,21 @@ public class AverageNumber {
         }
         int average = 0;
         int[] lengthMas = new int[len];
-        for (int i : mas) {
-            for (int x = 0; x < mas.length; ++x)
-                lengthMas[x] = String.valueOf(i).length();
-        }
-        for (int lengthMa : lengthMas) {
+        for (int x = 0; x < mas.length; ++x)
+            lengthMas[x] = String.valueOf(mas[x]).length();
+        for (int lengthMa : lengthMas)
             average += lengthMa;
-        }
         average = average / lengthMas.length;
-        System.out.println(average);
+        System.out.println("Средняя длина массива " + average);
+        System.out.println("Выведем те числа которые меньше средней длины:");
+        for (int i : mas) {
+            if (String.valueOf(i).length() < average)
+                System.out.println(i + " Length: " + String.valueOf(i).length());
+        }
+        System.out.println("Выведем те числа которые больше средней длины:");
+        for (int i : mas) {
+            if (String.valueOf(i).length() > average)
+                System.out.println(i + " Length: " + String.valueOf(i).length());
+        }
     }
 }
