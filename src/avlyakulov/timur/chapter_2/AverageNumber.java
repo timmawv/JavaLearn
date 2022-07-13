@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class AverageNumber {
     public static void findAverageNumbers() {
         Scanner in = new Scanner(System.in);
-        int max = 0, min = 0;
         System.out.print("Enter length ");
         int len = in.nextInt();
         int[] mas = new int[len];
