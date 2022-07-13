@@ -6,9 +6,11 @@ import java.util.Scanner;
 public class NumberPalindrome {
 
     public static void findPalindromes() {
+        System.out.print("Enter length ");
         Scanner in = new Scanner(System.in);
         int len = in.nextInt();
         int[] mas = new int[len];
+        System.out.print("Enter elements of array: ");
         for (int i = 0; i < len; ++i) {
             mas[i] = in.nextInt();
         }

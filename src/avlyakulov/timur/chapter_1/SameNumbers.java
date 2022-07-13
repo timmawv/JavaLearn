@@ -1,8 +1,7 @@
 package avlyakulov.timur.chapter_1;
-//Все трехзначные числа, в десятичной записи которых нет одинаковых цифр
 
 import java.util.Scanner;
-
+//Все трехзначные числа, в десятичной записи которых нет одинаковых цифр
 public class SameNumbers {
     public static void findSameNumbers() {
         Scanner in = new Scanner(System.in);
@@ -20,3 +19,4 @@ public class SameNumbers {
         }
     }
 }
+
