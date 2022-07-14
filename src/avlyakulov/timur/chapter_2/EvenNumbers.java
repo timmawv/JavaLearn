@@ -5,9 +5,6 @@ import java.util.Scanner;
 //Найти количество чисел, содержащих только четные цифры, а среди них количество чисел с равным числом четных и нечетных цифр.
 public class EvenNumbers {
     public static void findEvenNumbers() {
-        int iter = 0;
-        int iter1 = 0;
-        int mark = 0;
         Scanner in = new Scanner(System.in);
         System.out.print("Enter length ");
         int length = in.nextInt();
@@ -17,7 +14,10 @@ public class EvenNumbers {
         System.out.print("Enter elements of array: ");
         for (int i = 0; i < mas.length; ++i)
             mas[i] = in.nextInt();
+        int iter = 0;
+        int iter1 = 0;
         for (int x : mas) {
+            int mark = 0;
             int len = String.valueOf(x).length();
             String num = String.valueOf(x);
             for (int i = 0; i < len; ++i) {
@@ -33,20 +33,26 @@ public class EvenNumbers {
                     ++iter1;
                 }
             }
-            mark = 0;
         }
+        printEvenNum(numEven);
+        printCouplesNum(coupleNum);
+    }
+    public static void printEvenNum(int [] array){
         System.out.print("Числа которые содержат только четные цифры: ");
-        for (int i : numEven) {
+        for (int i : array) {
             if (i == 0)
                 continue;
             System.out.print(i + " ");
         }
         System.out.println();
+    }
+    public static void printCouplesNum(int [] array){
         System.out.print("Числа которые содержат одинаковое количество четных цифр и нечётных: ");
-        for (int i : coupleNum) {
+        for (int i : array) {
             if (i == 0)
                 continue;
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
