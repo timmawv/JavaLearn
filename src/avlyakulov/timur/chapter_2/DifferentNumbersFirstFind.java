@@ -13,23 +13,25 @@ public class DifferentNumbersFirstFind {
         for (int i = 0; i < length; ++i)
             mas[i] = in.nextInt();
         int findNum = 0;
-        for (int x = 0; x < length; ++x) {
+        for (int x : mas) {
             boolean checkEquality = true;
-            int len = String.valueOf(mas[x]).length();
+            int len = String.valueOf(x).length();
             for (int i = 0; i < len - 1; ++i) {
-                char num = String.valueOf(mas[x]).charAt(i);
+                char num = String.valueOf(x).charAt(i);
                 for (int j = i + 1; j < len; ++j) {
-                    if (num == String.valueOf(mas[x]).charAt(j)) {
+                    if (num == String.valueOf(x).charAt(j)) {
                         checkEquality = false;
                     }
-                    if (num != String.valueOf(mas[x]).charAt(j) && i == len - 2) {
-                            findNum = mas[x];
+                    if (num != String.valueOf(x).charAt(j) && i == len - 2) {
+                            findNum = x;
                             break;
                     }
                 }
                 if (!checkEquality)
                     break;
             }
+            if (findNum != 0)
+                break;
         }
         System.out.println("Первое число с различными цифрами: " + findNum);
     }
