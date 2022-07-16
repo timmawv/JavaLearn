@@ -2,7 +2,7 @@ package avlyakulov.timur.chapter_2;
 
 import java.util.Scanner;
 
-//Найти корни квадратного уравнения. Параметры уравнения передавать с командной строкой.
+//Найти корни квадратного уравнения. Параметры уравнения передавать с командной строкой
 public class QuadraticEquation {
     public static void findRoots() {
         System.out.println("Квадратное уровнение вида: ax2 + bx + c");
