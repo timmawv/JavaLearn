@@ -1,12 +1,12 @@
-package avlyakulov.timur.chapter_1;
+package avlyakulov.timur.chapter_2;
 
 import java.util.Scanner;
 
-//Числа-палиндромы, значения которых в прямом и обратном порядке совпадают.
-public class NumberPalindrome {
-
-    public static void findPalindromes() {
-        System.out.print("Enter length ");
+//Среди чисел найти число-палиндром. Если таких чисел больше одного, найти второе.
+public class NumberPalindromeSecond {
+    public static void findPalindromesSecond() {
+        boolean checkFirstMet = false;
+        System.out.print("Enter length- ");
         Scanner in = new Scanner(System.in);
         int len = in.nextInt();
         int[] mas = new int[len];
@@ -14,11 +14,12 @@ public class NumberPalindrome {
         for (int i = 0; i < len; ++i) {
             mas[i] = in.nextInt();
         }
-        System.out.println("Числа палиндромы: ");
         for (Integer i : mas) {
             String temp = reverse(i.toString());
+            if (checkFirstMet)
+                System.out.println("Палиндром который встретился 2 раз: " + i);
             if (i.toString().equals(temp))
-                System.out.print(i + " ");
+                checkFirstMet = true;
         }
     }
     public static String reverse(String src) {
@@ -28,4 +29,5 @@ public class NumberPalindrome {
         }
         return result;
     }
+
 }
