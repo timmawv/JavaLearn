@@ -1,6 +1,5 @@
 package avlyakulov.timur.chapter_2;
 
-import java.math.BigInteger;
 import java.util.Scanner;
 
 //Написать код программы, которая бы переводила числа из десятичной системы счисления в любую другую.
