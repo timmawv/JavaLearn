@@ -36,9 +36,9 @@ public class Index {
            }
     }
         public static void main(String[] args) {
-            String[] memory = {"object15", null, null, "object2", null};
-            executeDefragmentation(memory);
-            System.out.println(Arrays.toString(memory));
+            String[] arr = {"object15", null, null, "object2", null};
+            executeDefragmentation(arr);
+            System.out.println(Arrays.toString(arr));
         }
 }
 
