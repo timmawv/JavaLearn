@@ -24,8 +24,6 @@ public class Index {
         }
     }
     public static void executeDefragmentation(String[] array) {
-
-
         for (int x = 0; x < array.length - 1; x++)
               for (int i = 0; i <array.length - 1 - x ; i++) {
            if(array[i] == null) {
