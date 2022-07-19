@@ -15,6 +15,23 @@ public class MatrixOrderLine {
             for (int j = 0; j < n; ++j){
                 matrix [i][j] = (int) (Math.random() * 20);
             }
+        System.out.println("Our matrix");
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+        for (int k = 0; k < matrix.length; ++k)
+            for (int i = 0; i < n; ++i)
+                for (int j = 0; j < n - 1; ++j){
+                    if (matrix[i][j] > matrix[i][j + 1]) {
+                        int c = matrix[i][j];
+                        matrix[i][j] = matrix[i][j+1];
+                        matrix[i][j+1] = c;
+                    }
+                }
+        System.out.println("Our matrix after sort");
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
                 System.out.print(matrix[i][j] + " ");
