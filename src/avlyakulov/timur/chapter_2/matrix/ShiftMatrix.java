@@ -18,7 +18,7 @@ public class ShiftMatrix {
         OutputMatrix.printMatrix(matrix);
         System.out.println("Choose shift: right or left");
         String chooseWay = in.next();
-        switch (chooseWay){
+        switch (chooseWay) {
             case "left" -> shiftLeft(matrix);
             case "right" -> shiftRight(matrix);
             default -> System.out.println("You put wrong word");
@@ -37,7 +37,7 @@ public class ShiftMatrix {
                     int c = arr[x][j];
                     arr[x][j] = arr[x][j + 1];
                     arr[x][j + 1] = c;
-        }
+                }
     }
 
     public static void shiftRight(int[][] arr) {
@@ -50,6 +50,6 @@ public class ShiftMatrix {
                     int c = arr[x][j];
                     arr[x][j] = arr[x][j - 1];
                     arr[x][j - 1] = c;
-        }
+                }
     }
 }

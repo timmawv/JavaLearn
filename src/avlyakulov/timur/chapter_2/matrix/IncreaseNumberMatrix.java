@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 //Найти и вывести наибольшее число возрастающих\убывающих элементов матрицы, идущих подряд.
 public class IncreaseNumberMatrix {
-    public static void findFrequencyNumber () {
+    public static void findFrequencyNumber() {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter length of matrix a[n][n]");
         System.out.print("Enter n ");
