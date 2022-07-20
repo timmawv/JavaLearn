@@ -14,7 +14,25 @@ public class IncreaseNumberMatrix {
             for (int j = 0; j < n; ++j) {
                 matrix[i][j] = (int) (Math.random() * 20);
             }
+        int begin;
+        int end;
+        int numFrequency;
+        int [] arrFreq = new int[n];
         System.out.println("Matrix: ");
         OutputMatrix.printMatrix(matrix);
+            for (int j = 0; j < n; ++j) {
+                numFrequency = 0;
+                for (int x = 0; x < n - 1; ++x) {
+                    if (matrix[j][x] < matrix[j][x + 1])
+                        ++numFrequency;
+                    else {
+                        end = x;
+                        numFrequency = 0;
+                    }
+                }
+                arrFreq[j] = numFrequency;
+            }
+        for (int i : arrFreq)
+            System.out.print(i + " ");
     }
 }
