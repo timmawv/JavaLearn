@@ -26,30 +26,28 @@ public class ShiftMatrix {
         System.out.println("Matrix after shift");
         OutputMatrix.printMatrix(matrix);
     }
-
-    public static void shiftLeft(int[][] arr) {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter number of position to shift ");
-        int num = in.nextInt();
-        for (int i = 0; i < num; ++i)
-            for (int x = 0; x < arr.length; ++x)
-                for (int j = 0; j < arr.length - 1; ++j) {
-                    int c = arr[x][j];
-                    arr[x][j] = arr[x][j + 1];
-                    arr[x][j + 1] = c;
-                }
-    }
-
     public static void shiftRight(int[][] arr) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter number of position to shift ");
         int num = in.nextInt();
-        for (int i = 0; i < num; ++i)
+        for (int i = 0; i < num; ++i) // благодаря этому циклу осущетвляется нужное количество сдвигов, без него сдвиг всегда будет на 1 элемент
             for (int x = 0; x < arr.length; ++x)
                 for (int j = arr.length - 1; j > 0; --j) {
                     int c = arr[x][j];
                     arr[x][j] = arr[x][j - 1];
                     arr[x][j - 1] = c;
+                }
+    }
+    public static void shiftLeft(int[][] arr) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter number of position to shift ");
+        int num = in.nextInt();
+        for (int i = 0; i < num; ++i) // благодаря этому циклу осущетвляется нужное количество сдвигов, без него сдвиг всегда будет на 1 элемент
+            for (int x = 0; x < arr.length; ++x)
+                for (int j = 0; j < arr.length - 1; ++j) {
+                    int c = arr[x][j];
+                    arr[x][j] = arr[x][j + 1];
+                    arr[x][j + 1] = c;
                 }
     }
 }
