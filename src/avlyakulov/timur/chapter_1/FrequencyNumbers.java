@@ -25,24 +25,27 @@ public class FrequencyNumbers {
             }
             markArr[i] = mark;
         }
-        for (int i : markArr )
-            System.out.print(i + " ");
-        System.out.println();
+
         for (int i = 0; i < markArr.length - 1; ++i)
-            for (int j = i + 1; j < markArr.length; ++ j){
+            for (int j = i + 1; j < markArr.length; ++j) {
                 if (markArr[i] < markArr[j]) {
                     int c = markArr[i];
                     markArr[i] = markArr[j];
                     markArr[j] = c;
                     int k = mas[i];
-                    mas [i] = mas[j];
+                    mas[i] = mas[j];
                     mas[j] = k;
                 }
             }
-        for (int i : markArr )
-            System.out.print(i + " ");
-        System.out.println();
-        for (int i = 0; i < mas.length; ++i){
+        for (int i = 0; i < mas.length - 1; ++i)
+            for (int j = i + 1; j < mas.length; ++j) {
+                if (mas[i] == mas[j]) {
+                    mas[j] = 0;
+                    markArr[j] = 0;
+
+                }
+            }
+        for (int i = 0; i < mas.length; ++i) {
             if (markArr[i] != 0)
                 System.out.println("Element " + mas[i] + " Frequency " + markArr[i]);
         }
