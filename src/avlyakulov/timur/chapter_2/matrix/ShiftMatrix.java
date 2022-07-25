@@ -26,6 +26,7 @@ public class ShiftMatrix {
         System.out.println("Matrix after shift");
         OutputMatrix.printMatrix(matrix);
     }
+
     public static void shiftRight(int[][] arr) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter number of position to shift ");
@@ -38,6 +39,7 @@ public class ShiftMatrix {
                     arr[x][j - 1] = c;
                 }
     }
+
     public static void shiftLeft(int[][] arr) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter number of position to shift ");

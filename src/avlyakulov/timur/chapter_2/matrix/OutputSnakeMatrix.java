@@ -20,9 +20,9 @@ public class OutputSnakeMatrix {
         for (int i = 0; i < len; ++i) {
             if (i % 2 == 0)
                 for (int j = 0; j < len; ++j) {
-                  System.out.print(matrix[i][j] + " ");
+                    System.out.print(matrix[i][j] + " ");
                 }
-            else  {
+            else {
                 for (int j = len - 1; j >= 0; --j) {
                     System.out.print(matrix[i][j] + " ");
                 }

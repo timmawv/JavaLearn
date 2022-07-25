@@ -10,7 +10,7 @@ public class MatrixElementRounding {
         System.out.print("Enter n ");
         int n = in.nextInt();
         double[][] matrix = new double[n][n];
-        int [][] matrixInt = new int[n][n];
+        int[][] matrixInt = new int[n][n];
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j) {
                 matrix[i][j] = Math.random() * 20;
@@ -20,7 +20,7 @@ public class MatrixElementRounding {
         System.out.println("Матрица после округления");
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j) {
-                matrixInt[i][j] =(int) matrix[i][j];
+                matrixInt[i][j] = (int) matrix[i][j];
             }
         OutputMatrix.printMatrix(matrixInt);
     }
