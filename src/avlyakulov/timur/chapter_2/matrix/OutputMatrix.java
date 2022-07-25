@@ -9,4 +9,12 @@ public class OutputMatrix {
             System.out.println();
         }
     }
+    public static void printMatrix(double[][] matrix) {
+        for (double[] ints : matrix) {
+            for (int j = 0; j < matrix.length; ++j) {
+                System.out.print(ints[j] + " ");
+            }
+            System.out.println();
+        }
+    }
 }
