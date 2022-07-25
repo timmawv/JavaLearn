@@ -20,10 +20,17 @@ public class PositiveMatrix {
         for (int i = 0; i < n; ++i) {
             sum = 0;
             for (int j = 0; j < n - 1; ++j) {
-                if (matrix[i][j] > 0 && matrix[i][j + 1] < 0)
-                    sum += matrix[i + 1][j];
+                int next = j + 1;
+                if (matrix[i][j] > 0 && matrix[i][next] < 0) {
+                    while (matrix[i][next] < 0 && next < n - 1) {
+                        sum += matrix[i][next];
+                        ++next;
+                    }
+                    break;
+                }
             }
             System.out.println("Сума элементов строчки " + sum);
         }
+
     }
 }
