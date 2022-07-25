@@ -16,33 +16,14 @@ public class PositiveMatrix {
             }
         System.out.println("Our matrix");
         OutputMatrix.printMatrix(matrix);
-        int begin;
-        int end;
-        int counter = 0;
-        int[] masBegEnd = new int[2 * n];
-        int counterMas = 0;
+        int sum;
         for (int i = 0; i < n; ++i) {
-            begin = 0;
-            end = 0;
-            for (int j = 0; j < n; ++j) {
-                if (matrix[i][j] > 0 && counter == 0) {
-                    begin = j;
-                    masBegEnd[counterMas] = begin;
-                    ++counterMas;
-                    ++counter;
-                    continue;
-                }
-                if (matrix[i][j] > 0 && counter == 1) {
-                    end = j;
-                    masBegEnd[counterMas] = end;
-                    ++counterMas;
-                    counter = 0;
-                    break;
-                }
+            sum = 0;
+            for (int j = 0; j < n - 1; ++j) {
+                if (matrix[i][j] > 0 && matrix[i][j + 1] < 0)
+                    sum += matrix[i + 1][j];
             }
+            System.out.println("Сума элементов строчки " + sum);
         }
-        System.out.println("MasBegEnd");
-        for (int i : masBegEnd)
-            System.out.print(i + " ");
     }
 }

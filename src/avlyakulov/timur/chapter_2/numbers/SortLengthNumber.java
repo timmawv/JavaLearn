@@ -1,4 +1,4 @@
-package avlyakulov.timur.chapter_2;
+package avlyakulov.timur.chapter_2.numbers;
 
 //Упорядочить и вывести числа в порядке возрастания (убывания) значений их длины (очень непонятно)
 

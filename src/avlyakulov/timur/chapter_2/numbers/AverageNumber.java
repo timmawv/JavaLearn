@@ -1,4 +1,4 @@
-package avlyakulov.timur.chapter_2;
+package avlyakulov.timur.chapter_2.numbers;
 
 //Вывести на консоль те числа, длина которых меньше (больше) средней, а также длину.
 

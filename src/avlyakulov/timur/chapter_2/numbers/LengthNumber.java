@@ -1,4 +1,4 @@
-package avlyakulov.timur.chapter_2;
+package avlyakulov.timur.chapter_2.numbers;
 
 import java.util.Scanner;
 
