@@ -5,23 +5,14 @@ import java.util.Scanner;
 //Найти и вывести наибольшее число возрастающих\убывающих элементов матрицы, идущих подряд. todo (очень близок к завершению, доделать через время)
 public class IncreaseNumberMatrix {
     public static void findFrequencyNumber() {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter length of matrix a[n][n]");
-        System.out.print("Enter n ");
-        int n = in.nextInt();
-        int[][] matrix = new int[n][n];
-        for (int i = 0; i < n; ++i)
-            for (int j = 0; j < n; ++j) {
-                matrix[i][j] = (int) (Math.random() * 20);
-            }
-
+        int[][] matrix = FillMatrix.fillMatrix();
         int numFrequency = 0;
-        int[] arrFreq = new int[n];
+        int[] arrFreq = new int[matrix.length];
         System.out.println("Matrix: ");
         OutputMatrix.printMatrix(matrix);
-        for (int j = 0; j < n; ++j) {
+        for (int j = 0; j < matrix.length; ++j) {
             numFrequency = 0;
-            for (int x = 0; x < n - 1; ++x) {
+            for (int x = 0; x < matrix.length - 1; ++x) {
                 if (matrix[j][x] < matrix[j][x + 1]) {
                     ++numFrequency;
                 } else {
@@ -47,7 +38,7 @@ public class IncreaseNumberMatrix {
         System.out.println(mas.length);
         System.out.println("Max column of our arrFreq " + max + " Index of this array " + position);
         int counter = 0;
-        for (int i = 0; i < n - 1; ++i) {
+        for (int i = 0; i < matrix.length - 1; ++i) {
             if (counter == mas.length)
                 break;
             System.out.print(matrix[position][i] + " ");
