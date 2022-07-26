@@ -2,7 +2,7 @@ package avlyakulov.timur.chapter_2.matrix;
 
 import java.util.Scanner;
 
-//Повернуть матрицу на 90, 180 или 270 градусов против часовой стрелки
+//Повернуть матрицу на 90, 180 или 270 градусов против часовой стрелки TODO(доделать)
 public class TurnMatrix {
     public static void turnMatrix() {
         Scanner in = new Scanner(System.in);

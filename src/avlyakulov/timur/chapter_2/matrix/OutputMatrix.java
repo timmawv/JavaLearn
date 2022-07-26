@@ -8,6 +8,7 @@ public class OutputMatrix {
             }
             System.out.println();
         }
+        System.out.println();
     }
 
     public static void printMatrix(double[][] matrix) {
@@ -17,5 +18,6 @@ public class OutputMatrix {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }
