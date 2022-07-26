@@ -1,23 +1,16 @@
 package avlyakulov.timur.chapter_2.matrix;
 
-//Найти максимальный элемент(ы) в матрице и удалить из матрицы все строки и столбцы, его содержащие
-public class FindDeleteMaxMatrix {
-    public static void findDeleteMax() {
-        int[][] matrix = FillMatrix.fillMatrix();
+//Уплотнить матрицу, удаляя из нее строки и столбцы, заполненные нулями
+public class MatrixSeal {
+    public static void findDeleteZeroes() {
+        int[][] matrix = FillMatrix.fillMatrixWithZeroes();
         OutputMatrix.printMatrix(matrix);
         int len = matrix.length;
-        int max = 0;
-        for (int i = 0; i < matrix.length; ++i)
-            for (int j = 0; j < matrix.length; ++j) {
-                if (matrix[i][j] > max)
-                    max = matrix[i][j];
-            }
-        System.out.println("Максимальный элемент матрицы " + max);
         int counter = 0;
         for (int k = 0; k < matrix.length; ++k)
             for (int i = 0; i < matrix.length; ++i)
                 for (int j = 0; j < matrix.length; ++j) {
-                    if (matrix[i][j] == max) {
+                    if (matrix[i][j] == 0) {
                         if (i == matrix.length - 1) {
                             break;
                         } else {
@@ -32,8 +25,10 @@ public class FindDeleteMaxMatrix {
         OutputMatrix.printMatrix(matrix);
         for (int i = 0; i < matrix.length; ++i)
             for (int j = 0; j < matrix.length; ++j)
-                if (matrix[i][j] == max)
+                if (matrix[i][j] == 0) {
                     ++counter;
+                    break;
+                }
         System.out.println("Количество перестановок " + counter);
         int[][] temp = new int[matrix.length - counter][matrix.length];
         for (int i = 0; i < matrix.length - counter; ++i)
