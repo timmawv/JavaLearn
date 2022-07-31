@@ -1,4 +1,4 @@
-package avlyakulov.timur.practise;
+package avlyakulov.timur.algorithms;
 
 import java.util.Scanner;
 

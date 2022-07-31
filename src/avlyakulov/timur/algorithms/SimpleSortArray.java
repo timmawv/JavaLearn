@@ -1,4 +1,4 @@
-package avlyakulov.timur.practise;
+package avlyakulov.timur.algorithms;
 
 //simple sort array
 

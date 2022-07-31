@@ -2,7 +2,7 @@ package avlyakulov.timur.book.chapter_2.numbers;
 
 import java.util.Scanner;
 
-//Найти число, в котором число различных цифр минимально. Если таких чисел несколько, найти первое из них /todo(Доделать когда будут большие числа и надо будет найти минимальную разницу)
+//Найти число, в котором число различных цифр минимально. Если таких чисел несколько, найти первое из них
 public class DifferentNumbers {
     public static void findMinDifferentNumbers() {
         int[] mas = FillArray.fillArray();

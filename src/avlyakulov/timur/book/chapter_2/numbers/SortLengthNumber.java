@@ -1,8 +1,7 @@
 package avlyakulov.timur.book.chapter_2.numbers;
 
-//Упорядочить и вывести числа в порядке возрастания (убывания) значений их длины (очень непонятно)
+//Упорядочить и вывести числа в порядке возрастания (убывания) значений их длины
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class SortLengthNumber {
@@ -16,9 +15,16 @@ public class SortLengthNumber {
         for (int i = 0; i < len; ++i) {
             mas[i] = in.nextInt();
         }
-        Arrays.sort(mas); //todo (доделать задачу когда поймёшь как сортировать по длинне числа)
-        System.out.print("Mas: ");
+        for (int j = 0; j < mas.length; ++j)
+            for (int i = 0; i < mas.length - 1; ++i) {
+                if (String.valueOf(mas[i]).length() > String.valueOf(mas[i + 1]).length()) {
+                    int c = mas[i];
+                    mas[i] = mas[i + 1];
+                    mas[i + 1] = c;
+                }
+            }
         for (int i : mas)
-            System.out.print(i + " ");
+             System.out.println(i + " ");
+
     }
 }
