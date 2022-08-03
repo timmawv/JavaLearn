@@ -24,7 +24,7 @@ public class SortLengthNumber {
                 }
             }
         for (int i : mas)
-             System.out.println(i + " ");
+            System.out.println(i + " ");
 
     }
 }
