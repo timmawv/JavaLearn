@@ -1,4 +1,4 @@
-package avlyakulov.timur.book.chapter_3;
+package avlyakulov.timur.book.chapter_3.student.entity;
 /* Student: id, Фамилия, Имя, Отчество, Дата рождения, Адрес, Телефон,Факультет, Курс, Группа.
         Создать массив объектов. Вывести:
         a) список студентов заданного факультета;
