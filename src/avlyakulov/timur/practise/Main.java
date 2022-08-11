@@ -1,9 +1,10 @@
 package avlyakulov.timur.practise;
 
-import avlyakulov.timur.algorithms.FindMaxMinArray;
-
 public class Main {
     public static void main(String[] args) {
-        FindMaxMinArray.findMinMax();
+        Practise.printNum(4,5);
+        Practise.printNum(4);
+
+
     }
 }
