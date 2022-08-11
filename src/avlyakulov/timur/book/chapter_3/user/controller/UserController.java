@@ -70,15 +70,12 @@ public class UserController {
     private void update(BufferedReader reader) {
         System.out.println("UserController.update");
         try {
-            System.out.println("Enter your id to update ");
-            String id = reader.readLine();
             System.out.println("Enter your name to update ");
             String name = reader.readLine();
             System.out.println("Enter your age to update ");
             String ageString = reader.readLine();
             int age = Integer.parseInt(ageString);
             User user = new User();
-            user.setId(id);
             user.setAge(age);
             user.setName(name);
             userService.update(user);
@@ -104,6 +101,7 @@ public class UserController {
             System.out.println("Enter id to find user with same id ");
             String id = reader.readLine();
             User user = userService.findById(id);
+            System.out.println("We are here");
             System.out.println("user = " + user);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());

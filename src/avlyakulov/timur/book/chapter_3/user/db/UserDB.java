@@ -8,7 +8,7 @@ import java.util.UUID;
 public class UserDB {
     private User[] users;
     private static UserDB instance;
-    private int current = 0;
+    private int current;
 
     private UserDB() {
         users = new User[10];
@@ -46,24 +46,26 @@ public class UserDB {
 
         users[current] = null;
         User[] temp = new User[users.length - 1];
-        for (int i =0 ; i < users.length - 1; ++i)
+        for (int i = 0; i < users.length - 1; ++i)
             if (users[i] != null)
                 temp[i] = users[i];
         for (int i = 0; i < users.length - 1; ++i)
             users[i] = temp[i];
         --this.current;
     }
-    public User findById (String id) {
-        int current = 0;
-        for (int i = 0; i < users.length; ++i)
-            if (Objects.equals(users[i].getId(), id))
-                current = i;
-        return users[current];
+
+    public User findById(String id) {
+        for (User user : users)
+            if (user.getId().equals(id))
+                return user;
+        return null;
     }
-    public User[] findAll () {
+
+    public User[] findAll() {
         return users;
     }
-    public String generateId () {
+
+    public String generateId() {
         return UUID.randomUUID().toString();
     }
 }
