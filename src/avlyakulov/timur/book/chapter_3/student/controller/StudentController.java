@@ -32,10 +32,11 @@ public class StudentController {
     private void runNavigation() {
         System.out.println();
         System.out.println("if you want create student, please enter 1");
-        System.out.println("if you want update user, please enter 2");
-        System.out.println("if you want delete user, please enter 3");
-        System.out.println("if you want findById user, please enter 4");
-        System.out.println("if you want findAll user, please enter 5");
+        System.out.println("if you want find Student by faculty, please enter 2");
+        System.out.println("if you want find Student by faculty and course, please enter 3");
+        System.out.println("if you want findByYear Student, please enter 4");
+        System.out.println("if you want get list of group by name group, please enter 5");
+        System.out.println("if you want get all students, please enter 6");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
