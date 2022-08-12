@@ -3,7 +3,7 @@ package avlyakulov.timur.book.chapter_3.student.db;
 import avlyakulov.timur.book.chapter_3.student.entity.Student;
 
 import java.util.UUID;
-
+//todo (добавить метод add который будет динамический расширять наш массив и добавлять туда нужный эелемент)
 public class StudentDB {
     private Student[] students;
     private int current;
@@ -56,11 +56,27 @@ public class StudentDB {
     }
 
     public Student[] findByYear(String dateBirth) {
-        return null;
+        int i = 0;
+        Student[] students1 = new Student[students.length];
+        for (Student student : students)
+            if (student!=null)
+                if (Integer.parseInt(student.getDateBirth()) > Integer.parseInt(dateBirth)) {
+                    students1[i] = student;
+                    ++i;
+                }
+        return students1;
     }
 
     public Student[] listOfGroup(String group) {
-        return null;
+        Student[] students1 = new Student[students.length];
+        int j = 0;
+        for (Student student : students)
+            if (student!=null)
+                if (student.getGroup().equals(group)) {
+                    students1[j] = student;
+                    ++j;
+                }
+        return students1;
     }
 
     public Student[] findAll() {

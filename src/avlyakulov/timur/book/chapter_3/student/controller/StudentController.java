@@ -2,7 +2,6 @@ package avlyakulov.timur.book.chapter_3.student.controller;
 
 import avlyakulov.timur.book.chapter_3.student.entity.Student;
 import avlyakulov.timur.book.chapter_3.student.service.StudentService;
-import avlyakulov.timur.book.chapter_3.user.entity.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +11,9 @@ public class StudentController {
     private final StudentService studentService = new StudentService();
 
     public void run() {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Select your option ");
         String position;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             runNavigation();
             while ((position = reader.readLine()) != null) {
@@ -92,7 +91,10 @@ public class StudentController {
         try {
             System.out.println("Enter student faculty to find");
             String faculty = reader.readLine();
-            studentService.findByFaculty(faculty);
+            Student[] students = studentService.findByFaculty(faculty);
+            for (Student student : students)
+                if (student != null)
+                    System.out.println("student of faculty " + faculty + " " + student);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
@@ -106,7 +108,10 @@ public class StudentController {
             System.out.print("Course - ");
             String courseString = reader.readLine();
             int course = Integer.parseInt(courseString);
-            studentService.sortByCourseAndFaculty(faculty,course);
+            Student[] students = studentService.sortByCourseAndFaculty(faculty,course);
+            for (Student student : students)
+                if (student != null)
+                    System.out.println("Faculty " + faculty + " His course is " + course + " student " + student);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
@@ -116,7 +121,9 @@ public class StudentController {
         try {
             System.out.println("Enter student dateBirth");
             String yearBirth = reader.readLine();
-            studentService.findByYear(yearBirth);
+            Student [] students = studentService.findByYear(yearBirth);for (Student student : students)
+                if (student != null)
+                    System.out.println("Students who were born after this year " + yearBirth + " " + student);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
@@ -124,9 +131,12 @@ public class StudentController {
     private void listOfGroup (BufferedReader reader) {
         System.out.println("StudentController.listOfGroup");
         try {
-            System.out.println("Enter name of group to print all students");
+            System.out.println("Enter name of group to print all students ");
             String groupName = reader.readLine();
-            studentService.listOfGroup(groupName);
+            Student[] students = studentService.listOfGroup(groupName);
+            for (Student student : students)
+                if (student != null)
+                    System.out.println("Student of group " + groupName + " " + student);
         } catch (IOException e) {
             System.out.println("problem: = " + e.getMessage());
         }
