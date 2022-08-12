@@ -2,7 +2,6 @@ package avlyakulov.timur.book.chapter_3.user.db;
 
 import avlyakulov.timur.book.chapter_3.user.entity.User;
 
-import java.util.Objects;
 import java.util.UUID;
 
 public class UserDB {
