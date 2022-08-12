@@ -39,18 +39,15 @@ public class UserDB {
     }
 
     public void delete(String id) {
-        int current = 0;
         for (int i = 0; i < users.length; ++i)
-            if (Objects.equals(users[i].getId(), id))
-                current = i;
-
-        users[current] = null;
-        User[] temp = new User[users.length - 1];
-        for (int i = 0; i < users.length - 1; ++i)
+            if (users[i] != null)
+                if (users[i].getId().equals(id))
+                    users[i] = null;
+        User[] temp = new User[users.length];
+        for (int i = 0; i < users.length; ++i)
             if (users[i] != null)
                 temp[i] = users[i];
-        for (int i = 0; i < users.length - 1; ++i)
-            users[i] = temp[i];
+        users = temp;
         --this.current;
     }
 
