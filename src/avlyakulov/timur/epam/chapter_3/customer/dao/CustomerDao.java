@@ -1,6 +1,6 @@
 package avlyakulov.timur.epam.chapter_3.customer.dao;
 
-import avlyakulov.timur.epam.chapter_3.customer.CustomerDB.CustomerDB;
+import avlyakulov.timur.epam.chapter_3.customer.db.CustomerDB;
 import avlyakulov.timur.epam.chapter_3.customer.entity.Customer;
 
 public class CustomerDao {

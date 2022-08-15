@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_3.customer.CustomerDB;
+package avlyakulov.timur.epam.chapter_3.customer.db;
 
 import avlyakulov.timur.epam.chapter_3.customer.entity.Customer;
 
