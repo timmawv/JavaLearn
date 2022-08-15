@@ -10,8 +10,8 @@ public class Customer {
     private String surName;
     private String name;
     private String address;
-    private String creditCardNumber;
-    private String BankAccountNumber;
+    private int creditCardNumber;
+    private int BankAccountNumber;
 
     public String getId() {
         return id;
@@ -45,19 +45,19 @@ public class Customer {
         this.address = address;
     }
 
-    public String getCreditCardNumber() {
+    public int getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(String creditCardNumber) {
+    public void setCreditCardNumber(int creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 
-    public String getBankAccountNumber() {
+    public int getBankAccountNumber() {
         return BankAccountNumber;
     }
 
-    public void setBankAccountNumber(String bankAccountNumber) {
+    public void setBankAccountNumber(int bankAccountNumber) {
         BankAccountNumber = bankAccountNumber;
     }
 

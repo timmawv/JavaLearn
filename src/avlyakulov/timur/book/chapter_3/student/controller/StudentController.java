@@ -121,7 +121,8 @@ public class StudentController {
         try {
             System.out.println("Enter student dateBirth");
             String yearBirth = reader.readLine();
-            Student [] students = studentService.findByYear(yearBirth);for (Student student : students)
+            Student [] students = studentService.findByYear(yearBirth);
+            for (Student student : students)
                 if (student != null)
                     System.out.println("Students who were born after this year " + yearBirth + " " + student);
         } catch (IOException e) {
