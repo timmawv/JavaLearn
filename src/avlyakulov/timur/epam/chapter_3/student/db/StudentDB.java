@@ -3,7 +3,6 @@ package avlyakulov.timur.epam.chapter_3.student.db;
 import avlyakulov.timur.epam.chapter_3.student.entity.Student;
 
 import java.util.UUID;
-//todo (добавить метод add который будет динамический расширять наш массив и добавлять туда нужный эелемент)
 public class StudentDB {
     private Student[] students;
     private int current;
