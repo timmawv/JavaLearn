@@ -47,7 +47,7 @@ public class BookDB {
         Book[] books1 = new Book[books.length];
         for (Book book : books)
             if (book != null)
-                if (book.getAuthor().equals(publishingHouse)) {
+                if (book.getPublishingHouse().equals(publishingHouse)) {
                     books1[i] = book;
                     ++i;
                 }
