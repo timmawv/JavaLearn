@@ -34,8 +34,8 @@ public class BookController {
         System.out.println("if you want create book, please enter 1");
         System.out.println("if you get all books of given author, please enter 2");
         System.out.println("if you want get list of books of given publishing house, please enter 3");
-        System.out.println("if you want get list of books of given year, please enter 3");
-        System.out.println("if you want findAll user, please enter 4");
+        System.out.println("if you want get list of books of given year, please enter 4");
+        System.out.println("if you want findAll user, please enter 5");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
