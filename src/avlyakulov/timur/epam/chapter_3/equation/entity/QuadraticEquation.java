@@ -38,7 +38,7 @@ public class QuadraticEquation {
     @Override
     public String toString() {
         return "QuadraticEquation{" +
-                "equation='" + a + "x^2 + " + b + "x + " + c +
-                '}';
+                "equation= " + a + "x^2 + " + b + "x + " + c +
+                " }";
     }
 }

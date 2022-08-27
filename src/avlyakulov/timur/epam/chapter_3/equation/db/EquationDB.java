@@ -49,9 +49,13 @@ public class EquationDB {
     public String findAscendingDescendingInterval(QuadraticEquation quadraticEquation) {
         int[] roots = findRoots(quadraticEquation);
         Arrays.sort(roots);
-        return "Ascending: (-∞;" + roots[0] + ")  (" + roots[1] + ";+∞)" + " Descending: (" + roots[0] + ";" + roots[1] + ")";
+        if (quadraticEquation.getA() > 0)
+            return "Ascending: (-∞;" + roots[0] + ")  (" + roots[1] + ";+∞)" + " Descending: [" + roots[0] + ";" + roots[1] + "]";
+        else
+            return "Ascending: [" + roots[0] + ";" + roots[1] + "] " + " Descending: (-∞;" + roots[0] + ") " + " (" + roots[1] + ";+∞)";
     }
-    public QuadraticEquation [] findAll () {
+
+    public QuadraticEquation[] findAll() {
         return equations;
     }
 }
