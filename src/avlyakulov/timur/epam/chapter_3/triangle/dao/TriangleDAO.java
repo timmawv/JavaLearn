@@ -16,4 +16,11 @@ public class TriangleDAO {
     public String checkType (Triangle triangle) {
         return TriangleDB.getInstance().checkType(triangle);
     }
+
+    public void countAllTypes () {
+        TriangleDB.getInstance().countAllTypes();
+    }
+    public Triangle [] findMaxSquareBetweenTypes () {
+        return TriangleDB.getInstance().findMaxSquareBetweenTypes();
+    }
 }

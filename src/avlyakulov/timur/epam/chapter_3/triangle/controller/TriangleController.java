@@ -32,7 +32,9 @@ public class TriangleController {
         System.out.println();
         System.out.println("if you want create triangle, please enter 1");
         System.out.println("if you want checkTriangleType, please enter 2");
-        System.out.println("if you want findAll triangles, please enter 3");
+        System.out.println("if you want count all types triangles, please enter 3");
+        System.out.println("if you want find max by square between all types, please enter 4");
+        System.out.println("if you want findAll triangles, please enter 5");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
@@ -41,11 +43,16 @@ public class TriangleController {
         switch (position) {
             case "1" -> createTriangle(reader);
             case "2" -> checkTriangleType();
-            case "3" -> findAll();
+            case "3" -> countAllTypes();
+            case "4" -> findMaxSquareBetweenTypes();
+            case "5" -> findAll();
         }
         runNavigation();
     }
 
+    public void checkTriangleType () {
+        triangleService.checkTriangleType();
+    }
     public void createTriangle(BufferedReader reader) {
         try {
             System.out.println("Enter sites of your Triangle:");
@@ -80,13 +87,20 @@ public class TriangleController {
             System.out.println("error: " + e.getMessage());
         }
     }
+    public void countAllTypes () {
+        triangleService.countAllTypes();
+    }
+    public void findMaxSquareBetweenTypes () {
+        Triangle [] triangles = triangleService.findMaxSquareBetweenTypes();
+        System.out.println("Max triangles from all types");
+        for (Triangle triangle : triangles)
+            if (triangle != null)
+                System.out.println( triangle.getType() +" "+ triangle);
+    }
     public void findAll () {
         Triangle [] triangles = triangleService.findAll();
         for (Triangle triangle : triangles)
             if (triangle != null)
                 System.out.println( triangle.getType() +" triangle" + triangle);
-    }
-    public void checkTriangleType () {
-        triangleService.checkTriangleType();
     }
 }

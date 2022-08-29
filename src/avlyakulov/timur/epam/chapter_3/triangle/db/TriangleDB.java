@@ -53,4 +53,61 @@ public class TriangleDB {
                 else
                     return "Random";
     }
+    public void countAllTypes () {
+        int equilateral = 0;
+        int isosceles = 0;
+        int rectangular = 0;
+        int random = 0;
+        for (Triangle triangle : triangles)
+            if (triangle != null) {
+                switch (triangle.getType()) {
+                    case "Equilateral" -> ++equilateral;
+                    case "Isosceles" -> ++isosceles;
+                    case "Rectangular" -> ++rectangular;
+                    case "Random" -> ++random;
+                }
+            }
+        System.out.println("Count of types:");
+        System.out.println("Equilateral - " + equilateral);
+        System.out.println("Isosceles - " + isosceles);
+        System.out.println("Rectangular - " + rectangular);
+        System.out.println("Random - " + random);
+    }
+    public Triangle [] findMaxSquareBetweenTypes (){
+        int max = 0;
+        Triangle [] container = new Triangle[4];
+        int count = 0;
+        for (Triangle triangle : triangles)
+            if (triangle != null)
+                if (triangle.getType().equals("Equilateral"))
+                    if (triangle.getSquare() > max) {
+                        max = triangle.getSquare();
+                        container[count] = triangle;
+                    }
+        ++count;
+        for (Triangle triangle : triangles)
+            if (triangle != null)
+                if (triangle.getType().equals("Isosceles"))
+                    if (triangle.getSquare() > max) {
+                        max = triangle.getSquare();
+                        container[count] = triangle;
+                    }
+        ++count;
+        for (Triangle triangle : triangles)
+            if (triangle != null)
+                if (triangle.getType().equals("Rectangular"))
+                    if (triangle.getSquare() > max) {
+                        max = triangle.getSquare();
+                        container[count] = triangle;
+                    }
+        ++count;
+        for (Triangle triangle : triangles)
+            if (triangle != null)
+                if (triangle.getType().equals("Random"))
+                    if (triangle.getSquare() > max) {
+                        max = triangle.getSquare();
+                        container[count] = triangle;
+                    }
+        return container;
+    }
 }

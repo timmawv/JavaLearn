@@ -18,4 +18,10 @@ public class TriangleService {
     public String checkType (Triangle triangle) {
         return triangleDAO.checkType(triangle);
     }
+    public void countAllTypes () {
+        triangleDAO.countAllTypes();
+    }
+    public Triangle [] findMaxSquareBetweenTypes () {
+        return triangleDAO.findMaxSquareBetweenTypes();
+    }
 }
