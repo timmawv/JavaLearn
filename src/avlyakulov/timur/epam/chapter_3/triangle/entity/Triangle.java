@@ -10,7 +10,24 @@ public class Triangle {
     private int a;
     private int b;
     private int c;
+    private int square;
+    private int perimeter;
+    private String type;
 
+    public void setSquare(int square) {
+        this.square = square;
+    }
+
+    public void setPerimeter(int perimeter) {
+        this.perimeter = perimeter;
+    }
+
+    public int getSquare() {
+        return square;
+    }
+    public int getPerimeter() {
+        return perimeter;
+    }
     public int getA() {
         return a;
     }
@@ -33,5 +50,24 @@ public class Triangle {
 
     public void setC(int c) {
         this.c = c;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return " {" +
+                "a=" + a +
+                ", b=" + b +
+                ", c=" + c +
+                ", square=" + square +
+                ", perimeter=" + perimeter +
+                '}';
     }
 }
