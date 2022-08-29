@@ -4,16 +4,27 @@ import avlyakulov.timur.epam.chapter_3.equation.db.EquationDB;
 import avlyakulov.timur.epam.chapter_3.equation.entity.QuadraticEquation;
 
 public class EquationDAO {
-    public void creatEquation (QuadraticEquation quadraticEquation) {
+    public void creatEquation(QuadraticEquation quadraticEquation) {
         EquationDB.getInstance().creatEquation(quadraticEquation);
     }
-    public int[] findRoots (QuadraticEquation quadraticEquation) {
+
+    public int[] findRoots(QuadraticEquation quadraticEquation) {
         return EquationDB.getInstance().findRoots(quadraticEquation);
     }
-    public String findAscendingDescendingInterval (QuadraticEquation quadraticEquation) {
+
+    public String findAscendingDescendingInterval(QuadraticEquation quadraticEquation) {
         return EquationDB.getInstance().findAscendingDescendingInterval(quadraticEquation);
     }
-    public QuadraticEquation [] findAll () {
+
+    public QuadraticEquation[] findAll() {
         return EquationDB.getInstance().findAll();
+    }
+
+    public QuadraticEquation findMax(QuadraticEquation[] equations) {
+        return EquationDB.getInstance().findMax(equations);
+    }
+
+    public QuadraticEquation findMin(QuadraticEquation[] equations) {
+        return EquationDB.getInstance().findMin(equations);
     }
 }

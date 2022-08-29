@@ -32,16 +32,15 @@ public class EquationDB {
     public int[] findRoots(QuadraticEquation quadraticEquation) {
         int x1 = 0;
         int x2 = 0;
-        int disk = (int) Math.sqrt(Math.pow(quadraticEquation.getB(), 2) - 4 * quadraticEquation.getA() * quadraticEquation.getC());
+        int disk = (int) (Math.pow(quadraticEquation.getB(), 2) - 4 * quadraticEquation.getA() * quadraticEquation.getC());
         if (disk < 0)
-            System.out.println("Решений нет та как дискриминант меньше нуля");
+            return null;
         else if (disk == 0) {
-            System.out.println("Мы имеем только 1 решение та как дискриминант равен нулю");
             int x = -quadraticEquation.getB() / (2 * quadraticEquation.getA());
-            System.out.println("Root: " + x);
+            return new int[]{x};
         } else {
-            x1 = (-quadraticEquation.getB() + disk) / (2 * quadraticEquation.getA());
-            x2 = (-quadraticEquation.getB() - disk) / (2 * quadraticEquation.getA());
+            x1 = (-quadraticEquation.getB() + (int) Math.sqrt(disk)) / (2 * quadraticEquation.getA());
+            x2 = (-quadraticEquation.getB() - (int) Math.sqrt(disk)) / (2 * quadraticEquation.getA());
         }
         return new int[]{x1, x2};
     }
@@ -57,5 +56,35 @@ public class EquationDB {
 
     public QuadraticEquation[] findAll() {
         return equations;
+    }
+
+    public QuadraticEquation findMax(QuadraticEquation[] equations) {
+        int max = 0;
+        int[] roots;
+        QuadraticEquation equation = new QuadraticEquation();
+        for (QuadraticEquation quadraticEquation : equations)
+            if (quadraticEquation != null) {
+                roots = findRoots(quadraticEquation);
+                if ((roots[0] + roots[1]) > max) {
+                    max = roots[0] + roots[1];
+                    equation = quadraticEquation;
+                }
+            }
+        return equation;
+    }
+
+    public QuadraticEquation findMin(QuadraticEquation[] equations) {
+        int min = 0;
+        int[] roots;
+        QuadraticEquation equation = new QuadraticEquation();
+        for (QuadraticEquation quadraticEquation : equations)
+            if (quadraticEquation != null) {
+                roots = findRoots(quadraticEquation);
+                if ((roots[0] + roots[1]) < min) {
+                    min = roots[0] + roots[1];
+                    equation = quadraticEquation;
+                }
+            }
+        return equation;
     }
 }

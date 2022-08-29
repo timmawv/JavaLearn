@@ -34,6 +34,8 @@ public class EquationController {
         System.out.println("if you want find roots, please enter 2");
         System.out.println("if you want find interval, please enter 3");
         System.out.println("if you want findAll equations, please enter 4");
+        System.out.println("if you want find Max equation, please enter 5");
+        System.out.println("if you want find Min equation, please enter 6");
         System.out.println("if you want exit, please enter 0");
         System.out.println();
     }
@@ -44,6 +46,8 @@ public class EquationController {
             case "2" -> findRoots(reader);
             case "3" -> findAscendingDescendingInterval(reader);
             case "4" -> findAll();
+            case "5" -> findMax();
+            case "6" -> findMin();
         }
         runNavigation();
     }
@@ -79,6 +83,13 @@ public class EquationController {
             String chooseString = reader.readLine();
             int choose = Integer.parseInt(chooseString);
             int [] roots = equationService.findRoots(equations[choose - 1]);
+            if (roots == null)
+                System.out.println("Discriminant less than zero");
+            else if (roots.length == 1){
+                System.out.println("Discriminant equals zero");
+                System.out.println("X=" + roots[0]);
+            }
+            else
             System.out.println("X1 = " + roots[0] + " X2 = " + roots[1]);
         }
         catch (IOException e) {
@@ -107,5 +118,17 @@ public class EquationController {
         for (QuadraticEquation quadraticEquation : equations)
             if (quadraticEquation != null)
                 System.out.println(quadraticEquation);
+    }
+    public void findMax (){
+        QuadraticEquation [] equations = equationService.findAll();
+        QuadraticEquation quadraticEquation = equationService.findMax(equations);
+        System.out.println("Our max equation:");
+        System.out.println(quadraticEquation);
+    }
+    public void findMin (){
+        QuadraticEquation [] equations = equationService.findAll();
+        QuadraticEquation quadraticEquation = equationService.findMin(equations);
+        System.out.println("Our min equation:");
+        System.out.println(quadraticEquation);
     }
 }
