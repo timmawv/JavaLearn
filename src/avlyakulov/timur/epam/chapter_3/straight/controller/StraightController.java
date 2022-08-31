@@ -105,7 +105,11 @@ public class StraightController {
             choose = Integer.parseInt(chooseStr);
             Straight straight2 = straights[choose - 1];
             double[] points = straightService.findPointsOfIntersectionStraights(straight1, straight2);
-            System.out.println("Point of intersection A(" + points[0] + ";" + points[1] + ")");
+            if (points == null) {
+                System.out.println("Points is null");
+            } else {
+                System.out.println("Point of intersection A(" + points[0] + ";" + points[1] + ")");
+            }
         } catch (IOException e) {
             System.out.println("problem: " + e.getMessage());
         }
