@@ -9,9 +9,11 @@ import java.io.InputStreamReader;
 
 public class StraightController {
     private final StraightService straightService = new StraightService();
+    Straight[] straights = straightService.findAll();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public void run() {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.println("Select your option ");
         String position;
         try {
@@ -69,7 +71,6 @@ public class StraightController {
     public void findPointsOfIntersectionWithTheAxes(BufferedReader reader) {
         try {
             System.out.println("Choose 1 straight to find intersections");
-            Straight[] straights = straightService.findAll();
             for (Straight straight : straights)
                 if (straight != null)
                     System.out.println(straight);
@@ -88,7 +89,6 @@ public class StraightController {
         try {
             System.out.println("Choose 2 straights to find intersection");
             System.out.println("Choose 1 straight");
-            Straight[] straights = straightService.findAll();
             for (Straight straight : straights)
                 if (straight != null) {
                     System.out.println(straight);
