@@ -8,4 +8,19 @@ package avlyakulov.timur.epam.chapter_3.straight.entity;
 
 
 public class Straight {
+    private Fraction fraction;
+
+    public Fraction getFraction() {
+        if (fraction == null)
+            fraction = new Fraction();
+        return fraction;
+    }
+
+    public void setFraction(Fraction fraction) {
+        this.fraction = fraction;
+    }
+
+    public String toString () {
+        return "Straight: " + fraction.getA() + "x + " + fraction.getB() + "y = 1";
+    }
 }
