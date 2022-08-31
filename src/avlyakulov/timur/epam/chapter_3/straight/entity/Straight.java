@@ -20,7 +20,7 @@ public class Straight {
         this.fraction = fraction;
     }
 
-    public String toString () {
+    public String toString() {
         return "Straight: " + fraction.getA() + "x + " + fraction.getB() + "y = 1";
     }
 }

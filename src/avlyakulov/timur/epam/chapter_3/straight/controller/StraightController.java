@@ -76,14 +76,15 @@ public class StraightController {
             String chooseStr = reader.readLine();
             int choose = Integer.parseInt(chooseStr);
             Straight straight = straights[choose - 1];
-            double [] points = straightService.findPointsOfIntersectionWithTheAxes(straight);
+            double[] points = straightService.findPointsOfIntersectionWithTheAxes(straight);
             System.out.println("Point intersection with X " + points[0]);
             System.out.println("Point intersection with Y " + points[1]);
         } catch (IOException e) {
             System.out.println("problem: " + e.getMessage());
         }
     }
-    public void findPointsOfIntersectionStraights (BufferedReader reader) {
+
+    public void findPointsOfIntersectionStraights(BufferedReader reader) {
         try {
             System.out.println("Choose 2 straights to find intersection");
             System.out.println("Choose 1 straight");
@@ -96,20 +97,18 @@ public class StraightController {
             int choose = Integer.parseInt(chooseStr);
             Straight straight1 = straights[choose - 1];
             System.out.println("Choose 2 straight");
-                for (Straight straight : straights)
-                    if (straight != null) {
-                        System.out.println(straight);
-                    }
+            for (Straight straight : straights)
+                if (straight != null) {
+                    System.out.println(straight);
+                }
             chooseStr = reader.readLine();
             choose = Integer.parseInt(chooseStr);
             Straight straight2 = straights[choose - 1];
-            double [] points = straightService.findPointsOfIntersectionStraights(straight1,straight2);
-            System.out.println("Point of intersection A(" + points[0] + ";" + points[1]+ ")");
+            double[] points = straightService.findPointsOfIntersectionStraights(straight1, straight2);
+            System.out.println("Point of intersection A(" + points[0] + ";" + points[1] + ")");
+        } catch (IOException e) {
+            System.out.println("problem: " + e.getMessage());
         }
-         catch (IOException e)
-         {
-             System.out.println("problem: " + e.getMessage());
-         }
     }
 
     public void findAll() {

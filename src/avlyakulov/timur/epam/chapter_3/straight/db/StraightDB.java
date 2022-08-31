@@ -41,13 +41,11 @@ public class StraightDB {
         if (a == 0 && b == 0) {
             System.out.println("Our straights are parallel");
             return null;
-        }
-        else if (a == 0 || b == 0) {
+        } else if (a == 0 || b == 0) {
             System.out.println("Our straights match");
             return null;
-        }
-        else
-            return new double[] {c/a,c/b};
+        } else
+            return new double[]{c / a, c / b};
     }
 
     public Straight[] findAll() {
