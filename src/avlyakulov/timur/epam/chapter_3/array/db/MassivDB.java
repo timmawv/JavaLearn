@@ -71,15 +71,23 @@ public class MassivDB {
     }
 
     public void sortSimpleInsertion(int[] arr) {
-
+        for (int i = 1; i < arr.length; ++i) {
+            int current = arr[i];
+            int j = i;
+            while (j > 0 && arr[i - 1] > current) {
+                arr[j] = arr[j - 1];
+                --j;
+            }
+            arr[j] = current;
+        }
     }
 
     public void sortBinaryMerge(int[] arr) {
-
+        //todo доделать позже, очень сложная реализация
     }
 
     public void sortShell(int[] arr) {
-
+        // TODO: 21.09.2022 доделать позже, там что то непонятное, разбораться в этом 
     }
 
 
