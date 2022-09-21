@@ -37,6 +37,52 @@ public class MassivDB {
                 }
     }
 
+    public void sortShaker(int[] arr) {
+        for (int i = 0; i < arr.length - 1; ++i) {
+            if (arr[i] > arr[i + 1]) {
+                int c = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = c;
+            }
+        }
+        for (int i = arr.length - 1; i > 0; --i) {
+            if (arr[i] < arr[i - 1]) {
+                int c = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = c;
+            }
+        }
+    }
+
+    public void sortSimpleChoose(int[] arr) {
+        for (int i = 0; i < arr.length; ++i) {
+            int min = i;
+            for (int j = i + 1; j < arr.length; j++)
+                if (arr[j] < arr[min])
+                    min = j;
+            int c = arr[i];
+            arr[i] = arr[min];
+            arr[min] = c;
+        }
+    }
+
+    public void sortHash(int[] arr) {
+        //todo работает ток со связаными списками доделать, как поймешь это
+    }
+
+    public void sortSimpleInsertion(int[] arr) {
+
+    }
+
+    public void sortBinaryMerge(int[] arr) {
+
+    }
+
+    public void sortShell(int[] arr) {
+
+    }
+
+
     public Massiv[] findAll() {
         return massivs;
     }
