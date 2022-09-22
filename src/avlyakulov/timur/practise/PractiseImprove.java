@@ -18,6 +18,7 @@ public class PractiseImprove extends Practise {
         int x = 12;
         Practise practise = new PractiseImprove();
         practise.makeAction(x);
-
+        PractiseImprove practiseImprove = new PractiseImprove();
+        practiseImprove.improveYourPractise();
     }
 }
