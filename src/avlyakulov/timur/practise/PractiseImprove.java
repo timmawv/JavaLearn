@@ -1,5 +1,7 @@
 package avlyakulov.timur.practise;
 
+import java.util.Random;
+
 public class PractiseImprove extends Practise {
     public PractiseImprove() {
         super();
@@ -12,13 +14,13 @@ public class PractiseImprove extends Practise {
     public void improveYourPractise () {
         System.out.println("Improving...");
     }
+    public  boolean check() {
+        return new Random().nextBoolean(); // demo
+    }
 
 
     public static void main(String[] args) {
-        int x = 12;
-        Practise practise = new PractiseImprove();
-        practise.makeAction(x);
-        PractiseImprove practiseImprove = new PractiseImprove();
-        practiseImprove.improveYourPractise();
+        PractiseImprove improve = new PractiseImprove();
+        System.out.println(improve.check());
     }
 }
