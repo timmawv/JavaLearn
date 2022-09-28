@@ -1,8 +1,5 @@
 package avlyakulov.timur.practise;
 
-public class GenericPractise extends Practise {
+public class GenericPractise  {
 
-    public static void printNum (int num) {
-        System.out.println(num);
-    }
 }

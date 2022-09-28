@@ -2,26 +2,14 @@ package avlyakulov.timur.practise;
 
 public class Practise {
     private int x;
-
-    public Practise() {
-        this (5);
-        System.out.println("Default without param");
-    }
-
-    public Practise(int x) {
+    public Practise (int x) {
         this.x = x;
-        System.out.println("With parameters");
+        System.out.println("Constructor with parameters");
     }
-
-    public int getX() {
-        return x;
+    public Practise () {
+        System.out.println("Without parameters");
     }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void makeAction(int x) {
-        System.out.println(x);
+    public int getX () {
+        return this.x;
     }
 }
