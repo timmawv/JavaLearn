@@ -1,15 +1,9 @@
 package avlyakulov.timur.practise;
 
 public class Practise {
-    private int x;
-    public Practise (int x) {
-        this.x = x;
-        System.out.println("Constructor with parameters");
-    }
-    public Practise () {
-        System.out.println("Without parameters");
-    }
+    private final int x = 12;
+
     public int getX () {
-        return this.x;
+        return x;
     }
 }

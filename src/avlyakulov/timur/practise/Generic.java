@@ -4,7 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 //пример дженериков зачем они нужны и что было до них
-public class Generics {
+public class Generic {
+    private int id;
+    public Generic () {
+
+    }
+    public Generic (int id) {
+        this.id = id;
+    }
+    @Override
+    public String toString () {
+        return String.valueOf(id);
+    }
     public static void main(String[] args) {
         ///////////////// before java 5 //////////////////
         List animals = new ArrayList();
