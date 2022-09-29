@@ -1,14 +1,12 @@
 package avlyakulov.timur.practise;
 
-import java.util.Random;
-
 public class PractiseImprove extends Practise {
-    public int getX () {
-        return super.getX();
+    public PractiseImprove () {
+        System.out.println("PractiseImprove");
     }
-
-    public static void main(String[] args) {
-        PractiseImprove practise = new PractiseImprove();
-        System.out.println(practise.getX());
+    public void printTest () {
+        Practise practise = new PractiseImprove();
+        Practise practise1 = new Practise();
+        System.out.println(pra);
     }
 }
