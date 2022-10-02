@@ -8,12 +8,12 @@ public class Word {
     }
 
     public void setWord(String word) {
-            if (word.contains(" "))
-                System.out.println("You enter more than 1 word, please enter 1 word");
-            else {
-                this.word = word;
-            }
+        if (word.contains(" "))
+            System.out.println("You enter more than 1 word, please enter 1 word");
+        else {
+            this.word = word;
         }
+    }
 
     @Override
     public String toString() {

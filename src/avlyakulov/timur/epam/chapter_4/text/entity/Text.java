@@ -1,6 +1,7 @@
 package avlyakulov.timur.epam.chapter_4.text.entity;
 
 import java.util.Arrays;
+
 /*Создать объект класса Текст, используя классы Предложение, Слово.
         Методы: дополнить текст, вывести на консоль текст, заголовок текста. */
 public class Text {
@@ -9,8 +10,8 @@ public class Text {
     private String tittle;
     private int current;
 
-    public Text () {
-        text = new Sentence[10];
+    public Text() {
+        text = new Sentence[1];
     }
 
     public void addText(Sentence sentence) {
@@ -23,22 +24,6 @@ public class Text {
         ++current;
     }
 
-    public void printText() {
-        System.out.println(Arrays.toString(text));
-    }
-
-    public void printTextTittle() {
-        System.out.println();
-    }
-
-    public void setSentences(Sentence[] sentences) {
-        this.text = sentences;
-    }
-
-    public Sentence[] getSentences() {
-        return text;
-    }
-
     public String getTittle() {
         return tittle;
     }
@@ -49,8 +34,8 @@ public class Text {
 
     @Override
     public String toString() {
-        return "Text{" +
-                "text=" + Arrays.toString(text) +
-                '}';
+        return "Your Text: "
+                + Arrays.toString(text) +
+                ".";
     }
 }

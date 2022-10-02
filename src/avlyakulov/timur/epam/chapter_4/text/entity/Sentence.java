@@ -6,11 +6,11 @@ public class Sentence {
     private Word[] sentence;
     private int current = 0;
 
-    public Sentence () {
+    public Sentence() {
         sentence = new Word[10];
     }
 
-    public void addWordToSentence (Word word) {
+    public void addWordToSentence(Word word) {
         if (current == sentence.length) {
             Word[] words1 = new Word[sentence.length + 1];
             System.arraycopy(sentence, 0, words1, 0, sentence.length);
@@ -19,27 +19,13 @@ public class Sentence {
         sentence[current] = word;
         ++current;
     }
-    public void setWords(Word[] words) {
-        this.sentence = words;
-    }
-
-    public Word[] getWords() {
-        for (int i = 0; i < sentence.length; ++i)
-            if (sentence[i] == null)
-                sentence[i] = new Word();
-        return sentence;
-    }
-
-
-    public String getWordFromSentence(int order) {
-        return sentence[order].getWord();
-    }
-
 
     @Override
     public String toString() {
-        return "Sentence{" +
-                "sentence=" + Arrays.toString(sentence) +
-                '}';
+        String words = "";
+        for (Word word : sentence)
+            if (word != null)
+                words += word.getWord() + " ";
+        return words;
     }
 }

@@ -11,35 +11,43 @@ import java.io.InputStreamReader;
 public class TextController {
     Text text = new Text();
 
-    public void run () {
+    public void run() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String position;
         try {
             runNavigation();
             while ((position = reader.readLine()) != null) {
-                crud(position,reader);
+                if (position.equals("0"))
+                    System.exit(0);
+                else {
+                    crud(position, reader);
+                }
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("problem " + e.getMessage());
         }
     }
 
     public void runNavigation() {
-        System.out.println("if you want enter text press 1");
+        System.out.println("if you want enter or add text press 1");
+        System.out.println("if you want to print your text press 2");
+        System.out.println("if you want finish program press 0");
         System.out.println();
     }
 
     public void crud(String position, BufferedReader reader) {
-            switch (position) {
-                case "1" -> enterText(reader);
-            }
-            runNavigation();
+        switch (position) {
+            case "1" -> enterText(reader);
+            case "2" -> printText();
         }
+        runNavigation();
+    }
 
-    public void enterText (BufferedReader reader) {
+    public void enterText(BufferedReader reader) {
         try {
-            System.out.println("How many words do you want enter");
+            System.out.println("Please enter tittle of your text");
+            String tittle = reader.readLine();
+            System.out.println("How many words in sentence need to be");
             int amount = Integer.parseInt(reader.readLine());
             Sentence sentence = new Sentence();
             for (int i = 0; i < amount; ++i) {
@@ -58,11 +66,15 @@ public class TextController {
                 word1.setWord(word);
                 sentence.addWordToSentence(word1);
             }
+            text.setTittle(tittle);
             text.addText(sentence);
-            System.out.println(text);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("problem " + e.getMessage());
         }
+    }
+
+    public void printText() {
+        System.out.println("Tittle of your text - " + text.getTittle());
+        System.out.println(text);
     }
 }
