@@ -9,10 +9,8 @@ public class Text {
     private String tittle;
     private int current;
 
-    public Text (Sentence[] sentences,String tittle) {
-        this.tittle = tittle;
-        text = sentences;
-        current = sentences.length;
+    public Text () {
+        text = new Sentence[10];
     }
 
     public void addText(Sentence sentence) {

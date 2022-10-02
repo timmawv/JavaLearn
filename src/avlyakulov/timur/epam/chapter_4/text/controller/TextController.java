@@ -2,13 +2,14 @@ package avlyakulov.timur.epam.chapter_4.text.controller;
 
 import avlyakulov.timur.epam.chapter_4.text.entity.Sentence;
 import avlyakulov.timur.epam.chapter_4.text.entity.Text;
+import avlyakulov.timur.epam.chapter_4.text.entity.Word;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class TextController {
-    private Text text;
+    Text text = new Text();
 
     public void run () {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -17,7 +18,6 @@ public class TextController {
             runNavigation();
             while ((position = reader.readLine()) != null) {
                 crud(position,reader);
-
             }
         }
         catch (IOException e) {
@@ -43,11 +43,23 @@ public class TextController {
             int amount = Integer.parseInt(reader.readLine());
             Sentence sentence = new Sentence();
             for (int i = 0; i < amount; ++i) {
-                System.out.println("Enter word");
-                String word = reader.readLine();
-                sentence.getWords()[i].setWord(word);
+                boolean check = false;
+                String word = "";
+                while (!check) {
+                    System.out.println("Enter word");
+                    word = reader.readLine();
+                    if (word.contains(" "))
+                        System.out.println("Your word contains more than 1 word, please enter one more");
+                    else {
+                        check = true;
+                    }
+                }
+                Word word1 = new Word();
+                word1.setWord(word);
+                sentence.addWordToSentence(word1);
             }
-            System.out.println(sentence);
+            text.addText(sentence);
+            System.out.println(text);
         }
         catch (IOException e) {
             System.out.println("problem " + e.getMessage());

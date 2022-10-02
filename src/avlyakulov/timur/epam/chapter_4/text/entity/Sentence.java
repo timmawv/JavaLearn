@@ -24,6 +24,9 @@ public class Sentence {
     }
 
     public Word[] getWords() {
+        for (int i = 0; i < sentence.length; ++i)
+            if (sentence[i] == null)
+                sentence[i] = new Word();
         return sentence;
     }
 
