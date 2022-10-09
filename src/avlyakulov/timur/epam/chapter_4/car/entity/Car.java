@@ -19,21 +19,20 @@ public class Car extends Engine {
 
 
     public void drive() {
-        if (wheel.getCondition() == 0)
-            System.out.println("You can't drive because your wheel is broke please change him");
-        else if (getFuel() == 0)
-            System.out.println("You ran out of gas, please refuel your car");
-        else {
-            System.out.println("Car is driving...");
-            int fuel = getFuel();
-            setFuel(--fuel);
-            int condition = wheel.getCondition();
-            wheel.setCondition(--condition);
-            System.out.println("Your state of car after driving\n" +
-                    "Fuel - " + fuel + "\n" +
-                    "Wheel - " + wheel.getCondition());
-        }
-
+            if (wheel.getCondition() == 0)
+                System.out.println("You can't drive because your wheel is broke please change him");
+            else if (getFuel() == 0)
+                System.out.println("You ran out of gas, please refuel your car");
+            else {
+                System.out.println("Car is driving...");
+                int fuel = getFuel();
+                setFuel(--fuel);
+                int condition = wheel.getCondition();
+                wheel.setCondition(--condition);
+                System.out.println("Your state of car after driving\n" +
+                        "Fuel - " + fuel + "\n" +
+                        "Wheel - " + wheel.getCondition());
+            }
     }
 
     @Override

@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 
 public class CarController {
     private Car car;
+
     public void run() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String position;
@@ -25,6 +26,13 @@ public class CarController {
         }
     }
 
+    public boolean checkCar() {
+        if (car == null) {
+            System.out.println("You dont create a car");
+            return false;
+        } else return true;
+    }
+
     public void runNavigation() {
         System.out.println();
         System.out.println("if you want to create a car press 1");
@@ -39,10 +47,18 @@ public class CarController {
     public void crud(String position, BufferedReader reader) {
         switch (position) {
             case "1" -> createCar(reader);
-            case "2" -> car.drive();
-            case "3" -> car.refuel();
-            case "4" -> car.changeWheel();
-            case "5" -> car.printCarModel();
+            case "2" -> {
+                if (checkCar()) car.drive();
+            }
+            case "3" -> {
+                if (checkCar()) car.refuel();
+            }
+            case "4" -> {
+                if (checkCar()) car.changeWheel();
+            }
+            case "5" -> {
+                if (checkCar()) car.printCarModel();
+            }
         }
         runNavigation();
     }
