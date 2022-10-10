@@ -1,10 +1,10 @@
 package avlyakulov.timur.epam.chapter_4.car.entity;
 
-public class Engine {
+public class EngineCar {
 
     private int fuel;
 
-    public Engine () {
+    public EngineCar() {
         fuel = 3;
     }
     public void refuel () {}

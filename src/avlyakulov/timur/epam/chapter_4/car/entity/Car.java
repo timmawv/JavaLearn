@@ -6,7 +6,7 @@ package avlyakulov.timur.epam.chapter_4.car.entity;
 Идеи заранее : в двигателе храним количество бениза
 колесо ломается в случайный промежуток времени, создаем рандом, 1 позедка 1 кюрент увеличиваем и когда кюрент равно рандом ломаем колесо,
  */
-public class Car extends Engine {
+public class Car extends EngineCar {
     Wheel wheel;
     String model;
 
