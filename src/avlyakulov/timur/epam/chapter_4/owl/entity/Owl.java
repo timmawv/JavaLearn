@@ -4,7 +4,7 @@ package avlyakulov.timur.epam.chapter_4.owl.entity;
 Методы: летать, петь, нести яйца, высиживать птенцов.
  */
 public class Owl extends Sparrow {
-    private String name;
+    private final String name;
 
     public Owl (String name) {
         super(name);

@@ -5,7 +5,7 @@ package avlyakulov.timur.epam.chapter_4.owl.entity;
 Методы: летать, петь, нести яйца, высиживать птенцов.
  */
 public class Bird {
-    private String name;
+    private final String name;
 
     public Bird (String name) {
         this.name = name;
