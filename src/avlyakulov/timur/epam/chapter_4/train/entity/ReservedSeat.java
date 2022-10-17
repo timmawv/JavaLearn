@@ -1,17 +1,19 @@
-package avlyakulov.timur.epam.chapter_4.transport.entity;
+package avlyakulov.timur.epam.chapter_4.train.entity;
 
 public class ReservedSeat {
     private int capacityPassenger;
     private int capacityBaggage;
-    private final int levelComfort = 2;
+    private final int levelComfort = 3;
 
-    public ReservedSeat(int capacityPassenger, int capacityBaggage){
+    public ReservedSeat(int capacityPassenger, int capacityBaggage) {
         this.capacityPassenger = capacityPassenger;
         this.capacityBaggage = capacityBaggage;
     }
-    public ReservedSeat () {}
 
-    public int getLevelComfort () {
+    public ReservedSeat() {
+    }
+
+    public int getLevelComfort() {
         return levelComfort;
     }
 
@@ -35,9 +37,9 @@ public class ReservedSeat {
     @Override
     public String toString() {
         return "ReservedSeat{" +
-                "capacityPassenger=" + capacityPassenger +
-                ", capacityBaggage=" + capacityBaggage +
-                ", levelComfort=" + levelComfort +
+                "capacityPassenger = " + capacityPassenger +
+                ", capacityBaggage = " + capacityBaggage +
+                ", levelComfort = " + levelComfort +
                 '}';
     }
 }
