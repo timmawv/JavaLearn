@@ -2,27 +2,33 @@ package avlyakulov.timur.practise;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class FileTest {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         String path = "D:\\Загрузки\\testFile.txt";
         File file = new File(path);
-        Scanner scanner = new Scanner(file);
-        String line = scanner.nextLine();
-        scanner.close();
-        System.out.println(line);
-        String[] numbersString = line.split(" ");
-        System.out.println(Arrays.toString(numbersString));
-        int [] numbers = new int[numbersString.length];
-        int counter = 0;
-        for (String num : numbersString) {
-            numbers[counter] = Integer.parseInt(num);
-            ++counter;
+        PrintWriter pw;
+        try {
+            pw = new PrintWriter(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        for (int i : numbers)
-            System.out.println(i);
-        System.out.println(Arrays.toString(numbers));
+        pw.println("1 line of our example");
+        pw.print("2 line");
+        pw.println(" at the same line ");
+        pw.close();
+        String str = " ";
+        Scanner sc;
+        try {
+             sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        while (sc.hasNextLine())
+             str += sc.nextLine();
+        System.out.println(str);
+        sc.close();
     }
 }
