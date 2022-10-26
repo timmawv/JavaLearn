@@ -1,9 +1,9 @@
 package avlyakulov.timur.practise;
 
-public class PractiseImprove extends Practise {
+public class PractiseImprove  {
 
-    public PractiseImprove (int id, String name) {
-        super(id,name);
+    public PractiseImprove () {
+
     }
     @Override
     public String toString () {
@@ -11,7 +11,6 @@ public class PractiseImprove extends Practise {
     }
 
     public static void main(String[] args) {
-        PractiseImprove practiseImprove = new PractiseImprove(1,"Nik");
-        System.out.println(practiseImprove);
+
     }
 }

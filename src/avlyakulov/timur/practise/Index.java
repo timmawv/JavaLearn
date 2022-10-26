@@ -3,7 +3,7 @@ package avlyakulov.timur.practise;
 import java.util.Arrays;
 import java.util.Scanner;
 
-// простой алгоритм сортировки пузырьком
+// простой алгоритм сортировки пузырьком и алгоритм сортировки объектов когда мы все null's убираем в конец массива.
 public class Index {
     public void sortArray(int[] array) {
         Scanner sc = new Scanner(System.in);
@@ -40,7 +40,3 @@ public class Index {
         System.out.println(Arrays.toString(arr));
     }
 }
-
-
-
-
