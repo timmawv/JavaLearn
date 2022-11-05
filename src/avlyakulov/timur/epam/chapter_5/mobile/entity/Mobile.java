@@ -21,6 +21,10 @@ public class Mobile {
         ++current;
     }
 
+    public Model[] getModels () {
+        return models;
+    }
+
 
     public class Model {
         private Company name;
@@ -36,9 +40,9 @@ public class Mobile {
         @Override
         public String toString() {
             return "Model{" +
-                    "name=" + name +
+                    "name=" + name.toString().toLowerCase() +
                     ", price=" + price +
-                    ", capacityOfBattery=" + capacityOfBattery +
+                    ", capacityOfBattery=" + capacityOfBattery + " mAh" +
                     '}' + '\n';
         }
     }
