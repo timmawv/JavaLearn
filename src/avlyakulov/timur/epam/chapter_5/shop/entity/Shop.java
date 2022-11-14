@@ -16,13 +16,13 @@ public class Shop {
     public Shop(String name, String address) {
         this.name = name;
         this.address = address;
-        checkHistory = new DepartmentInTheStore[3];
+        checkHistory = new DepartmentInTheStore[2];
     }
 
     public void addToCheckHistoryNewCheck(DepartmentInTheStore check) {
         if (current == checkHistory.length) {
             DepartmentInTheStore[] checkHistory1 = new DepartmentInTheStore[checkHistory.length];
-            System.arraycopy(checkHistory,0,checkHistory1,0,checkHistory.length);
+            System.arraycopy(checkHistory, 0, checkHistory1, 0, checkHistory.length);
             checkHistory = checkHistory1;
         }
         checkHistory[current] = check;
@@ -35,11 +35,12 @@ public class Shop {
         private String[] products;
         private int[] prices;
         private String[] basket;
-        private int check;
+        private int amountOfMoney;
 
 
         public DepartmentInTheStore(TypeOfDepartment typeOfDepartment) {
             dateOfPurchase = new Date();
+            basket = new String[1];
             this.typeOfDepartment = typeOfDepartment;
             switch (typeOfDepartment) {
                 case SWEETS -> {
@@ -74,13 +75,17 @@ public class Shop {
             }
         }
 
+        public String[] getProducts() {
+            return products;
+        }
+
         public void addToBasketAndToCheckProduct(String nameProduct) {
             int i = 0;
             for (int j = 0; j < products.length; j++) {
                 if (products[j].equals(nameProduct)) {
                     basket[i] = nameProduct;
                     ++i;
-                    check += prices[j];
+                    amountOfMoney += prices[j];
                 }
             }
         }
@@ -89,8 +94,8 @@ public class Shop {
         public String toString() {
             return "Фіскальний чек {" +
                     "basket=" + Arrays.toString(basket) +
-                    ", check=" + check +
-                    ", date of your purchase=" + dateOfPurchase +
+                    ", amountOfMoney= " + amountOfMoney +
+                    ", date of your purchase= " + dateOfPurchase +
                     '}' + '\n';
         }
     }
@@ -100,7 +105,7 @@ public class Shop {
         return "Shop{" +
                 "name of Shop='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", checkHistory='" + Arrays.toString(checkHistory) + '\'' +
+                ", checkHistory='" + '\n' + Arrays.toString(checkHistory) + '\'' +
                 '}';
     }
 }
