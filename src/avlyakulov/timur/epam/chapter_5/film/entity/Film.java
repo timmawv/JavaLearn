@@ -35,10 +35,10 @@ public class Film {
     public class Genre {
         private String duration;
         private String producer;
-        private String nameOfGenre;
+        private avlyakulov.timur.epam.chapter_5.film.entity.Genre nameOfGenre;
         private String nameOfFilm;
 
-        public Genre (String duration,String producer,String nameOfGenre,String nameOfFilm) {
+        public Genre (String duration,String producer,avlyakulov.timur.epam.chapter_5.film.entity.Genre nameOfGenre,String nameOfFilm) {
             this.duration = duration;
             this.producer = producer;
             this.nameOfGenre = nameOfGenre;
@@ -53,7 +53,7 @@ public class Film {
                     ", producer='" + producer + '\'' +
                     ", nameOfGenre='" + nameOfGenre + '\'' +
                     ", nameOfFilm='" + nameOfFilm + '\'' +
-                    '}';
+                    '}' + '\n';
         }
     }
 }
