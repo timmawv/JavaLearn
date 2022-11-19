@@ -3,7 +3,7 @@ package avlyakulov.timur.epam.chapter_2.matrix;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//Повернуть матрицу на 90, 180 или 270 градусов против часовой стрелки //TODO(доделать)
+//Повернуть матрицу на 90, 180 или 270 градусов против часовой стрелки //TODO(доделать) (что то вообще анриал сделать)
 public class TurnMatrix {
     public static void turnMatrix() {
         int[][] matrix = FillMatrix.fillMatrix();
@@ -18,9 +18,11 @@ public class TurnMatrix {
     public static void turnMatrixWithParameters(int[][] matrix, int round) {
         switch (round) {
             case 90 -> {
-                int[] mas = matrix[0];
-                for (int i = 0 ; i < matrix.length; ++i)
-                    matrix[i][0] = mas[matrix.length - i - 1];
+                int [] mas = new int[matrix.length];
+                for (int i = 0; i < matrix.length; ++i) {
+                    mas[i] = matrix[0][i];
+                }
+                System.out.println(Arrays.toString(mas));
             }
             case 180 -> {
 
