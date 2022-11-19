@@ -2,7 +2,8 @@ package avlyakulov.timur.epam.chapter_2.matrix;
 
 import java.util.Scanner;
 
-//В матрице найти минимальный элемент и переместить его на место заданного элемента путем перестановки строк и столбцов todo (добавить переставление не только строк а и элементов)
+//В матрице найти минимальный элемент и переместить его на
+// место заданного элемента путем перестановки строк и столбцов todo (добавить переставление не только строк а и элементов)
 public class FindMinToReplace {
     public static void findAndReplaceMinElement() {
         int[][] matrix = FillMatrix.fillMatrix();
