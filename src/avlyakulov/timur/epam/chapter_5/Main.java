@@ -1,10 +1,10 @@
 package avlyakulov.timur.epam.chapter_5;
 
-import avlyakulov.timur.epam.chapter_5.film.controller.FilmController;
-import avlyakulov.timur.epam.chapter_5.shop.controller.ShopController;
+import avlyakulov.timur.epam.chapter_5.account.controller.AccountController;
+
 
 public class Main {
     public static void main(String[] args) {
-        new FilmController().run();
+        new AccountController().run();
     }
 }
