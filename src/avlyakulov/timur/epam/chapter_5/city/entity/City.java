@@ -16,7 +16,7 @@ public class City {
 
     public City (String name, int population) {
         this.name = name;
-        cityDistricts = new CityDistrict[4];
+        cityDistricts = new CityDistrict[1];
         this.population = population;
         isCapital = this.name.toLowerCase().equals("kiev");
     }
@@ -33,6 +33,17 @@ public class City {
 
     public int getPopulation () {
         return population;
+    }
+    public String getName () {
+        return name;
+    }
+
+    public CityDistrict[] getCityDistricts () {
+        return cityDistricts;
+    }
+
+    public boolean isCapital () {
+        return isCapital;
     }
 
     @Override

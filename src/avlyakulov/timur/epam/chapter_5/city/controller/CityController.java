@@ -1,10 +1,13 @@
 package avlyakulov.timur.epam.chapter_5.city.controller;
 
 import avlyakulov.timur.epam.chapter_5.city.entity.City;
+import avlyakulov.timur.epam.chapter_5.city.entity.TypeOfDistrict;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.util.Arrays;
 
 public class CityController {
     private City city;
@@ -35,6 +38,29 @@ public class CityController {
                     System.out.println("You have created city");
                 else createCity(reader);
             }
+            case "2" -> {
+                if (isCityCreated())
+                    addToCityDistrict(reader);
+            }
+            case "3" -> {
+                if (isCityCreated())
+                    System.out.println("Population of city " + city.getName()  + " is " + city.getPopulation());
+            }
+            case "4" -> {
+                if (isCityCreated())
+                    System.out.println(city);
+            }
+            case "5" -> {
+                if (isCityCreated())
+                    printInformationAboutSpecificDistrict(reader);
+            }
+            case "6" -> {
+                if (isCityCreated()) {
+                    if (city.isCapital())
+                        System.out.println("Yes your city is the capital");
+                    else System.out.println("No your is not a capital");
+                }
+            }
         }
     }
 
@@ -62,6 +88,33 @@ public class CityController {
         catch (IOException | IllegalArgumentException e) {
             System.out.println("You enter the wrong value " + e.getMessage());
         }
+    }
+    public void addToCityDistrict (BufferedReader reader) {
+        try {
+            System.out.println("Choose type of district");
+            System.out.println(Arrays.toString(TypeOfDistrict.values()).toLowerCase());
+            System.out.println("Enter the type of your district ");
+            String typeDistrict = reader.readLine().toUpperCase();
+            TypeOfDistrict typeOfDistrict = TypeOfDistrict.valueOf(typeDistrict);
+            System.out.println("Enter the name of district ");
+            String nameOfDistrict = reader.readLine();
+            City.CityDistrict cityDistrict = city. new CityDistrict(typeDistrict,nameOfDistrict);
+            city.addToCityDistrict(cityDistrict);
+        }
+        catch (IOException | IllegalArgumentException e) {
+            System.out.println("You enter the wrong value " + e.getMessage());
+        }
+    }
 
+    public void printInformationAboutSpecificDistrict (BufferedReader reader) {
+        try {
+            System.out.println("Enter the number of district that you want to get information ");
+            System.out.println(Arrays.toString(city.getCityDistricts()));
+            int num = Integer.parseInt(reader.readLine());
+            City.CityDistrict[] cityDistricts = city.getCityDistricts();
+            System.out.println(cityDistricts[num - 1]);
+        } catch (IOException | IllegalArgumentException e) {
+            System.out.println("You enter the wrong value " + e.getMessage());
+        }
     }
 }
