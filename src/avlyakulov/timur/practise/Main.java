@@ -6,5 +6,11 @@ public class Main{
         RecordImutable recordImutable = new RecordImutable("Tim",12);
         System.out.println(recordImutable.name());
         System.out.println(recordImutable);
+
+        Test.eat();
+
+
+
+
     }
 }
