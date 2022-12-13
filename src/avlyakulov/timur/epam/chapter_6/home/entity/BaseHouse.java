@@ -13,4 +13,5 @@ public interface BaseHouse {
     void increaseSquare(int square);
     void rentHouse();
     void makeRepair();
+    int getSquare();
 }

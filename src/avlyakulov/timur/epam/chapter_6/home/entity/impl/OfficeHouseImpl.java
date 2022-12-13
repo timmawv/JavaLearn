@@ -40,12 +40,19 @@ public class OfficeHouseImpl implements BaseHouse {
 
     @Override
     public void rentHouse() {
+        System.out.println("You start to rent your house");
+
         this.rentHouse = true;
     }
 
     @Override
     public void makeRepair() {
         System.out.println("We are making repair");
+    }
+
+    @Override
+    public int getSquare () {
+        return square;
     }
 
     @Override
