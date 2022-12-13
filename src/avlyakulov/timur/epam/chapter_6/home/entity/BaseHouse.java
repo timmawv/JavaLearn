@@ -8,9 +8,9 @@ package avlyakulov.timur.epam.chapter_6.home.entity;
 public interface BaseHouse {
 
     void buildHouse();
-    void countPriceForSquareMeter();
+    int countPriceForSquareMeter();
     int getNumberOfRooms();
-    void increaseSquare();
+    void increaseSquare(int square);
     void rentHouse();
     void makeRepair();
 }

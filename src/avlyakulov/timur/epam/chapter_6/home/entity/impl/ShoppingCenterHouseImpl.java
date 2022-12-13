@@ -1,21 +1,14 @@
 package avlyakulov.timur.epam.chapter_6.home.entity.impl;
+
 import avlyakulov.timur.epam.chapter_6.home.entity.BaseHouse;
 
-/*
-Дом. Возможности: построить дом; рассчитать цену за квадратный метр;
-узнать сколько комнат; увеличить площадь; сдавать дом в аренду; сделать
-ремонт (в какой-либо комнате). Добавить специализированные методы для
-Дома, Офисного здания, Торгового центра.
- */
-
-public class BaseHouseImpl implements BaseHouse {
+public class ShoppingCenterHouseImpl implements BaseHouse {
     private int square;
     private final int numberOfRooms;
     private final int floorOfTheHouse;
 
     private boolean rentHouse;
-
-    public BaseHouseImpl (int square, int numberOfRooms, int floorOfTheHouse) {
+    public ShoppingCenterHouseImpl (int square, int numberOfRooms, int floorOfTheHouse) {
         this.square = square;
         this.numberOfRooms = numberOfRooms;
         this.floorOfTheHouse = floorOfTheHouse;
@@ -24,13 +17,13 @@ public class BaseHouseImpl implements BaseHouse {
 
     @Override
     public void buildHouse() {
-        System.out.println("We are building your house");
+        System.out.println("We are building your shopping center");
     }
 
     @Override
     public int countPriceForSquareMeter() {
         System.out.println("Count price for square meter");
-        return square * 100;
+        return square * 50;
     }
 
     @Override
@@ -41,7 +34,7 @@ public class BaseHouseImpl implements BaseHouse {
     @Override
     public void increaseSquare(int square) {
         if (square < this.square)
-            System.out.println("You can't decrease square of your house");
+            System.out.println("You can't decrease square of your shopping center");
         else this.square = square;
     }
 
@@ -57,7 +50,7 @@ public class BaseHouseImpl implements BaseHouse {
 
     @Override
     public String toString() {
-        return "BaseHouseImpl{" +
+        return "ShoppingCenterHouseImpl{" +
                 "square=" + square +
                 ", numberOfRooms=" + numberOfRooms +
                 ", floorOfTheHouse=" + floorOfTheHouse +
