@@ -1,5 +1,7 @@
 package avlyakulov.timur.epam.chapter_6.sweet.entity;
 
+import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Candy;
+
 /*
 Конфеты. Возможности: выпустить партию конфет; получить информа-
 цию по продукции определенного производителя; добавить и редактиро-
@@ -9,10 +11,9 @@ package avlyakulov.timur.epam.chapter_6.sweet.entity;
  */
 public interface ProductionOfSweet {
 
-    ProductionOfSweet[] releaseBatchOfCandy();
-    String getInformationAboutSpecificProducer ();
-    void createNewTypeSweet();
-    void addInformationAboutProduction();
-    void setInformationAboutProduction();
-    void withdrawFromProduction();
+    void releaseBatchOfCandy(Candy[] candies);
+    void getInformationAboutSpecificProducer (ProductionOfSweet productionOfSweet);
+    Candy createNewTypeSweet(ProducerOfSweets producer,Ingredient[] ingredients,String name);
+    void getInformationAboutProduction();
+    void withdrawFromProduction(String nameCandy);
 }

@@ -1,36 +1,58 @@
 package avlyakulov.timur.epam.chapter_6.sweet.impl;
 
+import avlyakulov.timur.epam.chapter_6.sweet.entity.Ingredient;
+import avlyakulov.timur.epam.chapter_6.sweet.entity.ProducerOfSweets;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.ProductionOfSweet;
+import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Candy;
 
 public class ProductionOfSweetImpl implements ProductionOfSweet {
-    ProductionOfSweet[] baseSweets;
+
+    Candy[] production;
+
     @Override
-    public ProductionOfSweet[] releaseBatchOfCandy() {
-        return new ProductionOfSweet[0];
+    public void releaseBatchOfCandy(Candy[] candies) {
+        production = candies;
     }
 
     @Override
-    public String getInformationAboutSpecificProducer() {
-        return null;
+    public void getInformationAboutSpecificProducer(ProductionOfSweet productionOfSweet) {
+        System.out.println("Our producer " + productionOfSweet.toString());
+        System.out.println("His candies in production");
+        for (Candy candy : production)
+            if (candy.getProducer().equals(productionOfSweet.toString()))
+                System.out.println(candy);
     }
 
     @Override
-    public void createNewTypeSweet() {
-
+    public Candy createNewTypeSweet(ProducerOfSweets producer, Ingredient[] ingredients, String name) {
+        Candy candy = new Candy(producer, name);
+        candy.setIngredients(ingredients);
+        return candy;
     }
 
     @Override
-    public void addInformationAboutProduction() {
-
+    public void getInformationAboutProduction() {
+        System.out.println("Our productions is from these candies: ");
+        for (Candy candy : production)
+            System.out.println(candy);
     }
 
     @Override
-    public void setInformationAboutProduction() {
-
-    }
-
-    @Override
-    public void withdrawFromProduction() {
-
+    public void withdrawFromProduction(String nameCandy) {
+        int counter = 0;
+        for (Candy candy : production) {
+            if (candy.getName().equals(nameCandy)) {
+                production[counter] = null;
+            }
+            ++counter;
+        }
+        for (int i = counter; i < production.length; ++i) {
+            Candy candy = production[counter];
+            production[counter] = production[counter + 1];
+            production[counter + 1] = candy;
+        }
+        Candy[] candies1 = new Candy[production.length - 1];
+        System.arraycopy(production,0,candies1,0,candies1.length);
+        production = candies1;
     }
 }

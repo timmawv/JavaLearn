@@ -2,6 +2,8 @@ package avlyakulov.timur.epam.chapter_6.sweet.entity.sweet;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.Ingredient;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.ProducerOfSweets;
 
+import java.util.Arrays;
+
 /*
 Конфеты. Возможности: выпустить партию конфет; получить информа-
 цию по продукции определенного производителя; добавить и редактиро-
@@ -9,13 +11,17 @@ import avlyakulov.timur.epam.chapter_6.sweet.entity.ProducerOfSweets;
 вый тип конфет; снять с производства определенный тип конфет. Добавить
 специализированные методы для Конфеты, Шоколад, Леденец, Ирис.
  */
-public class Sweet {
-    private ProducerOfSweets producer;
-    private Ingredient[] ingredients;
+public class Sweet extends Candy{
 
-    public Sweet(ProducerOfSweets producer) {
-        this.producer = producer;
-        ingredients = new Ingredient[]{Ingredient.COCOA,Ingredient.SUGAR,Ingredient.SALT};
+    public Sweet (ProducerOfSweets producer,String name) {
+        super(producer,name);
+        ingredients = new Ingredient[] {Ingredient.COCOA,Ingredient.SALT,Ingredient.SUGAR};
     }
 
+    @Override
+    public String toString() {
+        return "Sweet{" +
+                "ingredients=" + Arrays.toString(ingredients) +
+                "} " + super.toString();
+    }
 }
