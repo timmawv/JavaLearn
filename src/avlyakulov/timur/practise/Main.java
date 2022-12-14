@@ -3,11 +3,10 @@ package avlyakulov.timur.practise;
 public class Main {
 
     public static void main(String[] args) {
-        int[] a = {2};
-        int[] b = {1, 2, 3, 6};
-        int[] c = OneOfTwo.chooseOneFromTwo(a, b);
-        for (int num : c)
-            System.out.println(num);
-
+        Student student = new Student("Alex",12,"Itinf");
+        System.out.println(student.getClass());
+        Class<Student> studentClass = Student.class;
+        System.out.println(studentClass);
+        System.out.println(studentClass.toGenericString());
     }
 }
