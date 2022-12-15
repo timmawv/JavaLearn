@@ -5,6 +5,8 @@ import avlyakulov.timur.epam.chapter_6.sweet.entity.ProducerOfSweets;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.ProductionOfSweet;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Candy;
 
+import java.util.Arrays;
+
 public class ProductionOfSweetImpl implements ProductionOfSweet {
 
     Candy[] production;
@@ -15,11 +17,11 @@ public class ProductionOfSweetImpl implements ProductionOfSweet {
     }
 
     @Override
-    public void getInformationAboutSpecificProducer(ProductionOfSweet productionOfSweet) {
-        System.out.println("Our producer " + productionOfSweet.toString());
+    public void getInformationAboutSpecificProducer(ProducerOfSweets producerOfSweets) {
+        System.out.println("Our producer " + producerOfSweets.toString());
         System.out.println("His candies in production");
         for (Candy candy : production)
-            if (candy.getProducer().equals(productionOfSweet.toString()))
+            if (candy.getProducer().name().equals(producerOfSweets.name()))
                 System.out.println(candy);
     }
 
@@ -54,5 +56,12 @@ public class ProductionOfSweetImpl implements ProductionOfSweet {
         Candy[] candies1 = new Candy[production.length - 1];
         System.arraycopy(production,0,candies1,0,candies1.length);
         production = candies1;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductionOfSweetImpl{" +
+                "production=" + Arrays.toString(production) +
+                '}';
     }
 }

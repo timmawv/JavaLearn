@@ -1,10 +1,8 @@
 package avlyakulov.timur.epam.chapter_6.sweet;
 
+import avlyakulov.timur.epam.chapter_6.sweet.entity.Ingredient;
 import avlyakulov.timur.epam.chapter_6.sweet.entity.ProducerOfSweets;
-import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Candy;
-import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Chocolate;
-import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Iris;
-import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Lollipop;
+import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.*;
 import avlyakulov.timur.epam.chapter_6.sweet.impl.ProductionOfSweetImpl;
 
 import java.io.BufferedReader;
@@ -14,6 +12,8 @@ import java.util.Arrays;
 
 public class ProductionController {
     ProductionOfSweetImpl productionOfSweet;
+    int counterOfProduction = 0;
+    Candy[] candies = new Candy[2];
 
     public boolean checkCreateProduction() {
         if (productionOfSweet == null) {
@@ -24,6 +24,7 @@ public class ProductionController {
 
     public void run() {
         String position;
+        runNavigation();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while ((position = reader.readLine()) != null) {
                 if (position.equals("0"))
@@ -39,30 +40,31 @@ public class ProductionController {
     public void crud(String position, BufferedReader reader) {
         switch (position) {
             case "1" -> {
-                if (checkCreateProduction())
-                    System.out.println("You have created the production");
-                else productionOfSweet = new ProductionOfSweetImpl();
+                if (productionOfSweet == null)
+                    productionOfSweet = new ProductionOfSweetImpl();
+                else System.out.println("You have created the production");
             }
             case "2" -> {
-                if (!checkCreateProduction())
-                    System.out.println("You don't create a production");
-                else releaseBatchOfCandy(reader);
+                if (checkCreateProduction())
+                    releaseBatchOfCandy(reader);
             }
             case "3" -> {
-                if (!checkCreateProduction())
-                    System.out.println("You don't create a production");
+                if (checkCreateProduction())
+                    getInformationAboutSpecificProducer(reader);
             }
             case "4" -> {
-                if (!checkCreateProduction())
-                    System.out.println("You don't create a production");
+                if (checkCreateProduction())
+                    createNewTypeOfSweet(reader);
             }
             case "5" -> {
-                if (!checkCreateProduction())
-                    System.out.println("You don't create a production");
+                if (checkCreateProduction())
+                    System.out.println(productionOfSweet);
+
             }
             case "6" -> {
-                if (!checkCreateProduction())
-                    System.out.println("You don't create a production");
+                if (checkCreateProduction())
+                    withDrawCandyFromProduction(reader);
+
             }
         }
     }
@@ -82,29 +84,68 @@ public class ProductionController {
 
     public void releaseBatchOfCandy(BufferedReader reader) {
         try {
-            int i = 0;
             Candy candy;
-            Candy[] candies = new Candy[0];
             System.out.println("Enter the name of candy that you want to add to batch");
             String name = reader.readLine();
             System.out.println(Arrays.toString(ProducerOfSweets.values()));
             System.out.println("Enter his producer from this list");
             String producer = reader.readLine();
-            switch (name) {
-                case "Candy" -> candy = new Candy(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
-                case "Lollipop" -> candy = new Lollipop(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
-                case "Iris" -> candy = new Iris(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
-                case "Chocolate" -> candy = new Chocolate(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
+            switch (name.toUpperCase()) {
+                case "SWEET" -> candy = new Sweet(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
+                case "LOLLIPOP" -> candy = new Lollipop(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
+                case "IRIS" -> candy = new Iris(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
+                case "CHOCOLATE" -> candy = new Chocolate(ProducerOfSweets.valueOf(producer.toUpperCase()), name);
                 default -> throw new IllegalStateException("Unexpected value: " + name);
             }
-            candies[i] = candy;
-            Candy[] candies1 = new Candy[candies.length + 1];
-            System.arraycopy(candies, 0, candies1, 0, candies.length);
-            candies = candies1;
-            ++i;
+            candies[counterOfProduction] = candy;
+            ++counterOfProduction;
             productionOfSweet.releaseBatchOfCandy(candies);
         } catch (IOException | IllegalArgumentException e) {
             System.out.println("You have enter the wrong value " + e.getMessage());
         }
+    }
+
+    public void getInformationAboutSpecificProducer(BufferedReader reader) {
+        try {
+            System.out.println(Arrays.toString(ProducerOfSweets.values()));
+            System.out.println("Enter the name of Producer of sweets from this list ");
+            ProducerOfSweets nameProducer = ProducerOfSweets.valueOf(reader.readLine().toUpperCase());
+            productionOfSweet.getInformationAboutSpecificProducer(nameProducer);
+        } catch (IOException | IllegalArgumentException e) {
+            System.out.println("You have enter the wrong value " + e.getMessage());
+        }
+    }
+
+    public void createNewTypeOfSweet(BufferedReader reader) {
+        try {
+            System.out.println("Enter the name of new type of Candy ");
+            String name = reader.readLine();
+            System.out.println(Arrays.toString(ProducerOfSweets.values()));
+            System.out.println("From this list enter producer of sweets");
+            ProducerOfSweets producerOfSweets = ProducerOfSweets.valueOf(reader.readLine().toUpperCase());
+            System.out.println("Enter the number of ingredients ");
+            int numOfIngredients = Integer.parseInt(reader.readLine());
+            Ingredient[] ingredients = new Ingredient[numOfIngredients];
+            for (int i = 0; i < numOfIngredients; ++i) {
+                System.out.println(Arrays.toString(Ingredient.values()));
+                System.out.println("From this list enter ingredient that you want to add to your new Candy");
+                ingredients[i] = Ingredient.valueOf(reader.readLine().toUpperCase());
+            }
+            Candy candy = productionOfSweet.createNewTypeSweet(producerOfSweets, ingredients, name);
+            System.out.println(candy);
+        } catch (IOException | IllegalArgumentException e) {
+            System.out.println("You have enter the wrong value " + e.getMessage());
+        }
+    }
+
+    public void withDrawCandyFromProduction(BufferedReader reader) {
+        try {
+            System.out.println("Enter the candy name that you want to withdraw ");
+            String nameCandy = reader.readLine();
+            productionOfSweet.withdrawFromProduction(nameCandy);
+        } catch (IOException | IllegalArgumentException e) {
+            System.out.println("You enter the wrong value " + e.getMessage());
+        }
+
     }
 }

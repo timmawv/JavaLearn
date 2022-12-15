@@ -12,7 +12,7 @@ import avlyakulov.timur.epam.chapter_6.sweet.entity.sweet.Candy;
 public interface ProductionOfSweet {
 
     void releaseBatchOfCandy(Candy[] candies);
-    void getInformationAboutSpecificProducer (ProductionOfSweet productionOfSweet);
+    void getInformationAboutSpecificProducer (ProducerOfSweets producerOfSweets);
     Candy createNewTypeSweet(ProducerOfSweets producer,Ingredient[] ingredients,String name);
     void getInformationAboutProduction();
     void withdrawFromProduction(String nameCandy);
