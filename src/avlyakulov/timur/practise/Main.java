@@ -1,12 +1,15 @@
 package avlyakulov.timur.practise;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class Main {
 
     public static void main(String[] args) {
-        Student student = new Student("Alex",12,"Itinf");
-        System.out.println(student.getClass());
-        Class<Student> studentClass = Student.class;
-        System.out.println(studentClass);
-        System.out.println(studentClass.toGenericString());
+        ArrayList<Student> studentArrayList = new ArrayList<>();
+        studentArrayList.add(new Student("Alex",12,"ITIFN"));
+        StudentWorker object = new StudentWorker("Alex",12,"ITIFN");
+        studentArrayList.add(object);
+
     }
 }
