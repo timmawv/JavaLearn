@@ -7,7 +7,7 @@ import avlyakulov.timur.epam.chapter_6.computer.impl.PadActionImpl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+//todo понять как создать какой то девайс со своими методами, без созданий всех отдельных сущностей
 public class Controller {
     ComputerActionImpl computer;
     MobileActionImpl mobile;
