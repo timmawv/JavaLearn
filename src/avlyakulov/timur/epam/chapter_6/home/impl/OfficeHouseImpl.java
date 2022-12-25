@@ -1,14 +1,14 @@
-package avlyakulov.timur.epam.chapter_6.home.entity.impl;
+package avlyakulov.timur.epam.chapter_6.home.impl;
 
-import avlyakulov.timur.epam.chapter_6.home.entity.BaseHouse;
+import avlyakulov.timur.epam.chapter_6.home.BaseHouse;
 
-public class ShoppingCenterHouseImpl implements BaseHouse {
+public class OfficeHouseImpl implements BaseHouse {
     private int square;
     private final int numberOfRooms;
     private final int floorOfTheHouse;
 
     private boolean rentHouse;
-    public ShoppingCenterHouseImpl (int square, int numberOfRooms, int floorOfTheHouse) {
+    public OfficeHouseImpl (int square, int numberOfRooms, int floorOfTheHouse) {
         this.square = square;
         this.numberOfRooms = numberOfRooms;
         this.floorOfTheHouse = floorOfTheHouse;
@@ -17,13 +17,13 @@ public class ShoppingCenterHouseImpl implements BaseHouse {
 
     @Override
     public void buildHouse() {
-        System.out.println("We are building your shopping center");
+        System.out.println("We are building your office");
     }
 
     @Override
     public int countPriceForSquareMeter() {
         System.out.println("Count price for square meter");
-        return square * 50;
+        return square * 80;
     }
 
     @Override
@@ -34,13 +34,14 @@ public class ShoppingCenterHouseImpl implements BaseHouse {
     @Override
     public void increaseSquare(int square) {
         if (square < this.square)
-            System.out.println("You can't decrease square of your shopping center");
+            System.out.println("You can't decrease square of your office");
         else this.square = square;
     }
 
     @Override
     public void rentHouse() {
         System.out.println("You start to rent your house");
+
         this.rentHouse = true;
     }
 
@@ -56,7 +57,7 @@ public class ShoppingCenterHouseImpl implements BaseHouse {
 
     @Override
     public String toString() {
-        return "ShoppingCenterHouseImpl{" +
+        return "OfficeHouseImpl{" +
                 "square=" + square +
                 ", numberOfRooms=" + numberOfRooms +
                 ", floorOfTheHouse=" + floorOfTheHouse +

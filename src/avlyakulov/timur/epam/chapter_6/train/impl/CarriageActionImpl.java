@@ -9,21 +9,26 @@ public class CarriageActionImpl extends Carriage implements CarriageAction {
     }
     @Override
     public int getWeight() {
-        return 0;
+        return 100;
     }
 
     @Override
     public void sendToDestination() {
-
+        status = Status.WAY;
     }
 
     @Override
     public void repair() {
-
+        System.out.println("repair");
     }
 
     @Override
     public Status getStatus() {
-        return null;
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        return "" + super.toString();
     }
 }

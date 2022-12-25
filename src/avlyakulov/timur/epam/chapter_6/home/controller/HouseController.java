@@ -1,9 +1,9 @@
-package avlyakulov.timur.epam.chapter_6.home.entity.controller;
+package avlyakulov.timur.epam.chapter_6.home.controller;
 
-import avlyakulov.timur.epam.chapter_6.home.entity.BaseHouse;
-import avlyakulov.timur.epam.chapter_6.home.entity.impl.BaseHouseImpl;
-import avlyakulov.timur.epam.chapter_6.home.entity.impl.OfficeHouseImpl;
-import avlyakulov.timur.epam.chapter_6.home.entity.impl.ShoppingCenterHouseImpl;
+import avlyakulov.timur.epam.chapter_6.home.BaseHouse;
+import avlyakulov.timur.epam.chapter_6.home.impl.BaseHouseImpl;
+import avlyakulov.timur.epam.chapter_6.home.impl.OfficeHouseImpl;
+import avlyakulov.timur.epam.chapter_6.home.impl.ShoppingCenterHouseImpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;

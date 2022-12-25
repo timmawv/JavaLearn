@@ -1,10 +1,10 @@
 package avlyakulov.timur.epam.chapter_6;
 
 
-import avlyakulov.timur.epam.chapter_6.plant.PlantController;
+import avlyakulov.timur.epam.chapter_6.train.CarriageController;
 
 public class Main {
     public static void main(String[] args) {
-        new PlantController().run();
+        new CarriageController().run();
     }
 }

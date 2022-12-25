@@ -12,12 +12,22 @@ public class Carriage {
     String registrationNumber;
     Destination destination;
     Owner owner;
-    Status status;
+    protected Status status;
 
     public Carriage (String registrationNumber,Destination destination,Owner owner,Status status) {
         this.registrationNumber = registrationNumber;
         this.destination = destination;
         this.owner = owner;
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Carriage{" +
+                "registrationNumber='" + registrationNumber + '\'' +
+                ", destination=" + destination +
+                ", owner=" + owner +
+                ", status=" + status +
+                '}';
     }
 }

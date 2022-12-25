@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_6.home.entity;
+package avlyakulov.timur.epam.chapter_6.home;
 /*
 Дом. Возможности: построить дом; рассчитать цену за квадратный метр;
 узнать сколько комнат; увеличить площадь; сдавать дом в аренду; сделать

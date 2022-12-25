@@ -18,12 +18,11 @@ public class Main {
         humans.add(human);
         humans.add(human2);
         System.out.println(humans);
-        Collections.sort(humans, new CompareHumanId());
+        Collections.sort(humans);
         System.out.println(humans);
-
+        int index = Collections.binarySearch(humans, new Human(3));
+        System.out.println(index);
     }
-
-
 
 }
 
