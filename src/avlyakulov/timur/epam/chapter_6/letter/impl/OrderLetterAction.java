@@ -1,0 +1,27 @@
+package avlyakulov.timur.epam.chapter_6.letter.impl;
+
+import avlyakulov.timur.epam.chapter_6.letter.entity.AbstractLetter;
+import avlyakulov.timur.epam.chapter_6.letter.entity.Letter;
+import avlyakulov.timur.epam.chapter_6.letter.entity.OrderLetter;
+import avlyakulov.timur.epam.chapter_6.letter.entity.PostAction;
+
+public class OrderLetterAction implements PostAction<OrderLetter> {
+    @Override
+    public void addSender(OrderLetter letter, String sender) {
+        letter.setSender(sender);
+    }
+
+    @Override
+    public void deleteSender(OrderLetter letter) {
+        letter.setSender(null);
+    }
+
+    @Override
+    public void CreateAndSendLetter(AbstractLetter[] letters, Letter letter) {
+        System.out.println("Sending Order letter...");
+    }
+
+    public void changeCost (OrderLetter letter,int cost) {
+        letter.setCost(cost);
+    }
+}
