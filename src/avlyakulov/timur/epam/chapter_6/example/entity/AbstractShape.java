@@ -7,7 +7,7 @@ public class AbstractShape {
         return shapeId;
     }
 
-    public void setShapeId(long shapeId) {
+    public void setShapeId (long shapeId) {
         this.shapeId = shapeId;
     }
 }

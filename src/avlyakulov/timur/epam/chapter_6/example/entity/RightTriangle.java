@@ -1,10 +1,10 @@
 package avlyakulov.timur.epam.chapter_6.example.entity;
 
-public class RightTriangle extends  AbstractShape {
+public class RightTriangle extends AbstractShape {
     private double sideA;
     private double sideB;
 
-    public RightTriangle (double sideA,double sideB) {
+    public RightTriangle (double sideA, double sideB) {
         this.sideA = sideA;
         this.sideB = sideB;
     }
