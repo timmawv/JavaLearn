@@ -36,6 +36,6 @@ public class Letter extends AbstractLetter {
                 "sender='" + sender + '\'' +
                 ", date=" + date +
                 ", text='" + text + '\'' +
-                "} ";
+                "} " + '\n';
     }
 }
