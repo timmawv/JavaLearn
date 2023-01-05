@@ -15,7 +15,7 @@ import java.util.Arrays;
 public class LetterController {
 
     PostAction<Letter> letterPostAction = new LetterAction();
-    PostAction<OrderLetter> orderLetterPostAction = new OrderLetterAction();
+    OrderLetterAction orderLetterPostAction = new OrderLetterAction();
     AbstractLetter[] letters = new AbstractLetter[1];
     int counter = 0;
 
@@ -41,19 +41,22 @@ public class LetterController {
 
     public void crud (String position, BufferedReader reader) {
         switch (position) {
-            case "1" -> {
-                createAndSendLetter(reader);
-            }
-            case "2" -> {
-                System.out.println(Arrays.toString(letters));
-            }
+            case "1" -> createAndSendLetter(reader);
+            case "2" -> addSender(reader);
+            case "3" -> deleteSender(reader);
+            case "4" -> changeCostOfLetter(reader);
+            case "5" -> System.out.println(Arrays.toString(letters));
+
         }
     }
 
     public void runNavigation () {
         System.out.println();
         System.out.println("If you want to create and send letter press 1");
-        System.out.println("If you want to print all letters press 2");
+        System.out.println("If you want to add sender to your letter or change it press 2");
+        System.out.println("If you want to delete sender press 3");
+        System.out.println("If you want to change cost of your order letter press 4");
+        System.out.println("If you want to print all letters press 5");
         System.out.println();
     }
 
@@ -92,4 +95,52 @@ public class LetterController {
         }
     }
 
+    public void addSender (BufferedReader reader) {
+        try {
+            System.out.println("Enter the new sender ");
+            String sender = reader.readLine();
+            System.out.println(Arrays.toString(letters));
+            System.out.println("From this list choose letter where you want to change sender ");
+            int num = Integer.parseInt(reader.readLine());
+            num = num - 1;
+            if (letters[num] instanceof Letter)
+                letterPostAction.addSender((Letter)letters[num],sender);
+            else
+                orderLetterPostAction.addSender((OrderLetter) letters[num],sender);
+        }
+        catch (IOException | IllegalArgumentException e ) {
+            System.out.println("You have enter the wrong value " + e.getMessage());
+        }
+    }
+
+    public void deleteSender (BufferedReader reader) {
+        try {
+            System.out.println(Arrays.toString(letters));
+            System.out.println("From this list choose letter where you want to delete sender ");
+            int num = Integer.parseInt(reader.readLine());
+            num = num - 1;
+            if (letters[num] instanceof Letter)
+                letterPostAction.deleteSender((Letter)letters[num]);
+            else
+                orderLetterPostAction.deleteSender((OrderLetter) letters[num]);
+        }
+        catch (IOException | IllegalArgumentException e) {
+            System.out.println("You have enter the wrong value " + e.getMessage());
+        }
+    }
+
+    public void changeCostOfLetter (BufferedReader reader) {
+        try {
+            System.out.println(Arrays.toString(letters));
+            System.out.println("From this list choose order letter where you want to change cost");
+            int num = Integer.parseInt(reader.readLine());
+            num = num - 1;
+            System.out.println("Enter the new cost of email");
+            int cost = Integer.parseInt(reader.readLine());
+            orderLetterPostAction.changeCost((OrderLetter) letters[num],cost);
+        }
+        catch (IOException | IllegalArgumentException | ClassCastException e) {
+            System.out.println("You have enter the wrong value " + e.getMessage());
+        }
+    }
 }

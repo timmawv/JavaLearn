@@ -5,5 +5,5 @@ public interface PostAction <T extends AbstractLetter> {
 
     void deleteSender (T letter);
 
-    void CreateAndSendLetter (AbstractLetter[] letters,Letter letter);
+
 }

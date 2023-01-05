@@ -16,10 +16,6 @@ public class OrderLetterAction implements PostAction<OrderLetter> {
         letter.setSender(null);
     }
 
-    @Override
-    public void CreateAndSendLetter(AbstractLetter[] letters, Letter letter) {
-        System.out.println("Sending Order letter...");
-    }
 
     public void changeCost (OrderLetter letter,int cost) {
         letter.setCost(cost);
