@@ -13,7 +13,8 @@ public class Letter extends AbstractLetter {
         super.text = text;
         date = new Date();
     }
-    public void setSender (String sender) {
+
+    public void setSender(String sender) {
         this.sender = sender;
     }
 

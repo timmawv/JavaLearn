@@ -14,7 +14,8 @@ public class AbstractLetter {
     public void setText(String text) {
         this.text = text;
     }
-    public String getText () {
+
+    public String getText() {
         return text;
     }
 }

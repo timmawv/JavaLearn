@@ -15,7 +15,7 @@ public class OrderLetter extends Letter {
     }
 
 
-    public void setCost (int cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 

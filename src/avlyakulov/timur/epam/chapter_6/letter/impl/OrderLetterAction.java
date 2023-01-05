@@ -1,11 +1,11 @@
 package avlyakulov.timur.epam.chapter_6.letter.impl;
 
-import avlyakulov.timur.epam.chapter_6.letter.entity.AbstractLetter;
-import avlyakulov.timur.epam.chapter_6.letter.entity.Letter;
+
 import avlyakulov.timur.epam.chapter_6.letter.entity.OrderLetter;
 import avlyakulov.timur.epam.chapter_6.letter.entity.PostAction;
 
 public class OrderLetterAction implements PostAction<OrderLetter> {
+
     @Override
     public void addSender(OrderLetter letter, String sender) {
         letter.setSender(sender);
@@ -17,7 +17,7 @@ public class OrderLetterAction implements PostAction<OrderLetter> {
     }
 
 
-    public void changeCost (OrderLetter letter,int cost) {
+    public void changeCost(OrderLetter letter, int cost) {
         letter.setCost(cost);
     }
 }

@@ -4,7 +4,7 @@ import avlyakulov.timur.epam.chapter_6.letter.entity.AbstractLetter;
 import avlyakulov.timur.epam.chapter_6.letter.entity.Letter;
 import avlyakulov.timur.epam.chapter_6.letter.entity.PostAction;
 
-public class LetterAction implements PostAction <Letter> {
+public class LetterAction implements PostAction<Letter> {
 
 
     @Override
