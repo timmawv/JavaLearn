@@ -5,7 +5,7 @@ import avlyakulov.timur.epam.chapter_6.letter.entity.AbstractLetter;
 public class Cheese extends AbstractProduct {
     private final int shelfLife;
 
-    public Cheese ( int id, int cost, int fatPercent) {
+    public Cheese(int id, int cost, int fatPercent) {
         super.id = id;
         super.cost = cost;
         super.place = "Shopping room";
@@ -16,11 +16,11 @@ public class Cheese extends AbstractProduct {
     @Override
     public String toString() {
         return "Cheese{" +
-                ", id=" + id +
+                "id=" + id +
                 ", cost=" + cost +
                 ", place='" + place + '\'' +
                 ", fatPercent=" + fatPercent +
-                "shelfLife=" + shelfLife +
-                "} ";
+                ", shelfLife=" + shelfLife +
+                "} " + '\n';
     }
 }

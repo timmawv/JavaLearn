@@ -1,9 +1,9 @@
 package avlyakulov.timur.epam.chapter_6.product.entity;
 
-public class Milk extends AbstractProduct{
+public class Milk extends AbstractProduct {
     private final int shelfLife;
 
-    public Milk ( int id, int cost, int fatPercent) {
+    public Milk(int id, int cost, int fatPercent) {
         super.id = id;
         super.cost = cost;
         super.place = "Shopping room";
@@ -14,11 +14,11 @@ public class Milk extends AbstractProduct{
     @Override
     public String toString() {
         return "Milk{" +
-                ", id=" + id +
+                "id=" + id +
                 ", cost=" + cost +
                 ", place='" + place + '\'' +
                 ", fatPercent=" + fatPercent +
-                "shelfLife=" + shelfLife +
-                "} ";
+                ", shelfLife=" + shelfLife +
+                "} " + '\n';
     }
 }

@@ -22,6 +22,13 @@ public class AbstractProduct {
     public int getFatPercent () {
         return fatPercent;
     }
+
+    public void setCost (int cost) {
+        this.cost = cost;
+    }
+    public int getCost () {
+        return cost;
+    }
     @Override
     public String toString() {
         return "{" +
