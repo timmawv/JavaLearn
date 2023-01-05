@@ -23,6 +23,9 @@ public class AbstractProduct {
         return fatPercent;
     }
 
+    public String getPlace () {
+        return place;
+    }
     public void setCost (int cost) {
         this.cost = cost;
     }

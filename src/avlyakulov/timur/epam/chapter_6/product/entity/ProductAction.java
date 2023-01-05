@@ -8,11 +8,11 @@ id, наименование, цена, срок хранения
 ные методы для масла, молока, творога.
  */
 public interface ProductAction<T extends AbstractProduct> {
-    default void changePlaceHoldToWareHouse(AbstractProduct product) {
-        product.setPlace("WareHouse");
+    default void changePlaceHold(AbstractProduct product) {
+        if (product.getPlace().equals("WareHouse"))
+            product.setPlace("Shopping room");
+        else
+            product.setPlace("WareHouse");
     }
 
-    default void changePlaceHoldToShoppingRoom(AbstractProduct product) {
-        product.setPlace("Shopping room");
-    }
 }
