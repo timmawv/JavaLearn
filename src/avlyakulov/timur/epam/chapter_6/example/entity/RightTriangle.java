@@ -30,6 +30,6 @@ public class RightTriangle extends AbstractShape {
         return "RightTriangle{" +
                 "sideA=" + sideA +
                 ", sideB=" + sideB +
-                "} " + super.toString();
+                "} ";
     }
 }

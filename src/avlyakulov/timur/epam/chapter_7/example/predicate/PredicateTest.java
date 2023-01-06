@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class PredicateTest {
     public static void main(String[] args) {
         Predicate<String> predicateStr1 = s -> s.length() < 2;
-        Predicate<String> predicateStr2 = String::isBlank;
+        Predicate<String> predicateStr2 = s -> s.isBlank();
         Predicate<Integer> predicateInt = i -> i >= 9;
         //simple example of predicate
         System.out.println(predicateStr1.test("sfasdfa"));

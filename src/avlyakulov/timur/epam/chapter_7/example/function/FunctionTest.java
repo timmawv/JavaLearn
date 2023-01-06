@@ -1,5 +1,7 @@
 package avlyakulov.timur.epam.chapter_7.example.function;
 
+import avlyakulov.timur.epam.chapter_6.example.entity.RightTriangle;
+
 import java.util.Arrays;
 import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
@@ -57,5 +59,6 @@ public class FunctionTest {
         //Binary Operator
         BinaryOperator<String> binaryOperator = (s1,s2) -> s1 + s2.toUpperCase();
         System.out.println(binaryOperator.apply("oracle","epam"));
+
     }
 }
