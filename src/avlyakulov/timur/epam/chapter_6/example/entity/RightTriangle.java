@@ -1,6 +1,7 @@
 package avlyakulov.timur.epam.chapter_6.example.entity;
 
 public class RightTriangle extends AbstractShape {
+
     private double sideA;
     private double sideB;
 
@@ -8,6 +9,12 @@ public class RightTriangle extends AbstractShape {
         this.sideA = sideA;
         this.sideB = sideB;
     }
+
+    public RightTriangle(Double[] doubles) {
+        this.sideA = doubles[0];
+        this.sideB = doubles[1];
+    }
+
 
     public double getSideA() {
         return sideA;
