@@ -18,5 +18,7 @@ public class HashMapTest {
         System.out.println(map.values());
         System.out.println(map.entrySet());
         System.out.println(map);
+        map.put(3,"Denis");//пример перезаписи в наш объект по ключу
+        System.out.println(map);
     }
 }
