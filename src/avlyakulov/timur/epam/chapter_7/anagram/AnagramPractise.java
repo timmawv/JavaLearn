@@ -34,7 +34,7 @@ public class AnagramPractise {
         return predicateTestLength.test(wordAnagramUtil.getWord(), wordAnagramUtil.getAnagram());
     }
     public List<String> converToList (String str) {
-        Function<String, String[]> splitWordToArray = s -> s.split(("(?!^)"));
+        Function<String, String[]> splitWordToArray = s -> s.split(("(?<=.)"));
         return Arrays.stream(splitWordToArray.apply(str)).sorted().collect(Collectors.toList());
     }
     public boolean checkLengthLists (List<String> listWord,List<String> listAnagram) {
