@@ -23,13 +23,15 @@ public class FileText {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        String[] text = textStr.split(" ");
-        System.out.println(Arrays.toString(text));
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Enter the word than you want to check match");
             String word = reader.readLine();
-
-            System.out.println();
+            Function<String, String[]> splitText = s -> s.split("[^A-Za-zА-Яа-я0-9]");
+            String[] text = splitText.apply(textStr);
+            System.out.println(Arrays.toString(text));
+            Predicate<String> checkWordEntry = (s) -> s.equals(word);
+            long numberOfEntry = Arrays.stream(text).filter(checkWordEntry).count();
+            System.out.println(word + "-" + numberOfEntry);
         } catch (IOException | IllegalArgumentException e) {
             System.out.println("You enter the wrong value ");
         }
