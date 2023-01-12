@@ -7,6 +7,9 @@ public interface Test {
      default void swim() {
         System.out.println("Плыви!");
     }
+    private void method () {
+        System.out.println("Do something...");
+    }
     void go();
 
 }
