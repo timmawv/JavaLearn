@@ -13,8 +13,4 @@ public enum OrderComparatorFunctional {
     public Comparator<Order> getComparator() {
         return comparator;
     }
-
-    public static void main(String[] args) {
-
-    }
 }
