@@ -1,9 +1,8 @@
-package avlyakulov.timur.epam.chapter_7.numbers;
+package avlyakulov.timur.epam.chapter_7.numbers.bigger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.function.Function;
 
 /*
 Дано три разных целых числа. Реализовать лямбда-выражение, которое на-

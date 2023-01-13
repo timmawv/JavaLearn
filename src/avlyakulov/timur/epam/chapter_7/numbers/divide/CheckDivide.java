@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_7.numbers;
+package avlyakulov.timur.epam.chapter_7.numbers.divide;
 /*
 Написать функциональный интерфейс с методом, который принимает число
 и возвращает булево значение. Написать реализацию такого интерфейса

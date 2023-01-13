@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_7.numbers;
+package avlyakulov.timur.epam.chapter_7.numbers.divide;
 
 import java.io.BufferedReader;
 import java.io.IOException;
