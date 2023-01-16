@@ -36,8 +36,8 @@ public class SumElementsOfArray {
 
     public static double sumArray(String[] numbers) {
         double sum = 0;
-        for (int i = 0; i < numbers.length; ++i)
-            sum += Double.parseDouble(numbers[i]);
+        for (String number : numbers)
+            sum += Double.parseDouble(number);
         return sum;
     }
 }
