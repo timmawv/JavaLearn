@@ -15,8 +15,9 @@ public class CountFactorialNumber {
             System.out.println("Enter your num to find his factorial ");
             int num = Integer.parseInt(reader.readLine());
             Consumer<Integer> factorialNum = t -> {
-                if (t != 1)
-                    t = t * (t - 1);
+                for (int i = num - 1; i > 1; --i) {
+                    t = t * i;
+                }
                 System.out.println(t);
             };
             factorialNum.accept(num);
