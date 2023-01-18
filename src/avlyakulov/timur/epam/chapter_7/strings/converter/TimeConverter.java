@@ -1,8 +1,5 @@
 package avlyakulov.timur.epam.chapter_7.strings.converter;
 
-import java.util.Arrays;
-import java.util.function.Function;
-
 /*
 Дано время в 12-часовом формате в виде строки.
 Конвертировать время в 24-часовой формат.
