@@ -1,10 +1,9 @@
 package avlyakulov.timur.epam.chapter_7.example.predicate;
 
 import java.util.Arrays;
-import java.util.function.BiPredicate;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
+import java.util.function.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PredicateTest {
     public static void main(String[] args) {
@@ -59,5 +58,14 @@ public class PredicateTest {
         //BiPredicate with two Generic
         BiPredicate<String, Integer> biPredicate = (s, max) -> s.length() <= max;
         System.out.println(biPredicate.test("java",12));
+        Predicate<String> predicate = s -> {
+            int i = 0;
+            boolean result = s.contains("JDK");
+            System.out.print(i++ + " ");
+            return result;
+        };
+        Arrays.stream(new String[]{"JRE", "JDK", "JVM", "JSE", "JDK"}).filter(predicate)
+                .findFirst().ifPresent(System.out::println);
+
     }
 }
