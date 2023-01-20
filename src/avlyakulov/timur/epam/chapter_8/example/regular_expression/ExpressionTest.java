@@ -5,9 +5,7 @@ import java.util.regex.Pattern;
 
 public class ExpressionTest {
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("x+y");
-        Matcher matcher = pattern.matcher("xxxy");
-        boolean res = matcher.matches();
-        System.out.println(res);
+        String regex = "java"; // шаблон строки ”java”;
+        String regex1 = "\\d{3}"; // шаблон строки из трех цифровых символов;
     }
 }
