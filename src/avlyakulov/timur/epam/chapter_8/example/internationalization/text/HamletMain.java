@@ -1,8 +1,8 @@
-package avlyakulov.timur.epam.chapter_8.example.internationalization;
+package avlyakulov.timur.epam.chapter_8.example.internationalization.text;
 
 import java.io.IOException;
 import java.util.Locale;
-import java.util.ResourceBundle;
+
 
 public class HamletMain {
     //поддержка различных языков
@@ -28,11 +28,9 @@ public class HamletMain {
             default -> System.out.println("You are fucking dubm look at u idiot");
         }
         Locale current = new Locale(language, country);
-        ResourceBundle rb = ResourceBundle.getBundle("text", current);
-        String s1 = rb.getString("str1");
+        String s1 = MessageManager.EN.getString("str1");
         System.out.println(s1);
-        String s2 = rb.getString("str2");
+        String s2 = MessageManager.EN.getString("str2");
         System.out.println(s2);
-
     }
 }

@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_8.example.internationalization;
+package avlyakulov.timur.epam.chapter_8.example.internationalization.text;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
