@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class Test {
     public static void main(String[] args) {
-        String regex = "К.+?т";
+        String regex = "кот";
         String s = "котенок Котяра кот котёл кот байкот";
         Pattern pt = Pattern.compile(regex);
         Matcher mt = pt.matcher(s);

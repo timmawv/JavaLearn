@@ -1,7 +1,5 @@
 package avlyakulov.timur.practise.leetcode;
 
-import java.util.Arrays;
-
 public class LengthLastWord {
     public int LengthOfLastWord (String s) {
         String[] words = s.split(" ");
