@@ -2,6 +2,7 @@ package avlyakulov.timur.epam.chapter_8.example.date.local;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 
 public class LocalDateTimeTest {
@@ -59,12 +60,23 @@ public class LocalDateTimeTest {
         System.out.println(formatter3.format(localDateTime2));
         System.out.println("-------------------------------");
         //Класс java.time.Period позволяет задавать и манипулировать промежутками в днях между датами:
-        LocalDate before1 = LocalDate.of(2022,8,25);
+        LocalDate before1 = LocalDate.of(2022,11,20);
         LocalDate now = LocalDate.now();
         System.out.println(now);
         Period period = Period.between(before1,now);
         System.out.println(period);
         System.out.println(period.getDays());
+        System.out.println("--------------------------------");
+        //Класс java.time.Duration исполняет ту же роль, что и класс Period,
+        //но только промежутки измеряются в днях, часах, минутах, секундах:
+        LocalTime time06am = LocalTime.of(6,0,0);
+        LocalTime time11pm = LocalTime.of(23,45,30);
+        Duration duration = Duration.between(time06am,time11pm);
+        System.out.println(duration.toHours() + " hours");
+        LocalDate newYear = LocalDate.of(2023,1,1);
+        LocalDate today = LocalDate.now();
+        long daysToToday = ChronoUnit.DAYS.between(newYear,today);
+        System.out.println(daysToToday + " days");
 
     }
 }
