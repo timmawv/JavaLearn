@@ -35,5 +35,6 @@ public class StringTest {
         System.out.println("Before change " + str4);
         str4 = str4.replace(" ", "");
         System.out.println("After change " + str4);
+
     }
 }

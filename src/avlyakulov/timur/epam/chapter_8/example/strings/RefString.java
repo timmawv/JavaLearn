@@ -13,13 +13,8 @@ public class RefString {
     }
 
     public static void changeNumber(int number) {
-        System.out.println(number);
-        number++;
-        System.out.println(number);
-        ++number;
-        System.out.println(number);
         number = number + 2;
-        System.out.println(number);
+        System.out.println("In method " + number);
     }
 
     public static void main(String[] args) {

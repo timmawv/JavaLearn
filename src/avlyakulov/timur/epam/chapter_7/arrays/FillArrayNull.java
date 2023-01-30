@@ -11,6 +11,7 @@ import java.util.function.Supplier;
 полнить в конце нулями до прежнего размера массива.
  */
 public class FillArrayNull {
+
     public static void main(String[] args) {
         Supplier<int[]> getArrInt = () -> new int[6];
         int[] arr = getArrInt.get();
@@ -20,7 +21,7 @@ public class FillArrayNull {
         arr = Arrays.stream(arr).boxed().map(fillArray).map(checkDivide).mapToInt(o -> o).toArray();
         printArr.accept(arr);
         Comparator<Integer> sortNullToEndList = (a, b) -> a == 0 ? 1 : b == 0 ? -1 : 0;
-                arr = Arrays.stream(arr).boxed().map(checkDivide).sorted(sortNullToEndList).mapToInt(o -> o).toArray();
+        arr = Arrays.stream(arr).boxed().map(checkDivide).sorted(sortNullToEndList).mapToInt(o -> o).toArray();
         printArr.accept(arr);
     }
 }
