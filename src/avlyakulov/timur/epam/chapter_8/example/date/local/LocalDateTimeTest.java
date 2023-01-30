@@ -1,11 +1,7 @@
 package avlyakulov.timur.epam.chapter_8.example.date.local;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Month;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 
 public class LocalDateTimeTest {
@@ -55,5 +51,20 @@ public class LocalDateTimeTest {
         LocalDate localDate4 = LocalDate.parse(date,formatter2);
         System.out.println(localDate4);
         System.out.println(formatter2.format(localDate4));
+        System.out.println("-------------------------");
+        DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("EEEE, MMM d, yyyy HH:mm:ss a", Locale.US);
+        date = "Monday, May 25, 2020 10:30:56 AM";
+        LocalDateTime localDateTime2 = LocalDateTime.parse(date,formatter3);
+        System.out.println(localDateTime2);
+        System.out.println(formatter3.format(localDateTime2));
+        System.out.println("-------------------------------");
+        //Класс java.time.Period позволяет задавать и манипулировать промежутками в днях между датами:
+        LocalDate before1 = LocalDate.of(2022,8,25);
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
+        Period period = Period.between(before1,now);
+        System.out.println(period);
+        System.out.println(period.getDays());
+
     }
 }

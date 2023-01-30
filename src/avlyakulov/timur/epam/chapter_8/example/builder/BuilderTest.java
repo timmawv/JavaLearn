@@ -14,5 +14,6 @@ public class BuilderTest {
         System.out.println("length = " + builder.length());
         System.out.println("capacity = " + builder.capacity());
         System.out.println("reverse = " + builder.reverse());
+
     }
 }
