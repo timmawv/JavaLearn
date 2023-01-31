@@ -13,9 +13,7 @@ public class LocalDateTimeTest {
         //Дату, время и дату\время можно изменять, применяя группу методов plusXXX(), minusXXX():
         LocalDate localDate = LocalDate.now();
         System.out.println(localDate);
-        localDate = localDate.plusDays(2)
-                .minusMonths(1)
-                .plusYears(2);
+        localDate = localDate.plusDays(2).minusMonths(1).plusYears(2);
         System.out.println(localDate);
         //При необходимости можно задать текущие дату, время и дату\время:
         LocalDate localDate1 = LocalDate.of(2028, Month.OCTOBER,15);
