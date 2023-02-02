@@ -24,5 +24,8 @@ public class LangTest {
         Locale localeGr = Locale.GERMAN;
         format = NumberFormat.getInstance(localeGr);
         System.out.println("Наше число в текущей Germany Locale " + format.format(number));
+        Locale locale = new Locale("uk","UA");
+        System.out.println(locale.getDisplayCountry());
+        System.out.println(locale.getDisplayLanguage());
     }
 }

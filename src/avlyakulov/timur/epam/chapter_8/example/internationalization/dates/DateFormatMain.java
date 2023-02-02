@@ -9,7 +9,7 @@ public class DateFormatMain {
     //региональные представления дат
     public static void main(String[] args) {
         DateFormat dateFormat = DateFormat.getDateTimeInstance(
-                DateFormat.FULL, DateFormat.MEDIUM, new Locale("uk", "UK"));
+                DateFormat.FULL, DateFormat.MEDIUM, Locale.getDefault());
         String dateStr = dateFormat.format(new Date());
         System.out.println(dateStr);
         try {
@@ -25,10 +25,10 @@ public class DateFormatMain {
             e.printStackTrace();
         }
         Date date = new Date();
-        Locale[] locales = DateFormat.getAvailableLocales();
+       /* Locale[] locales = DateFormat.getAvailableLocales();
         for (Locale loc : locales) {
             DateFormat format = DateFormat.getDateInstance(DateFormat.FULL, loc);
             System.out.println(loc.toString() + "---> " + format.format(date));
-        }
+        }*/
     }
 }
