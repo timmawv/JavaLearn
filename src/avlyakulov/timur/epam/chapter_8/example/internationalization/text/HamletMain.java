@@ -27,7 +27,6 @@ public class HamletMain {
             }
             default -> System.out.println("You are fucking dubm look at u idiot");
         }
-        Locale current = new Locale(language, country);
         String s1 = MessageManager.EN.getString("str1");
         System.out.println(s1);
         String s2 = MessageManager.EN.getString("str2");
