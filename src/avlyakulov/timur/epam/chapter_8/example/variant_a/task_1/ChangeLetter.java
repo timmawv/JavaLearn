@@ -11,7 +11,7 @@ k больше длины слова, корректировку не выпол
  */
 public class ChangeLetter {
     public static void main(String[] args) {
-        String text = "    Наш текст в     котором будут  меняться буквы    в зависимости от значения    ";
+        String text = "    Наш  набор слов        в     котором будут  меняться буквы    в зависимости от значения    ";
         text = text.strip();
         text = text.replaceAll("\\s+", " ");
         String[] words = text.split(" ");
@@ -30,11 +30,10 @@ public class ChangeLetter {
         System.out.println(Arrays.toString(words));
         for (String w : words) {
             char[] wordChar = w.toCharArray();
-            if (numberToChange > w.length()) {
+            if (!w.matches("[А-Яа-я]{" + numberToChange  + ",}")) {
                 ++i;
                 continue;
-            }
-            else {
+            } else {
                 wordChar[numberToChange - 1] = letter;
             }
             words[i] = String.valueOf(wordChar);
