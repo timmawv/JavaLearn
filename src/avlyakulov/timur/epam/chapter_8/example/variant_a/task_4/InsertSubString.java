@@ -27,6 +27,6 @@ public class InsertSubString {
         System.arraycopy(subStringArr,0,textArr1,symbol,subStringArr.length);
         System.arraycopy(textArr,symbol,textArr1,symbol + subStringArr.length, textArr.length - symbol);
         textArr = textArr1;
-        System.out.println(textArr1);
+        System.out.println(textArr);
     }
 }
