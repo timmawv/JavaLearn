@@ -31,10 +31,11 @@ public class DeleteSymbol {
                 textChar1[position] = symbol.charAt(0);
                 System.arraycopy(textChar,position,textChar1,position + 1,textChar.length - position);
                 textChar = textChar1;
-                System.out.println(textChar);
+                text = String.valueOf(textChar);
             }
         } catch (IOException | IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
+        System.out.println(text);
     }
 }
