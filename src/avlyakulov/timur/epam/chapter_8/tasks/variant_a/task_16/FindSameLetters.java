@@ -1,9 +1,5 @@
 package avlyakulov.timur.epam.chapter_8.tasks.variant_a.task_16;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.Arrays;
-
 /*
 В стихотворении найти одинаковые буквы, которые встречаются во всех словах.
  */
