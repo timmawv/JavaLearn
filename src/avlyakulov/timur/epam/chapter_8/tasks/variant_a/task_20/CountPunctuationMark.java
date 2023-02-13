@@ -13,7 +13,7 @@ public class CountPunctuationMark {
         Matcher matcher = pattern.matcher(text);
         int counter = 0;
         while (matcher.find())
-            System.out.println(matcher.group());
-        System.out.println(counter);
+            ++counter;
+        System.out.println("Количество знаков препинания " +counter);
     }
 }
