@@ -19,11 +19,12 @@ public class CountWordInText {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        Pattern pattern = Pattern.compile("" + word + "");
+        Pattern pattern = Pattern.compile("\\b" + word + "\\b");
         Matcher matcher = pattern.matcher(text);
         int counter = 0;
-        while (matcher.find())
+        while (matcher.find()) {
             ++counter;
+        }
         System.out.println(counter);
     }
 }
