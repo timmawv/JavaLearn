@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class SumNumbersInText {
     public static void main(String[] args) {
         String text = "Наше слово! Было 1 важное слово, которое - есть 6 важным слово, в нашем:  78тексте";
-        Pattern pattern = Pattern.compile("\\w+");
+        Pattern pattern = Pattern.compile("\\d+");
         Matcher matcher = pattern.matcher(text);
         int sum = 0;
         while (matcher.find())
