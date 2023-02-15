@@ -8,5 +8,8 @@ public class Practise {
                 "new day of Life";
         sentence  = sentence.lines().map(String::toLowerCase).collect(Collectors.joining());
         System.out.println(sentence);
+        String s = "";
+        System.out.println(s.isEmpty());
+        System.out.println(s.isBlank());
     }
 }
