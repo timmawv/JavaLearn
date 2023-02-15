@@ -14,5 +14,6 @@ public class Practise {
         String str = "азбука";
         String str1 = "вино";
         System.out.println(str1.compareToIgnoreCase(str));
+
     }
 }
