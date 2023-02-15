@@ -11,5 +11,8 @@ public class Practise {
         String s = "";
         System.out.println(s.isEmpty());
         System.out.println(s.isBlank());
+        String str = "азбука";
+        String str1 = "вино";
+        System.out.println(str1.compareToIgnoreCase(str));
     }
 }
