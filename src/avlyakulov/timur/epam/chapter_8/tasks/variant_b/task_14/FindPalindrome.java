@@ -23,7 +23,7 @@ public class FindPalindrome {
         System.out.printf("Слово палиндром максимальной длины %s",w);
     }
 
-    static boolean checkPalindromeWord (String str) {
+    public static boolean checkPalindromeWord (String str) {
         return str.equals(new StringBuilder(str).reverse().toString());
     }
 }
