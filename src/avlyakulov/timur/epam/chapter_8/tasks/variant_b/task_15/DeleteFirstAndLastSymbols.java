@@ -12,10 +12,10 @@ public class DeleteFirstAndLastSymbols {
         String[] words = text.split("[\\s.?]");
         System.out.println(Arrays.toString(words));
         text = "";
-        for (int i = 0; i < words.length; ++i) {
-            StringBuilder sb = new StringBuilder(words[i]);
+        for (String w : words) {
+            StringBuilder sb = new StringBuilder(w);
             if (sb.length() > 2)
-                sb.deleteCharAt(0).deleteCharAt(sb.length() -1);
+                sb.deleteCharAt(0).deleteCharAt(sb.length() - 1);
             text += sb + " ";
         }
         System.out.println(text);
