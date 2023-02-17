@@ -8,17 +8,21 @@ package avlyakulov.timur.epam.chapter_8.tasks.variant_c.task_5;
  */
 public class TextCompression {
     public static void main(String[] args) {
-        StringBuilder text = new StringBuilder("Hello people it is our wooorld");
+        StringBuilder text = new StringBuilder("hellowoooorld");
         int counterWords;
         for (int i = 0; i < text.length() - 1; ++i) {
             int counterNextWord = i + 1;
             counterWords = 1;
+            int startWord = i + 1;
             while (text.charAt(i) == text.charAt(counterNextWord)) {
                 ++counterWords;
-                //text.deleteCharAt(counterNextWord);
                 ++counterNextWord;
-                if (text.charAt(i) != text.charAt(counterNextWord))
-                    text.insert(counterNextWord,counterWords);
+            }
+            if (counterWords > 1) {
+                text.insert(startWord, counterWords);
+                for (int j = 0; j < counterWords - 1; ++j) {
+                    text.deleteCharAt(startWord + 1);
+                }
             }
         }
         System.out.println(text);
