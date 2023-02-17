@@ -8,7 +8,7 @@ package avlyakulov.timur.epam.chapter_8.tasks.variant_c.task_5;
  */
 public class TextCompression {
     public static void main(String[] args) {
-        StringBuilder text = new StringBuilder("hellowoooorld");
+        StringBuilder text = new StringBuilder("Hello peooooooople it is ouuuuuur wooorld");
         int counterWords;
         for (int i = 0; i < text.length() - 1; ++i) {
             int counterNextWord = i + 1;
