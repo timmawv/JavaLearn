@@ -12,13 +12,13 @@ public class TextUnpacking {
         Pattern pattern = Pattern.compile("[a-z]\\d");
         Matcher matcher = pattern.matcher(text);
         while (matcher.find()) {
-            System.out.println(matcher.group());
             int startWord = matcher.start();
             int numLetters = Integer.parseInt(text.substring(startWord + 1, startWord + 2));
             text.deleteCharAt(startWord + 1);
             for (int i = 0; i < numLetters - 1; ++i) {
                 text.insert(startWord + 1, text.charAt(startWord));
             }
+            matcher = pattern.matcher(text);
         }
         System.out.println(text);
     }
