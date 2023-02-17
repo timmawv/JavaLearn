@@ -6,5 +6,6 @@ package avlyakulov.timur.epam.chapter_8.tasks.variant_c.task_14;
 public class BurrowsWheelerDecryption {
     public static void main(String[] args) {
         String wordEncrypted = "VJAA";
+        //невозможно сделать, та как после сортировки невозможно восстановить старый порядок наших слов
     }
 }
