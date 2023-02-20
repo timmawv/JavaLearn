@@ -9,7 +9,7 @@ package avlyakulov.timur.epam.chapter_8.tasks.variant_c.task_16;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+//todo доделать цепочку поиска для всех слов, не только для какого то конкретного
 public class PrintStartEndWord {
     public static void main(String[] args) {
         String text = "армия ярмарка зуй саня одиссей йога";

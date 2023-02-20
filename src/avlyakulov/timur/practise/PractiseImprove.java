@@ -1,16 +1,15 @@
 package avlyakulov.timur.practise;
 
-public class PractiseImprove  {
+import org.w3c.dom.ls.LSOutput;
 
-    public PractiseImprove () {
-
-    }
-    @Override
-    public String toString () {
-        return this.getClass().getName() + " : " + "sdklfjasdflksad";
-    }
+public class PractiseImprove {
 
     public static void main(String[] args) {
-
+        String s1 = new String("Java");
+        String s2 = "Java";
+        String s3 = new String(s1);
+        String s4 = "Java";
+        System.out.println(s2 == s4);
+        System.out.println(s2.equals(s1));
     }
 }

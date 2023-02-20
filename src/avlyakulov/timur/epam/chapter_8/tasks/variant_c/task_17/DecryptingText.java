@@ -1,6 +1,7 @@
 package avlyakulov.timur.epam.chapter_8.tasks.variant_c.task_17;
 
 //расшифруем тект из из задачи под номером 17
+// todo доделать расшифровку текста
 public class DecryptingText {
     public static void main(String[] args) {
         String textEncrypted = "Нееопджибоасочачьонвема оерлеечаер тонхоеа ееы еон та рерлееы па е е зоер.швр еон е чоеьчьош?штт лпджиеьшпв еон лнинвронпд чоНетопдживрвемс е реНерьборлеес?";
