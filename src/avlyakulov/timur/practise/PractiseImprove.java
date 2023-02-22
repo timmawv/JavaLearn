@@ -2,7 +2,7 @@ package avlyakulov.timur.practise;
 
 import org.w3c.dom.ls.LSOutput;
 
-public class PractiseImprove {
+public class PractiseImprove extends Practise {
 
     public static void main(String[] args) {
         String s1 = new String("Java");

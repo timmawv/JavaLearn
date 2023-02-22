@@ -1,7 +1,7 @@
 package avlyakulov.timur.epam.chapter_9.example;
 
 public class HandlingCoupleException {
-    public void doAction() {
+    public static void main(String[] args) {
         try {
             int a = (int) (Math.random() * 2);
             System.out.println("a = " + a);
@@ -13,7 +13,7 @@ public class HandlingCoupleException {
         }
         catch (ArrayIndexOutOfBoundsException e) {
             System.err.println("out of bound: " + e);
-        }//end try-catch block
+        }  //end try-catch block
         System.out.println("After try-catch block");
     }
 }
