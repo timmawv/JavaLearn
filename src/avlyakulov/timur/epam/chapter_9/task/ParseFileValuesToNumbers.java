@@ -20,10 +20,10 @@ import java.util.Scanner;
 public class ParseFileValuesToNumbers {
     public static void main(String[] args) {
         File file = new File("src\\avlyakulov\\timur\\epam\\chapter_9\\task\\numbers.txt");
-        String language = "";
-        float num = 0;
+        //String language = "";
+        float num;
         try (Scanner sc = new Scanner(file)) {
-            while (sc.hasNext("\\d{1,},\\d{1,}")) {
+            while (sc.hasNext("\\d+,\\d+")) {
                 num = sc.nextFloat();
                 System.out.println(num);
                 NumberFormat formatter = NumberFormat.getInstance(Locale.GERMAN);
