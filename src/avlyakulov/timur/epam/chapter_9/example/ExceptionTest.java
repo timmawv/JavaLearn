@@ -3,7 +3,18 @@ package avlyakulov.timur.epam.chapter_9.example;
 import avlyakulov.timur.practise.Practise;
 import avlyakulov.timur.practise.PractiseImprove;
 
+import java.io.IOException;
+
+
 public class ExceptionTest {
+    public static void doSomething () throws IOException {
+
+    }
+    public static void doSomething (int a) throws NegativeArraySizeException {
+        int[] arr = new int[a];
+    }
+
+
     public static void main(String[] args) {
         /*try {
             int[] a = new int[2];
@@ -28,26 +39,43 @@ public class ExceptionTest {
                 System.err.print("В каком смысле не RuntimeException???");
             }
         }
+        try {
+            System.out.println("1");
+            try {
+                int a = -1;
+                int[] arr = new int[a];
+            } catch (ArithmeticException e) {
+                System.out.println(e.getMessage());
+                try {
+                    throw new RuntimeException();
+                } catch (RuntimeException err) {
+                    System.out.println(err.getMessage());
+                }
+            }
+        } catch (NegativeArraySizeException e) {
+            System.err.println("Мы вышли за пределы массива ");
+        }
+
 
         try {
-            System.err.print(" 0");
-            try {
-                System.err.print(" 1");
-                if (true)
-                    throw new Exception();
-
-                System.err.print(" 2");
-            } catch (RuntimeException e) {
-                System.err.print(" 3"); // НЕ заходим - есть исключение, но НЕПОДХОДЯЩЕГО ТИПА
-            } finally {
-                System.err.print(" 4"); // заходим всегда
-            }
-            System.err.print(" 5");     // не заходим - выполнение НЕ в норме
-        } catch (Exception e) {
-            System.err.print(" 6");     // ЗАХОДИМ - есть подходящее исключение
-        } finally {
-            System.err.print(" 7");     // заходим всегда
+            throw new IllegalArgumentException();
         }
-        System.err.print(" 8");         // заходим - выполнение УЖЕ в норме
+        catch (IllegalArgumentException e) {
+            System.err.println("We have exception and we handle the exception ");
+        }
+        System.out.println("We are here and our program work");
+
+        System.out.println("Секция throws checked and unchecked exceptions");
+        try {
+            doSomething();
+        } catch (IOException e) {
+
+        }
+        try {
+            doSomething(-3);
+        }
+        catch (NegativeArraySizeException e) {
+
+        }
     }
 }
