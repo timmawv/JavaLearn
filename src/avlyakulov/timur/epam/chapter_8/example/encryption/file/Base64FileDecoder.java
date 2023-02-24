@@ -21,7 +21,7 @@ public class Base64FileDecoder {
     }
 
     public static void main(String[] args) throws IOException {
-        String filenameEncode = "fileText.txt.encode";
+        String filenameEncode = "data\\fileText.txt.encode";
         Base64FileDecoder decoder = new Base64FileDecoder();
         String result = decoder.fileDecode(filenameEncode);
         System.out.println(result);
