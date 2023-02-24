@@ -1,7 +1,7 @@
 package avlyakulov.timur.epam.chapter_9.task;
 
 import java.io.File;
-import java.io.IOException;
+import java.io.FileNotFoundException;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
@@ -20,18 +20,24 @@ import java.util.Scanner;
 public class ParseFileValuesToNumbers {
     public static void main(String[] args) {
         File file = new File("src\\avlyakulov\\timur\\epam\\chapter_9\\task\\numbers.txt");
-        //String language = "";
         float num;
+        float sum = 0;
+        float average;
+        int counter = 0;
         try (Scanner sc = new Scanner(file)) {
-            while (sc.hasNext("\\d+,\\d+")) {
+            while (sc.hasNext("\\b\\d+[,.]\\d+\\b")) {
                 num = sc.nextFloat();
-                System.out.println(num);
                 NumberFormat formatter = NumberFormat.getInstance(Locale.GERMAN);
                 String numGer = formatter.format(num);
-                System.out.println(numGer);
+                System.out.printf("Наши числа в немецкой локали: %s\n", numGer);
+                sum += num;
+                ++counter;
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Can't find file", e);
+        } catch (FileNotFoundException | NumberFormatException e) {
+            throw new RuntimeException("Error", e);
         }
+        average = sum / counter;
+        System.out.printf("Сумма наших чисел %f\n", sum);
+        System.out.printf("Среднее значение наших чисел %f", average);
     }
 }
