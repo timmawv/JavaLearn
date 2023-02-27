@@ -9,7 +9,7 @@ public class OutMain {
     public static void main(String[] args) {
         try (FileOutputStream outputStream = new FileOutputStream("data\\out.txt", true)) {
             outputStream.write(48);
-            byte[] arr = {65,78,100};
+            byte[] arr = {65, 78, 100};
             outputStream.write(arr);
         } catch (FileNotFoundException e) {
             System.err.println("Can't found file");

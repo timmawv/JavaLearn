@@ -16,10 +16,10 @@ public class PrintMain {
         //example with stream
         double[] values1 = {14.10, 17};
         try (PrintStream stream = new PrintStream(new FileOutputStream("data\\res.txt"))) {
-            for (double value: values) {
-                stream.printf("Java %.2g%n", value);
+            for (double value: values1) {
+                stream.printf("Java %.2g\n", value);
                 System.setOut(stream);
-                System.out.printf("%.2g%n", value);
+                System.out.printf("%.2g\n", value);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

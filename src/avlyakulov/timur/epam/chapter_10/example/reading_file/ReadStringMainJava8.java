@@ -18,7 +18,9 @@ public class ReadStringMainJava8 {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         //В класс Files добавлен статический метод newBufferedReader(Path path), создающий объект BufferedReader.
+        System.out.println("В класс Files добавлен статический метод newBufferedReader(Path path), создающий объект BufferedReader.");
         Path path = Paths.get("data\\res.txt");
         try (Stream<String> lines = Files.newBufferedReader(path).lines()) {
             lines.forEach(System.out::println);
@@ -27,6 +29,7 @@ public class ReadStringMainJava8 {
         }
 
         //В тот же класс Files добавлен статический метод lines(), возвращающий Stream из строк.
+        System.out.println("//В тот же класс Files добавлен статический метод lines(), возвращающий Stream из строк.");
         try (Stream<String> lines = Files.lines(path)) {
             String result = lines.collect(Collectors.joining());
             System.out.println(result);

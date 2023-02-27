@@ -10,8 +10,8 @@ public class ReadStringMainJava2 {
         String stringLines = "";
         try (BufferedReader reader = new BufferedReader(new FileReader("data\\res.txt"))) {
             String tmp;
-            while ((tmp = reader.readLine()) != null) { //java 2
-                stringLines = stringLines.concat(tmp +"\n");
+            while ((tmp = reader.readLine()) != null) { //java 2 считываем пока не дойдем до конца файла, конец файла будет null
+                stringLines = stringLines.concat(tmp + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

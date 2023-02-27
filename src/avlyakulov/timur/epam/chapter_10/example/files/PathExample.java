@@ -18,6 +18,5 @@ public class PathExample {
         System.out.println(path1);
         System.out.println(path2);
         System.out.println(FileSystems.getDefault());
-
     }
 }

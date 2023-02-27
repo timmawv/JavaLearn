@@ -23,6 +23,8 @@ public class FileMain {
                 e.printStackTrace();
             }
         }
+        System.out.println();
+        System.out.println("Файлы которые лежат в этой директории вся инфомрация об них");
         File dir = new File("data");
         if (dir.exists() && dir.isDirectory()) {
             for (File current : dir.listFiles()) {
