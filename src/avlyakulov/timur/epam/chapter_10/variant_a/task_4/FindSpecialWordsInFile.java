@@ -19,6 +19,7 @@ public class FindSpecialWordsInFile {
                 word = sc.next();
                 if (sc.hasNext())
                     wordNext = sc.next();
+                //todo доделать нормальное сравнение наших слов, сейчас оно прыгает от некст слова к некст слову и в конце мы неправильно сравниваем
                 if (word.toLowerCase().charAt(word.length() - 1) == wordNext.toLowerCase().charAt(0)) {
                     System.out.println("Слова текста, для которых последняя буква одного слова совпадает с первой буквой следующего слова.");
                     System.out.println(word + " и " + wordNext);
