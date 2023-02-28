@@ -9,7 +9,8 @@ public class DeSerializationMain {
         //Student.faculty = "ITM";
         try (ObjectInputStream ois = new ObjectInputStream(
                 new FileInputStream("data\\o.dat"))) {
-            Student student = (Student) ois.readObject();
+            Student student = new Student("Janka",555777,null);
+            student = (Student) ois.readObject();
             System.out.println(student);
             System.out.println(student.getFaculty());
         } catch (IOException | ClassNotFoundException e) {
