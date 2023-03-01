@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_10.variant_b.entity;
+package avlyakulov.timur.epam.chapter_10.variant_b.car.entity;
 
 import java.io.Serializable;
 
@@ -12,10 +12,10 @@ public class Car implements Serializable {
     private int speed;
     private transient int code;
 
-    public Car(int cost, int fuelConsumption, int speed) {
+    public Car(int cost) {
         this.cost = cost;
-        this.fuelConsumption = fuelConsumption;
-        this.speed = speed;
+        this.fuelConsumption = (int) (Math.random() * 3 + 1);
+        this.speed = (int) (Math.random() * 10 + 5) * 10;
         code = (int) (Math.random() * 100 + 32);
     }
 
@@ -29,6 +29,10 @@ public class Car implements Serializable {
 
     public int getSpeed() {
         return speed;
+    }
+
+    public int getCode() {
+        return code;
     }
 
     @Override
