@@ -12,17 +12,15 @@ import java.util.Scanner;
 public class FindSpecialWordsInFile {
     public static void main(String[] args) {
         File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_a\\task_4\\info.txt");
-        String word;
-        String wordNext = "";
+        String line;
         try (Scanner sc = new Scanner(new FileReader(file))) {
-            while (sc.hasNext("[а-яА-Я]{1,}")) {
-                word = sc.next();
-                if (sc.hasNext())
-                    wordNext = sc.next();
-                //todo доделать нормальное сравнение наших слов, сейчас оно прыгает от некст слова к некст слову и в конце мы неправильно сравниваем
-                if (word.toLowerCase().charAt(word.length() - 1) == wordNext.toLowerCase().charAt(0)) {
-                    System.out.println("Слова текста, для которых последняя буква одного слова совпадает с первой буквой следующего слова.");
-                    System.out.println(word + " и " + wordNext);
+            while (sc.hasNextLine()) {
+                line = sc.nextLine();
+                String[] words = line.split("\\s");
+                for (int i = 0; i < words.length - 1; ++i) {
+                    if (words[i].toLowerCase().charAt(words[i].length() - 1) == words[i + 1].toLowerCase().charAt(0))
+                        System.out.println("Слова текста, для которых последняя буква одного слова совпадает с первой буквой следующего слова\n" +
+                                words[i] + " и " + words[i + 1]);
                 }
             }
         } catch (IOException e) {
