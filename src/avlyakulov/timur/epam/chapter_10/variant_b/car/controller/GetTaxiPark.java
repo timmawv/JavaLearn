@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Arrays;
-
+// example of deserialization from file our class
 public class GetTaxiPark {
     public static void main(String[] args) {
         File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");

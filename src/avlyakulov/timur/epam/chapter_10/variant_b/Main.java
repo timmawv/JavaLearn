@@ -1,9 +1,9 @@
 package avlyakulov.timur.epam.chapter_10.variant_b;
 
-import avlyakulov.timur.epam.chapter_10.variant_b.car.controller.TaxiParkController;
+import avlyakulov.timur.epam.chapter_10.variant_b.rocks.controller.RockController;
 
 public class Main {
     public static void main(String[] args) {
-        new TaxiParkController().run();
+        new RockController().run();
     }
 }

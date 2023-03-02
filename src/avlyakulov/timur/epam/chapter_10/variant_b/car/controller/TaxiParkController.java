@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class TaxiParkController implements Serializable {
     Car[] cars = new Car[3];
-    private int counter = 0;
+    private int numbersOfCars = 0;
     transient Scanner sc = new Scanner(System.in);
     File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");
 
@@ -35,6 +35,7 @@ public class TaxiParkController implements Serializable {
         System.out.println("If you want sort your cars by fuel press 4");
         System.out.println("If you want to find your car by speed range press 5");
         System.out.println("If you want to save your taxi park to file press 6");
+        System.out.println("If you want to restore you taxi park press 7");
         System.out.println("If you want to finish your program press 0");
         System.out.println();
 
@@ -48,6 +49,7 @@ public class TaxiParkController implements Serializable {
             case "4" -> sortCarsByFuel();
             case "5" -> findBySpeedRange();
             case "6" -> safeToFileOurPark();
+            case "7" -> restorePark();
             default -> System.out.println("You have enter the wrong value");
         }
     }
@@ -62,13 +64,13 @@ public class TaxiParkController implements Serializable {
             case 1 -> car = new Mazda(cost);
             case 2 -> car = new BMW(cost);
         }
-        if (counter == cars.length) {
+        if (numbersOfCars == cars.length) {
             Car[] cars1 = new Car[cars.length + 1];
             System.arraycopy(cars, 0, cars1, 0, cars.length);
             cars = cars1;
         }
-        cars[counter] = car;
-        ++counter;
+        cars[numbersOfCars] = car;
+        ++numbersOfCars;
         System.out.println("Your car was created and add to taxi park");
     }
 
@@ -104,9 +106,20 @@ public class TaxiParkController implements Serializable {
     public void safeToFileOurPark() {
         try (ObjectOutputStream writer = new ObjectOutputStream( new FileOutputStream(file))) {
             writer.writeObject(cars);
-            writer.writeObject(counter);
+            writer.writeObject(numbersOfCars);
         } catch (IOException e) {
             throw new RuntimeException("Can't find file",e);
+        }
+    }
+
+    public void restorePark() {
+        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");
+        try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(file))) {
+            cars = (Car[]) reader.readObject();
+            numbersOfCars = (int) reader.readObject();
+            System.out.println("You taxi park was restored");
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException("Can't find file", e);
         }
     }
 }
