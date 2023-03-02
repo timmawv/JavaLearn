@@ -7,13 +7,13 @@ import avlyakulov.timur.epam.chapter_10.variant_b.car.entity.Mazda;
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
-//todo сделать возвращение к состоянию нашего парка при новом запуске контроллера
+
 
 public class TaxiParkController implements Serializable {
     Car[] cars = new Car[3];
     private int numbersOfCars = 0;
     transient Scanner sc = new Scanner(System.in);
-    File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");
+    File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\rocks_info.txt");
 
     public void run() {
         String position;
@@ -113,7 +113,7 @@ public class TaxiParkController implements Serializable {
     }
 
     public void restorePark() {
-        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");
+        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\rocks_info.txt");
         try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(file))) {
             cars = (Car[]) reader.readObject();
             numbersOfCars = (int) reader.readObject();

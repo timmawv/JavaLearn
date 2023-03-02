@@ -10,7 +10,7 @@ import java.util.Arrays;
 // example of deserialization from file our class
 public class GetTaxiPark {
     public static void main(String[] args) {
-        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\taxi-park_info.txt");
+        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_b\\car\\controller\\rocks_info.txt");
         try (ObjectInputStream reader = new ObjectInputStream(new FileInputStream(file))) {
             Car[] cars = (Car[]) reader.readObject();
             System.out.println(Arrays.toString(cars));

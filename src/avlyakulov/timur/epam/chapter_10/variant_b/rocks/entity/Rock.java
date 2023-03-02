@@ -13,6 +13,7 @@ public class Rock implements Serializable {
     private int weight;
     private int cost;
     private int transparency;
+    private static final long serialVersionUID = 1L;
 
     public Rock(int cost, int transparency) {
         weight = (int) ((Math.random() * 10 + 5) * 2);
@@ -20,8 +21,16 @@ public class Rock implements Serializable {
         this.transparency = transparency;
     }
 
+    public int getTransparency() {
+        return transparency;
+    }
+
     public int getCost() {
         return cost;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 
 
