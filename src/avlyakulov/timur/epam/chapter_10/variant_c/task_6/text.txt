@@ -1,0 +1,1 @@
+word words a s b 1 2.5 12.3 10 12
