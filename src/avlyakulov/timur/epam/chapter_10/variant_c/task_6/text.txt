@@ -1,1 +1,1 @@
-word words a s b 1 2.5 12.3 10 12
+10 12 word words apple s b 1 2.5 12.3 145 360
