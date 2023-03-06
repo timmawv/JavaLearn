@@ -5,7 +5,6 @@ package avlyakulov.timur.epam.chapter_10.variant_c.task_7;
 количество таких слов.
  */
 
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,12 +19,18 @@ public class DeleteFromFileWords {
             while (readerFile.hasNextLine()) {
                 int counter = 0;
                 String line = readerFile.nextLine();
-                System.out.println(line);
                 Pattern pattern = Pattern.compile("\\b\\w{3,5}\\b");
                 Matcher matcher = pattern.matcher(line);
-                while (matcher.find())
+                while (matcher.find()) {
                     ++counter;
-                System.out.println(counter);
+                }
+                if (counter % 2 != 0)
+                    --counter;
+                System.out.println(line);
+                for (int i = 0; i < counter; ++i) {
+                    line = line.replaceFirst("\\b\\w{3,5}\\b", "");
+                }
+                System.out.println(line);
             }
         } catch (IOException e) {
             throw new RuntimeException("Exception", e);
