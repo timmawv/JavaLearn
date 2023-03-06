@@ -28,7 +28,6 @@ public class ReadStringMainJava8 {
             e.printStackTrace();
         }
 
-        //В тот же класс Files добавлен статический метод lines(), возвращающий Stream из строк.
         System.out.println("//В тот же класс Files добавлен статический метод lines(), возвращающий Stream из строк.");
         try (Stream<String> lines = Files.lines(path)) {
             String result = lines.collect(Collectors.joining());

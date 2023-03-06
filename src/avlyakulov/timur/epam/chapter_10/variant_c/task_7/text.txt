@@ -1,0 +1,2 @@
+Our simple text has lots of words.
+They are correct for this sentence.
