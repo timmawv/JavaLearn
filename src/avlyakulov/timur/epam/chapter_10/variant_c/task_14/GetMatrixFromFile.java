@@ -12,19 +12,20 @@ import java.util.Scanner;
  */
 public class GetMatrixFromFile {
     public static void main(String[] args) {
-        File file = new File("src\\avlyakulov\\timur\\epam\\chapter_10\\variant_c\\task_14\\matrix.txt");
+        File file = new File("src/avlyakulov/timur/epam/chapter_10/variant_c/task_14/matrix.txt");
+        int[][] matrix = new GetMatrixFromFile().getMatrixFromFile(file);
+        OutputMatrix.printMatrix(matrix);
+    }
+
+    public int[][] getMatrixFromFile(File file) {
         int[][] matrix;
         String line = "";
-        int n = 0, m;
+        int n = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-            m = reader.readLine().split("\\s").length;
-            ++n;
             while ((line = reader.readLine()) != null) {
                 ++n;
             }
-            System.out.println(m);
-            System.out.println(n);
-            matrix = new int[n][m];
+            matrix = new int[n][n];
         } catch (IOException e) {
             throw new RuntimeException("Exception", e);
         }
@@ -35,6 +36,6 @@ public class GetMatrixFromFile {
         } catch (IOException e) {
             throw new RuntimeException("Exception", e);
         }
-        OutputMatrix.printMatrix(matrix);
+        return matrix;
     }
 }

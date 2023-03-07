@@ -9,17 +9,23 @@ public class ShiftMatrix {
         int[][] matrix = FillMatrix.fillMatrix();
         System.out.println("Our matrix");
         OutputMatrix.printMatrix(matrix);
-        System.out.println("Choose shift: right or left or up or down");
-        String chooseWay = in.next();
-        switch (chooseWay) {
-            case "left" -> shiftLeft(matrix);
-            case "right" -> shiftRight(matrix);
-            case "up" -> shiftUp(matrix);
-            case "down" -> shiftDown(matrix);
-            default -> System.out.println("You put wrong word");
+        boolean answer = true;
+        while (answer) {
+            System.out.println("Choose shift: right or left or up or down");
+            String chooseWay = in.next();
+            switch (chooseWay) {
+                case "left" -> shiftLeft(matrix);
+                case "right" -> shiftRight(matrix);
+                case "up" -> shiftUp(matrix);
+                case "down" -> shiftDown(matrix);
+                default -> {
+                    System.out.println("You put wrong word");
+                    answer = false;
+                }
+            }
+            System.out.println("Matrix after shift");
+            OutputMatrix.printMatrix(matrix);
         }
-        System.out.println("Matrix after shift");
-        OutputMatrix.printMatrix(matrix);
     }
 
     public static void shiftRight(int[][] arr) {
@@ -59,6 +65,7 @@ public class ShiftMatrix {
                 arr[x + 1] = c;
             }
     }
+
     public static void shiftDown(int[][] arr) {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter number of position to shift ");
