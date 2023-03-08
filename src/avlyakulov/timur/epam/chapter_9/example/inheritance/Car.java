@@ -17,3 +17,11 @@ class GreenCarTesla extends Car {
     public GreenCarTesla() throws Throwable {
     }
 }
+
+class TeslaCar extends Car {
+    /*public TeslaCar () throws FileNotFoundException { нельзя создать такой конструктор который имеет наследников конструктора исключений объвленных
+    в супер классе.
+
+    }*/
+    public TeslaCar() throws IOException {}
+}

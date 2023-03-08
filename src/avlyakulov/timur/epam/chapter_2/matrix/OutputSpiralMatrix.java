@@ -15,7 +15,6 @@ public class OutputSpiralMatrix {
                 matrix[i][j] = number;
                 ++number;
             }
-
         }
         OutputMatrix.printMatrix(matrix);
     }

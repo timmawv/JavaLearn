@@ -125,7 +125,6 @@ public class MotorcyclistController {
             throw new RuntimeException("Exception", e);
         }
     }
-
     public void countPriceOfYourEquipment() {
         int sum = Arrays.stream(equipment)
                 .mapToInt(BaseThing::getCost)

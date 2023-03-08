@@ -1,8 +1,8 @@
 package avlyakulov.timur.epam.chapter_10.example.files;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -18,5 +18,11 @@ public class PathExample {
         System.out.println(path1);
         System.out.println(path2);
         System.out.println(FileSystems.getDefault());
+
+        Path source = Paths.get("data/info.txt");
+        Path destination = Paths.get("data/book_info.txt");
+        Files.copy(source,destination);
+
+
     }
 }
