@@ -1,6 +1,5 @@
-package avlyakulov.timur.epam.chapter_11.example.practise;
+package avlyakulov.timur.epam.chapter_11.example.arraylist;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
 import java.util.List;
 

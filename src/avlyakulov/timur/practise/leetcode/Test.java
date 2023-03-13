@@ -10,9 +10,7 @@ public class Test {
             sum += nums[i];
             if (nums[i] >= 10) {
                 num = nums[i];
-
                 for (int j = 0; j < String.valueOf(nums[i]).length(); ++j) {
-
                     sumOfNumbers += num % 10;
                     num /= 10;
                 }

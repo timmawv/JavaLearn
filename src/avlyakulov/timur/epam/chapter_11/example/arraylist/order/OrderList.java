@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_11.example.practise.order;
+package avlyakulov.timur.epam.chapter_11.example.arraylist.order;
 
 import java.util.ArrayList;
 import java.util.List;
