@@ -1,5 +1,6 @@
 package avlyakulov.timur.algorithms;
 
+import avlyakulov.timur.collections.queue.Queue;
 import avlyakulov.timur.collections.queue.SimpleQueue;
 import avlyakulov.timur.collections.stack.SimpleStack;
 
@@ -29,7 +30,6 @@ public class Tree {
     //рекурсивный обход в глубину
     public int sum() {
         int sumNode = getNode();
-
         if (left != null)
             sumNode += left.sum();
         if (right != null)
@@ -52,6 +52,7 @@ public class Tree {
         }
         return sumNode;
     }
+
     //итеративный обход дерева в ширину с применением Queue
     public int sumWide(Tree root) {
         SimpleQueue<Tree> queue = new SimpleQueue<>();
@@ -66,6 +67,26 @@ public class Tree {
                 queue.add(node.right);
         }
         return sumNode;
+    }
+
+    //поиск эелемента в дереве
+    public Tree findElementInTree(int value) {
+        Tree root = this;
+        while (root.getNode() != value) {
+            if (value > root.getNode())
+                root = root.right;
+            else root = root.left;
+        }
+        return root;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "value=" + value +
+                ", leftChild=" + left +
+                ", rightChild=" + right +
+                "}";
     }
 
 
@@ -84,5 +105,9 @@ public class Tree {
         System.out.println("Сумма элементов нашего дерева рекурсивным обходом в глубину  " + tree.left.sum());
         System.out.println("Сумма элементов нашего дерева итеративным обходом в глубину  " + tree.sumIterable(tree));
         System.out.println("Сумма элементов нашего дерева итеративным обходом в ширину  " + tree.sumWide(tree));
+
+        Tree findTree = tree.findElementInTree(31);
+        System.out.println("Find Tree " + findTree);
     }
+
 }

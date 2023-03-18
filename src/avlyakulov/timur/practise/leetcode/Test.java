@@ -1,6 +1,8 @@
 package avlyakulov.timur.practise.leetcode;
 
 
+import avlyakulov.timur.algorithms.Tree;
+
 public class Test {
     public int xorOperation(int n, int start) {
         int sum = start;
@@ -10,6 +12,8 @@ public class Test {
         }
         return sum;
     }
+
+
     public static void main(String[] args) {
         System.out.println(new Test().xorOperation(5,0));
     }
