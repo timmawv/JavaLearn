@@ -1,5 +1,6 @@
 package avlyakulov.timur.epam.chapter_11.example.enumset;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
 
 import static avlyakulov.timur.epam.chapter_11.example.enumset.Country.*;
@@ -14,6 +15,7 @@ public class EnumSetCountryMain {
             System.out.println(current + " is in Asia");
         else
             System.out.println(current + " is not in Asia");
-        System.out.println();
+        System.out.println("EnumSet");
+
     }
 }
