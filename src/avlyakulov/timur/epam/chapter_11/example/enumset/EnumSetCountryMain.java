@@ -1,6 +1,5 @@
 package avlyakulov.timur.epam.chapter_11.example.enumset;
 
-import java.util.ArrayList;
 import java.util.EnumSet;
 
 import static avlyakulov.timur.epam.chapter_11.example.enumset.Country.*;
