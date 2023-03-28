@@ -17,13 +17,14 @@ public class CurrentOrdersMain {
         orders.put(keys.get(1), new Order(65, 54d));
         orders.put(keys.get(2), new Order(41, 93d));
         keys.get(1).setProcessed(true);
-        final int size = keys.size();
         Iterator<Key> iterator = keys.iterator();
+        System.out.println(keys);
         while (iterator.hasNext()) {
             Key ordersKey = iterator.next();
             if (ordersKey.isProcessed())
                 iterator.remove();
         }
+        System.out.println(keys);
         orders.printOrders();
         System.out.println(orders.size());
         System.gc();

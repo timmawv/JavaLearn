@@ -2,7 +2,6 @@ package avlyakulov.timur.epam.chapter_11.example.metacharacter;
 
 import avlyakulov.timur.epam.chapter_11.example.arraylist.order.Order;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListExtendTest {

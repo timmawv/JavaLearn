@@ -9,18 +9,23 @@ public class SumOddLengthSubArrays {
         //здесь мы считаем просто сумму элементов когда пара это 1 элемент
         for (int i = 0; i < arr.length; ++i)
             sum += arr[i];
-        //проверка на четность дабы соратить время
+        //проверка на четность дабы сократить время
         if (arr.length % 2 != 0) {
             //1 пара всех элементов
             sum *= 2;
             //цикл проверки для того чтобы обойти все нечетные пары
             while (counterPairs != arr.length) {
+                //обнуляем каунтер чтоб уже считать для новых пар эелементов
+                counter = 0;
                 //цикл для подсчета элементов в текущей паре
-                for (int i = 0; i < numberOfOddNums; ++i) {
-
+                while (counter != counterPairs + 1) {
+                    for (int i = counter; i < numberOfOddNums; ++i) {
+                        sum += arr[i];
+                    }
+                    ++counter;
                 }
-
                 counterPairs += 2;
+                numberOfOddNums -= 2;
             }
         }
         return sum;
