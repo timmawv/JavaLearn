@@ -14,11 +14,10 @@ import java.util.TreeSet;
 // где a - любое целое число, которое является положительным и не равно 1, та как Set - набор уникальных значений
 public class PairwiseSummationOfFiniteSeries {
     public void pairwiseSummationOfFiniteSeries() {
-        long sum = 0;
+        long sum;
         Set<Integer> set = new TreeSet<>();
         set.add(1);
-        int degree = 0;
-        int a = 0;
+        int degree, a;
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.print("Enter a - ");
             a = Integer.parseInt(reader.readLine());
@@ -37,7 +36,7 @@ public class PairwiseSummationOfFiniteSeries {
         System.out.println("Сумма конечного ряда равна " + sum);
     }
 
-     static class Math {
+    static class Math {
         public static int pow(int a, int degree) {
             int result = 1;
             for (int i = 0; i < degree; ++i) {
