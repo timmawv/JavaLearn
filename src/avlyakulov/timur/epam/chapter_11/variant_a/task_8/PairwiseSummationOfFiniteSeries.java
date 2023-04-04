@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_11.variant_a.task_7;
+package avlyakulov.timur.epam.chapter_11.variant_a.task_8;
 
 import java.io.BufferedReader;
 import java.io.IOException;
