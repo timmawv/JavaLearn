@@ -44,7 +44,7 @@ public class AddingTwoPolynomial {
         printPolynomial(resultMap);
     }
 
-    public void printPolynomial(Map<Integer, Integer> map) {
+    public static void printPolynomial(Map<Integer, Integer> map) {
         map.forEach((key, value) -> System.out.print(value + "x^" + key + " + "));
         System.out.println();
     }
