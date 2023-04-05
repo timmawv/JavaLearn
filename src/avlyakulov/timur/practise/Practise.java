@@ -1,22 +1,61 @@
 package avlyakulov.timur.practise;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Practise {
-    public static void dirtyHeap(List<String>... stringLists) {
-        Object[] array = stringLists;
-        System.out.println(Arrays.toString(array));
-        List<Integer> list = List.of(1,2,3,4);
-        array[0] = list;
-        System.out.println(array[0]);
-        System.out.println((stringLists[0]));
-        System.out.println(stringLists[1]);
+
+    public static void printOurAnimals(List<? super Dog> animals) {
+        animals.add(new Dog());
+        System.out.println(animals);
     }
 
     public static void main(String[] args) {
-        List<String> cars1 = Arrays.asList("Ford", "Fiat", "Kia");
-        List<String> cars2 = Arrays.asList("Ferrari", "Bugatti", "Zaporozhets");
-        dirtyHeap(cars1, cars2);
+        List<Dog> dogs = new ArrayList<>();
+        List<Cat> cats = new ArrayList<>();
+        dogs.add(new Dog());
+        cats.add(new Cat());
+        List<Animal> animals = new ArrayList<>(List.of(new Animal(), new Cat(), new Dog()));
+        System.out.println("Animals");
+        printOurAnimals(animals);
+        System.out.println("Cats");
+        printOurAnimals(cats);
+        System.out.println("Dogs");
+        printOurAnimals(dogs);
+    }
+}
+
+class Animal {
+    public void eat() {
+        System.out.println("Animal is eating");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal";
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void eat() {
+        System.out.println("Cat is eating");
+    }
+
+    @Override
+    public String toString() {
+        return "Cat";
+    }
+}
+
+class Dog extends Cat {
+    @Override
+    public void eat() {
+        System.out.println("Dog is eating");
+    }
+
+    @Override
+    public String toString() {
+        return "Dog";
     }
 }
