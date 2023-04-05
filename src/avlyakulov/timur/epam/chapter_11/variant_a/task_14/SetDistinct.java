@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 //Задан файл с текстом на английском языке. Выделить все различные слова.
 //Слова, отличающиеся только регистром букв, считать одинаковыми.

@@ -23,7 +23,5 @@ public class CollectorsGrouping {
         Map<Boolean, List<String>> mapOfBoolean = strings.stream()
                 .collect(Collectors.partitioningBy(s -> s.length() > 2));
         System.out.println(mapOfBoolean);
-
-
     }
 }
