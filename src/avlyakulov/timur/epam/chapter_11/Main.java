@@ -1,10 +1,12 @@
 package avlyakulov.timur.epam.chapter_11;
 
-import avlyakulov.timur.epam.chapter_11.variant_a.task_17.GetRangeOfIterator;
+import avlyakulov.timur.epam.chapter_11.variant_b.task_1.RoundOfPeople;
 
 public class Main {
     public static void main(String[] args) {
-        String result = new GetRangeOfIterator().getStartAndEndOfRange();
-        System.out.println(result);
+        System.out.println("ArrayList");
+        long millis = System.currentTimeMillis();
+        new RoundOfPeople().removeThePersonFromTheCircleArrayList();
+        System.out.println("Time of deleting " + (System.currentTimeMillis() - millis));
     }
 }
