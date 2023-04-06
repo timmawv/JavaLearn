@@ -2,7 +2,6 @@ package avlyakulov.timur.epam.chapter_11.variant_a.task_16;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
 //Заполнить HashMap 10 объектами <Integer, String>. Найти строки у кото-
 //рых ключ>5. Если ключ = 0, вывести строки через запятую. Перемножить
 //все ключи, где длина строки>5.
