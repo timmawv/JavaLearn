@@ -13,7 +13,15 @@ public class LargestLocalValueInMatrix {
     public static int[][] largestLocal(int[][] grid) {
         int[][] matrix = new int[grid.length - 2][grid.length - 2];
         int length = matrix.length;
+        while (length != grid.length) {
+            for (int i = length; i < grid.length; ++i) {
 
+            }
+
+
+
+            ++length;
+        }
         return matrix;
     }
 
