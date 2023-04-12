@@ -1,7 +1,6 @@
 package avlyakulov.timur.epam.chapter_12.example.fork;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
 
