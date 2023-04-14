@@ -17,7 +17,7 @@ public class JoinMain {
         thread.start();
         try {
             thread.join(100);// ждем пока закончит роботу побочнный поток и после этого выполнение продолжит главный поток в нашем случае main()
-            Thread.currentThread().join(100);// побочный поток
+            //Thread.currentThread().join(100);// побочный поток
             // or //TimeUnit.MILLISECONDS.timedJoin(thread,100);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
