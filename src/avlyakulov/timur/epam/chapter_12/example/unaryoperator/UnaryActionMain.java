@@ -1,7 +1,6 @@
-package avlyakulov.timur.epam.chapter_12.example.fork;
+package avlyakulov.timur.epam.chapter_12.example.unaryoperator;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class UnaryActionMain {
@@ -10,9 +9,9 @@ public class UnaryActionMain {
                 .asDoubleStream()
                 .boxed()
                 .parallel()
-                .peek(n -> System.out.printf("%5.2f; ", n))
-                .collect(Collectors.toList());
+                .peek(n -> System.out.printf("%5.2f", n))
+                .toList();
         new UnaryAction<>(numbers, d -> Math.sqrt(d)).invoke();
-        numbers.stream().forEach(r -> System.out.printf("%7.4f %n ", r));
+        numbers.stream().forEach(r -> System.out.printf("%7.4f %n", r));
     }
 }

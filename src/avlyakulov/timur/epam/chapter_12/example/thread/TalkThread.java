@@ -1,20 +1,19 @@
 package avlyakulov.timur.epam.chapter_12.example.thread;
 
 public class TalkThread implements Runnable {
-    //реализация интерфейса Runnable
     @Override
     public void run() {
         try {
-            for (int i = 0; i < 7; i++) {
-                System.out.println("Talk -->" + i);
+            for (int i = 0; i < 7; ++i) {
+                System.out.println("Talk --> " + i);
                 try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         } finally {
-            Thread.currentThread().setName("ImplementThread");
+            Thread.currentThread().setName("TalkThread");
             System.out.println(Thread.currentThread().getName());
         }
     }

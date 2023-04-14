@@ -11,11 +11,10 @@ public class ActionCallable implements Callable<Integer> {
     }
 
     @Override
-    public Integer call() {
+    public Integer call() throws Exception {
         int sum = 0;
-        for (int i : list) {
+        for (int i : list)
             sum += i;
-        }
         return sum;
     }
 }

@@ -5,19 +5,18 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ActionMain {
     public static void main(String[] args) {
-        List<Integer> list = IntStream.range(1, 1_001)
+        List<Integer> list = IntStream.range(0, 1_000)
                 .boxed()
-                .collect(Collectors.toList());
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        Future<Integer> future = executor.submit(new ActionCallable(list));// запускает поток на выполнение
-        executor.submit(new Thread()); // не запустится та как использовали метод shutdown
-        executor.shutdown();// stops service but not thread. Без него программа будет работать
-        executor.shutdownNow(); // stops service and all running threads
+                .toList();
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<Integer> future = executorService.submit(new ActionCallable(list));
+        executorService.shutdown();//stops service but not thread
+        // executor.submit(new Thread()); // will throw an Exception
+        // executor.shutdownNow(); // stops service and all running threads
         try {
             System.out.println(future.get());
         } catch (InterruptedException | ExecutionException e) {

@@ -2,12 +2,10 @@ package avlyakulov.timur.epam.chapter_12.example.thread;
 
 public class BaseThreadMain {
     public static void main(String[] args) {
-        WalkThread walk = new WalkThread(); // new thread object
-        Thread talk = new Thread(new TalkThread()); // new thread object
-        walk.start(); // start of thread
-        talk.start(); // start of thread
-        // TalkThread t = new TalkThread(); just an object, not a thread
-        // t.run(); talk.run();
-        // method will execute, but thread will not start!
+        WalkThread walk = new WalkThread(); // та как мы extend Thread то мы можем создать объект
+        Thread talk = new Thread(new TalkThread()); // тут мы имплементируем и передаем наш run();
+        walk.start();
+        talk.start();
+        //в даном случаем работают 3 потока наших 2 и еще main thread.
     }
 }

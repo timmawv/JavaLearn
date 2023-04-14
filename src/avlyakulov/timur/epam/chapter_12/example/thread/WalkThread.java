@@ -1,7 +1,6 @@
 package avlyakulov.timur.epam.chapter_12.example.thread;
 
 public class WalkThread extends Thread {
-    //расширение класса Thread
     public void run() {
         try {
             for (int i = 0; i < 7; ++i) {
@@ -13,7 +12,7 @@ public class WalkThread extends Thread {
                 }
             }
         } finally {
-            Thread.currentThread().setName("ExtendThread");
+            Thread.currentThread().setName("WalkThread");
             System.out.println(Thread.currentThread().getName());
         }
     }
