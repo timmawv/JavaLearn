@@ -1,7 +1,5 @@
 package avlyakulov.timur.practise;
 
-import org.w3c.dom.ls.LSOutput;
-
 public class PractiseImprove extends Practise {
 
     public static void main(String[] args) {
