@@ -2,7 +2,7 @@ package avlyakulov.timur.practise.leetcode;
 
 public class DescryptAlphabet {
     public String freqAlphabets(String s) {
-
+        return "";
     }
 
     public static void main(String[] args) {
