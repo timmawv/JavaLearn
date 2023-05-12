@@ -4,11 +4,11 @@ package avlyakulov.timur.epam.chapter_4.file.entity;
 Создать объект класса Текстовый файл, используя классы Файл,Директория.
 Методы: создать, переименовать, вывести на консоль содержимое, дополнить, удалить.
  */
-public class File extends Directory {
+public class FileEntity extends Directory {
     private String name;
     private String text;
 
-    public File(String path, String name, String text) {
+    public FileEntity(String path, String name, String text) {
         super(path);
         this.name = name;
         this.text = text;
