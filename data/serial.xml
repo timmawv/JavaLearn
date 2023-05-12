@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="17.0.3.1" class="java.beans.XMLDecoder">
- <object class="avlyakulov.timur.epam.chapter_10.example.serialization.Student">
+ <object class="timur.epam.chapter_10.example.serialization.Student">
   <void property="id">
    <int>555777</int>
   </void>
