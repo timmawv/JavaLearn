@@ -24,20 +24,25 @@ public class DescryptAlphabet {
     }*/
 
     public String freqAlphabets(String s) {
-        String result = "";
+        StringBuilder result = new StringBuilder("");
         int counter = 0;
         int num = 96;
-        while (counter < s.length()  ) {
-            if (s.charAt(counter + 2) != '#') {
-
+        while (counter < s.length()) {
+            if (counter < s.length() - 2 && s.charAt(counter + 2) == '#') {
+                int curNum = Integer.parseInt(s.substring(counter, counter + 2));
+                result.append(Character.toString(curNum + num));
+                counter = counter + 3;
+            } else {
+                int curNum = Integer.parseInt(s.substring(counter, counter + 1));
+                result.append(Character.toString(curNum + num));
+                ++counter;
             }
-            ++counter;
         }
-        return result;
+        return result.toString();
     }
 
     public static void main(String[] args) {
-        String s = "10#11#12";
+        String s = "1326#";
         System.out.println(new DescryptAlphabet().freqAlphabets(s));
     }
 }

@@ -23,10 +23,7 @@ public class ExceptionTest {
         finally {
             System.out.println("Block finally"); // блок finally выполнится в любом случае даже если будет выкинут unchecked exception
         }*/
-        Practise practise = new Practise();
-        if (practise instanceof PractiseImprove) // сюда надо вставлять нащадка, какого то класса и сам класс: true (если наш класса предок) , false(если не предок)
-            System.out.println("true");
-        else System.out.println("false");
+
 
 
         try {
