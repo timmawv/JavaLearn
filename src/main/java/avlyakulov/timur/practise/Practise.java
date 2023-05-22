@@ -1,28 +1,21 @@
 package avlyakulov.timur.practise;
 
 
-import java.util.Arrays;
-
 public class Practise {
-    public int[] separateDigits(int[] nums) {
-        int length = 0;
-        for (int i : nums) {
-            length += String.valueOf(i).length();
-        }
-        int[] result = new int[length];
+    public int commonFactors(int a, int b) {
         int counter = 0;
-        for (int i : nums) {
-            String temp = String.valueOf(i);
-            for (int x = 0; x < temp.length(); ++x) {
-                result[counter] = Integer.parseInt(temp.substring(x, x + 1));
+        int numMin = a > b ? b : a;
+        int numMax = a > b ? a : b;
+        for (int i = numMin; i > 0; --i) {
+            if (numMax % i == 0 && numMin % i == 0)
                 ++counter;
-            }
         }
-        return result;
+        return counter;
     }
 
     public static void main(String[] args) {
-        int[] nums = {13, 25, 83, 77};
-        System.out.println(Arrays.toString(new Practise().separateDigits(nums)));
+        int a = 12;
+        int b = 6;
+        System.out.println(new Practise().commonFactors(a, b));
     }
 }
