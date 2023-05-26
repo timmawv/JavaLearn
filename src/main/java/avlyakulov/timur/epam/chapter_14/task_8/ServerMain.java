@@ -1,33 +1,34 @@
 package avlyakulov.timur.epam.chapter_14.task_8;
 
-import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 
 public class ServerMain {
-    //передача данных по протоколу UDP
+    //прием файла по протоколу UDP
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(8082)) {
-            Socket clientSocket = serverSocket.accept();
-            BufferedReader readerFromSocket = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-            BufferedReader readerConsole = new BufferedReader(new InputStreamReader(System.in));
-            PrintWriter writerServer = new PrintWriter(clientSocket.getOutputStream());
+        File fileReceive = new File("D://Загрузки/newFormer.mp4");
+        System.out.println("Receiving data...");
+        acceptFile(fileReceive, 8045, 1024);
+        System.out.println("Data transfer was completed");
+    }
+
+    public static void acceptFile(File file, int port, int pacSize) {
+        byte[] data = new byte[pacSize];
+        DatagramPacket packet = new DatagramPacket(data, data.length);
+        try (FileOutputStream outputStream = new FileOutputStream(file)) {
+            DatagramSocket datagramSocket = new DatagramSocket(port);
+            datagramSocket.setSoTimeout(60_000); /* setting the timeout: if within 60 seconds no packets were received, data reception ends */
             while (true) {
-                System.out.println("Message from client");
-                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-                System.out.println(dtf.format(LocalDateTime.now()) + "\n" + readerFromSocket.readLine());
-                System.out.println("Enter the message for client that you want to answer");
-                String messageClient = readerConsole.readLine();
-                writerServer.println(messageClient);
-                writerServer.flush();
+                datagramSocket.receive(packet);
+                outputStream.write(data);
+                outputStream.flush();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 }

@@ -1,21 +1,22 @@
 package avlyakulov.timur.epam.chapter_14.task_8;
 
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.Socket;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 //Клиент выбирает изображение из списка и пересылает его другому клиенту через сервер.
 public class ClientSenderFile {
+    //передача данных по протоколу UDP
     public static void main(String[] args) {
         File fileSend = new File("D://Загрузки/former1.mp4");
-        try (FileInputStream inputStream = new FileInputStream(fileSend)) {
+        try (FileInputStream inputStream = new FileInputStream(fileSend);
+             DatagramSocket datagramSocket = new DatagramSocket()) {
             byte[] data = new byte[1024];
-            DatagramSocket datagramSocket = new DatagramSocket();
             InetAddress inetAddress = InetAddress.getLocalHost();
             DatagramPacket datagramPacket;
             System.out.println("Sending file...");
@@ -29,7 +30,5 @@ public class ClientSenderFile {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 }
