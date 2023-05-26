@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_14.task_8;
+package avlyakulov.timur.epam.chapter_14.chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,8 +9,7 @@ import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class ServerMain {
-    //передача данных по протоколу UDP
+public class ServerRespond {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(8082)) {
             Socket clientSocket = serverSocket.accept();
