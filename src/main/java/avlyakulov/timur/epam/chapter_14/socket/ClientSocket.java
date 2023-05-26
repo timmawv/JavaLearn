@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class ClientSocket {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket(InetAddress.getLocalHost(),8081);
+        Socket socket = new Socket(InetAddress.getLocalHost(),8083);
         PrintWriter out = new PrintWriter(socket.getOutputStream());
         out.println("Hello world!");
         out.println("It is simple example");
