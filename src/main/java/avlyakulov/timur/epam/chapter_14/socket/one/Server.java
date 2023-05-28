@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_14.socket;
+package avlyakulov.timur.epam.chapter_14.socket.one;
 
 import java.io.IOException;
 import java.io.PrintWriter;

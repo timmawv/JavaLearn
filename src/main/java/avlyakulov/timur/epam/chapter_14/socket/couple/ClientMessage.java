@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_14.chat;
+package avlyakulov.timur.epam.chapter_14.socket.couple;
 
 
 import java.io.BufferedReader;
@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ClientMessage {
     public static void main(String[] args) {
-        try (Socket socket = new Socket("localhost", 8082);
+        try (Socket socket = new Socket("localhost", 8085);
              PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
              BufferedReader readerFromConsole = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
