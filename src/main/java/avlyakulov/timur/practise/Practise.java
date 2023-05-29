@@ -3,17 +3,25 @@ package avlyakulov.timur.practise;
 
 public class Practise {
 
-    public int largestAltitude(int[] gain) {
+    public int countGoodRectangles(int[][] rectangles) {
         int max = 0;
-        int num = 0;
-        for (int i : gain) {
-            num += i;
-            max = max < num ? num : max;
+        int num;
+        int counter = 0;
+        for (int i = 0; i < rectangles.length; ++i) {
+            num = rectangles[i][0] < rectangles[i][1] ? rectangles[i][0] : rectangles[i][1];
+            if (max < num)
+                max = num;
         }
-        return max;
+        for (int i = 0; i < rectangles.length; ++i) {
+            num = rectangles[i][0] < rectangles[i][1] ? rectangles[i][0] : rectangles[i][1];
+            if (max == num)
+                ++counter;
+        }
+        return counter;
     }
 
     public static void main(String[] args) {
-
+        int[][] rectangles = {{5, 8}, {3, 9}, {5, 12}, {16, 5}};
+        System.out.println(new Practise().countGoodRectangles(rectangles));
     }
 }
