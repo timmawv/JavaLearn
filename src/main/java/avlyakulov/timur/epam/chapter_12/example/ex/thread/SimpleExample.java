@@ -3,7 +3,7 @@ package avlyakulov.timur.epam.chapter_12.example.ex.thread;
 public class SimpleExample {
     public static void main(String[] args) {
         System.out.println("Example of main thread " + Thread.currentThread().getName());
-        MyThread myThread = new MyThread();
+        CustomThread myThread = new CustomThread();
         myThread.start();
         MyRunnable myRunnable = new MyRunnable();
         //myRunnable.run();// выводится main потом не создался
