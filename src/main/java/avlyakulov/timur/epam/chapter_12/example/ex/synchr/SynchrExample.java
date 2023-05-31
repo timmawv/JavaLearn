@@ -2,41 +2,37 @@ package avlyakulov.timur.epam.chapter_12.example.ex.synchr;
 
 public class SynchrExample {
     public static void main(String[] args) {
-        Resource resource = new Resource(5);
-        ThreadEx myThread = new ThreadEx();
-        myThread.setName("one");
-        ThreadEx myThread2 = new ThreadEx();
-        myThread.setResource(resource);
-        myThread2.setResource(resource);
-        myThread.start();
-        myThread2.start();
+        ThreadEx thread1 = new ThreadEx();
+        ThreadEx thread2 = new ThreadEx();
+        thread1.setName("one");
+        thread1.start();
+        thread2.start();
         try {
-            myThread.join();
-            myThread2.join();
+            thread1.join();
+            thread2.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(resource.getI());
-
+        System.out.println(Resource.getNum());
+        //пояснение по поводу метода join() - для чего штука нужна, та как в этой программе мы создали 2 потока то они работают себе, после этого выводим число
+        //если нет нашего метода join - то 3 поток main выведит все раньше и мы не увидим изменений, благодаря join мы ждем выполнение этих потоков и только потом
+        //мы принтим результат.
     }
     //есть ресурсы которые могут использовать 2 потока одновременно
 }
 
 class ThreadEx extends Thread {
-    Resource resource;
-
-    public void setResource(Resource resource) {
-        this.resource = resource;
-    }
 
     @Override
     public void run() {
-        resource.changeI();
+        Resource.changeNum();
     }
 }
 
 class Resource {
     private int i;
+
+    private static int num = 5;
 
     public Resource(int i) {
         this.i = i;
@@ -89,5 +85,19 @@ class Resource {
 
     public int getI() {
         return i;
+    }
+
+
+    //static methods
+    public synchronized static void changeNum() {
+        int num = Resource.num;
+        if (Thread.currentThread().getName().equals("one"))
+            Thread.yield();
+        ++num;
+        Resource.num = num;
+    }
+
+    public static int getNum() {
+        return num;
     }
 }
