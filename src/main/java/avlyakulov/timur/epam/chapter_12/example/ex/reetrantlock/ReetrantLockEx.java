@@ -1,10 +1,15 @@
 package avlyakulov.timur.epam.chapter_12.example.ex.reetrantlock;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class ReetrantLockEx {
     public static void main(String[] args) {
         Resource resource = new Resource();
         resource.setI(5);
+        resource.j = 5;
         MyThread thread1 = new MyThread();
+        thread1.setName("one");
         MyThread thread2 = new MyThread();
         thread1.resource = resource;
         thread2.resource = resource;
@@ -17,6 +22,7 @@ public class ReetrantLockEx {
             throw new RuntimeException(e);
         }
         System.out.println(resource.getI());
+        System.out.println(resource.j);
     }
 }
 
@@ -32,9 +38,27 @@ class MyThread extends Thread {
 
 class Resource {
     int i;
+    int j;
+    Lock lock = new ReentrantLock();//просто аналог synchronized
+    //зачем нужны если есть синхронизация
+    //они дают гибкость лочить несколько методов, можно в 1 вызвать а в 2 освободить, более гибкая синхронизация
 
-    public void changeI() {
-        ++i;
+    void changeI() {
+        lock.lock();
+        int k = i;
+        if (Thread.currentThread().getName().equals("one"))
+            Thread.yield();
+        k = k + 1;
+        i = k;
+        changeJ();
+    }
+    void changeJ() {
+        int k = j;
+        if (Thread.currentThread().getName().equals("one"))
+            Thread.yield();
+        k = k + 1;
+        j = k;
+        lock.unlock();
     }
 
     public int getI() {
