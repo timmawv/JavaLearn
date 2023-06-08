@@ -3,25 +3,21 @@ package avlyakulov.timur.practise;
 
 public class Practise {
 
-    public int countGoodRectangles(int[][] rectangles) {
-        int max = 0;
-        int num;
+    public int minOperations(int[] nums) {
         int counter = 0;
-        for (int i = 0; i < rectangles.length; ++i) {
-            num = rectangles[i][0] < rectangles[i][1] ? rectangles[i][0] : rectangles[i][1];
-            if (max < num)
-                max = num;
-        }
-        for (int i = 0; i < rectangles.length; ++i) {
-            num = rectangles[i][0] < rectangles[i][1] ? rectangles[i][0] : rectangles[i][1];
-            if (max == num)
-                ++counter;
+        for (int i = 0; i < nums.length - 1; ++i) {
+            if (nums[i] > nums[i + 1]) {
+                int diff = nums[i] - nums[i + 1];
+                ++diff;
+                counter += diff;
+                nums[i + 1] += diff;
+            }
         }
         return counter;
     }
 
     public static void main(String[] args) {
-        int[][] rectangles = {{5, 8}, {3, 9}, {5, 12}, {16, 5}};
-        System.out.println(new Practise().countGoodRectangles(rectangles));
+        int[] nums = {1, 5, 4, 2, 1};
+        System.out.println(new Practise().minOperations(nums));
     }
 }
