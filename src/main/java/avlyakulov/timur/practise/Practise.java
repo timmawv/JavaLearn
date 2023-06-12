@@ -1,23 +1,32 @@
 package avlyakulov.timur.practise;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Practise {
 
-    public int minOperations(int[] nums) {
-        int counter = 0;
-        for (int i = 0; i < nums.length - 1; ++i) {
-            if (nums[i] > nums[i + 1]) {
-                int diff = nums[i] - nums[i + 1];
-                ++diff;
-                counter += diff;
-                nums[i + 1] += diff;
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = left; i <= right; ++i) {
+            int length = String.valueOf(i).length();
+            int counter = 0;
+            int temp = i;
+            for (int j = 0; j < length; ++j) {
+                int n = temp % 10;
+                if (n == 0)
+                    break;
+                if (i % n == 0)
+                    ++counter;
+                temp /= 10;
             }
+            if (counter == length)
+                list.add(i);
         }
-        return counter;
+        return list;
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 5, 4, 2, 1};
-        System.out.println(new Practise().minOperations(nums));
+        System.out.println(new Practise().selfDividingNumbers(688, 690));
     }
 }
