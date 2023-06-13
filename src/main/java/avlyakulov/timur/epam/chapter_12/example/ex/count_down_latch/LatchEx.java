@@ -1,4 +1,4 @@
-package avlyakulov.timur.epam.chapter_12.example.count_down_latch;
+package avlyakulov.timur.epam.chapter_12.example.ex.count_down_latch;
 
 import java.util.concurrent.CountDownLatch;
 
