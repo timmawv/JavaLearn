@@ -1,15 +1,19 @@
 package avlyakulov.timur.practise;
 
 
-import java.util.concurrent.ExecutionException;
-
 public class Practise {
+    public int[] diStringMatch(String s) {
+        int[] arr = new int[s.length() + 1];
+        arr[0] = (int) (Math.random() * 3 + 3);
+        int counter = 1;
+        for (char c : s.toCharArray()) {
+            if (c == 'I') {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
-        new Thread(() -> {
-           for (int i = 0; i < 10; ++i)
-               System.out.println("it is one step " + i);
-        }).start();
-        System.out.println("End of main thread");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
     }
 }
