@@ -15,18 +15,13 @@ public class Market extends Thread {
         return index;
     }
 
+
     @Override
     public void run() {
-        try {
-            while (true) {
-                index.addAndGet(generator.nextInt(21) - 10);
-                System.out.println("Market set that index for brokers " + getIndex());
-                Thread.sleep(500);
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        while (true) {
+            index.addAndGet(generator.nextInt(21) - 10);
+            System.out.println("Market set that index for brokers " + getIndex());
+            Thread.currentThread().notifyAll();
         }
     }
-
-
 }

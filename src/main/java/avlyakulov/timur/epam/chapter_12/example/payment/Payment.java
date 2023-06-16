@@ -9,7 +9,7 @@ public class Payment {
             System.out.println("Start payment");
             while(amount <= 0) {
                 System.out.println("Amount is less than null so we are waiting");
-                this.wait();
+                this.wait(120);
             }
             //payment code
             amount -= 10;
