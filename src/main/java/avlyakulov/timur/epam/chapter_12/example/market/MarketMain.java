@@ -9,11 +9,11 @@ public class MarketMain {
         Market market = new Market(new AtomicLong(100));
         Broker.initMarket(market);
         market.start();
-        for (int i = 0; i < NUMBER_BROKERS; ++i) {
+
             Broker broker = new Broker();
-            broker.setName("Broker" + i);
+            //broker.setName("Broker" + i);
             broker.start();
-        }
+
 
     }
 }
