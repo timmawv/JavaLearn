@@ -15,9 +15,8 @@ public class Broker extends Thread {
     public void run() {
         try {
             while (true) {
-                AtomicLong index = market.getIndex();
                 System.out.println(Thread.currentThread().getName() + " got that index : " + market.getIndex());
-                Thread.currentThread().wait();
+                sleep(PAUSE_IN_MILLIS);
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
