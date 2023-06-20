@@ -1,8 +1,6 @@
 package avlyakulov.timur.epam.chapter_12.example.ex.blockingdeque;
 
 
-import java.util.PriorityQueue;
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 

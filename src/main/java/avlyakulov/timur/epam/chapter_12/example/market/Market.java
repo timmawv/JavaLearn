@@ -19,12 +19,13 @@ public class Market extends Thread {
     @Override
     public void run() {
         while (true) {
-            synchronized (index) {
+            synchronized (this) {
                 index.addAndGet(generator.nextInt(21) - 10);
                 System.out.println("Market set that index for brokers " + getIndex());
+                notifyAll();
             }
             try {
-                sleep(1_000);
+                sleep(3_000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

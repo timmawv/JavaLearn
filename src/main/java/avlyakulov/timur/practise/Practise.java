@@ -21,6 +21,5 @@ public class Practise {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new Practise().diStringMatch("IDID")));
-
     }
 }
