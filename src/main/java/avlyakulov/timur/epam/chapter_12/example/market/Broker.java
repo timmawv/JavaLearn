@@ -1,7 +1,5 @@
 package avlyakulov.timur.epam.chapter_12.example.market;
 
-import java.util.concurrent.Phaser;
-
 public class Broker extends Thread {
     private static Market market;
     private static final int PAUSE_IN_MILLIS = 1_000;

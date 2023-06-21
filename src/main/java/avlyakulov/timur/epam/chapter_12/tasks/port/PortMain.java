@@ -6,7 +6,11 @@ public class PortMain {
     public static void main(String[] args) {
 
         Port port = new Port(new AtomicLong(150));
-        Ship ship = new Ship();
-
+        port.start();
+        Ship.initPort(port);
+        for (int i = 0; i < 5; ++i) {
+            Ship ship = new Ship();
+            ship.start();
+        }
     }
 }

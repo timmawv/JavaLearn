@@ -11,20 +11,30 @@ import java.util.concurrent.atomic.AtomicLong;
 разгружаться или выполнять оба действия.
  */
 public class Port extends Thread {
-    AtomicLong numberContainer;
+    private AtomicLong numberContainer;
 
     public Port(AtomicLong numberContainer) {
         this.numberContainer = numberContainer;
     }
 
+    public void setContainers(AtomicLong numberContainer) {
+        this.numberContainer = numberContainer;
+    }
+
+    public AtomicLong getNumberContainer() {
+        return numberContainer;
+    }
+
     @Override
     public void run() {
         while (true) {
-            try {
-                System.out.println("Number of container in port " + numberContainer);
-                Thread.sleep(1_000);
-            } catch (InterruptedException e) {
-
+            synchronized (this) {
+                try {
+                    System.out.println("Number of container in port " + numberContainer);
+                    wait();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
