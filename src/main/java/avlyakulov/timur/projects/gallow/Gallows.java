@@ -88,9 +88,11 @@ public class Gallows {
             for (int i = 0; i < hiddenWord.length(); ++i) {
                 word = word.concat("_ ");
             }
+            System.out.println("Использованные буквы " + usedWords);
             System.out.printf("Загаданное слово  %s\n", word);
             System.out.println("Введите букву что угадать слово");
             String letter = reader.readLine();
+            usedWords.add(letter);
             if (hiddenWord.contains(letter))
                 System.out.println("It contains this letter");
             else --life;
