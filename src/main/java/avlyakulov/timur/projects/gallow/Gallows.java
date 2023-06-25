@@ -1,5 +1,9 @@
 package avlyakulov.timur.projects.gallow;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Gallows {
     public int life;
 
@@ -74,8 +78,23 @@ public class Gallows {
     }
 
     public void startGame() {
-        System.out.println("The game has started ");
-        gallowsState();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (life > 0) {
+                gallowsState();
+                String hiddenWord = new Dictionary().chooseRandWord();
+                String word = "";
+                for (int i = 0; i < hiddenWord.length(); ++i) {
+                    word = word.concat("_ ");
+                }
+                System.out.printf("Загаданное слово  %s\n", word);
+                System.out.println("Введите букву что угадать слово");
+                String letter = reader.readLine();
 
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        gallowsState();
+        System.out.println("You lose");
     }
 }
