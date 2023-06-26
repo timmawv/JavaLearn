@@ -88,11 +88,18 @@ public class Gallows {
             for (int i = 0; i < hiddenWord.length(); ++i) {
                 word = word.concat("_ ");
             }
-            System.out.println("Использованные буквы " + usedWords);
-            System.out.printf("Загаданное слово  %s\n", word);
-            System.out.println("Введите букву что угадать слово");
-            String letter = reader.readLine();
-            usedWords.add(letter);
+            System.out.println("Used words " + usedWords);
+            System.out.printf("Hidden word  %s\n", word);
+            String letter = "";
+            boolean checkLetter = false;
+            while (!checkLetter) {
+                System.out.println("Enter the letter to guess the word");
+                letter = reader.readLine();
+                if (letter.length() > 1)
+                    System.out.println("You have entered more than 1 letter");
+                else
+                    usedWords.add(letter);
+            }
             if (hiddenWord.contains(letter))
                 System.out.println("It contains this letter");
             else --life;
@@ -103,7 +110,7 @@ public class Gallows {
 
     public void mainMenu() {
         String state;
-        System.out.println("Вы хотите начать игру?\nДа - y\nВыйти - n");
+        System.out.println("Do you want to start game?\nYes - y\nExit - n");
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while (!(state = reader.readLine()).equals("0")) {
                 switch (state) {
