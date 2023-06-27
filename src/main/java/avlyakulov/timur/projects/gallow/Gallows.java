@@ -89,7 +89,6 @@ public class Gallows {
         }
         while (life > 0) {
             gallowsState();
-
             System.out.println("Used words " + usedWords);
             System.out.printf("Hidden word  %s\n", String.valueOf(word));
             String letter = "";
