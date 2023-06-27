@@ -82,15 +82,17 @@ public class Gallows {
 
     public void startGame(BufferedReader reader) throws IOException {
         String hiddenWord = new Dictionary().chooseRandWord();
-        char[] word = new char[2 * hiddenWord.length()];
-        for (int i = 0; i < 2 * hiddenWord.length() - 1; i += 2) {
+        char[] word = new char[hiddenWord.length()];
+        for (int i = 0; i < hiddenWord.length(); ++i) {
             word[i] = '_';
-            word[i + 1] = ' ';
         }
         while (life > 0) {
             gallowsState();
             System.out.println("Used words " + usedWords);
-            System.out.printf("Hidden word  %s\n", String.valueOf(word));
+            System.out.print("Hidden word ");
+            for (int i = 0; i < word.length; ++i)
+                System.out.print(word[i] + " ");
+            System.out.println();
             String letter = "";
             boolean checkLetter = false;
             while (!checkLetter) {
