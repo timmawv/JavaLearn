@@ -81,15 +81,17 @@ public class Gallows {
     }
 
     public void startGame(BufferedReader reader) throws IOException {
+        String hiddenWord = new Dictionary().chooseRandWord();
+        char[] word = new char[2 * hiddenWord.length()];
+        for (int i = 0; i < 2 * hiddenWord.length() - 1; i += 2) {
+            word[i] = '_';
+            word[i + 1] = ' ';
+        }
         while (life > 0) {
             gallowsState();
-            String hiddenWord = new Dictionary().chooseRandWord();
-            String word = "";
-            for (int i = 0; i < hiddenWord.length(); ++i) {
-                word = word.concat("_ ");
-            }
+
             System.out.println("Used words " + usedWords);
-            System.out.printf("Hidden word  %s\n", word);
+            System.out.printf("Hidden word  %s\n", String.valueOf(word));
             String letter = "";
             boolean checkLetter = false;
             while (!checkLetter) {
@@ -97,12 +99,22 @@ public class Gallows {
                 letter = reader.readLine();
                 if (letter.length() > 1)
                     System.out.println("You have entered more than 1 letter");
-                else
-                    usedWords.add(letter);
+                else {
+                    if (usedWords.contains(letter)) {
+                        System.out.println("This letter was used");
+                    } else {
+                        usedWords.add(letter);
+                        checkLetter = true;
+                    }
+                }
             }
-            if (hiddenWord.contains(letter))
+            if (hiddenWord.contains(letter)) {
                 System.out.println("It contains this letter");
-            else --life;
+                for (int i = 0; i < hiddenWord.length(); ++i) {
+                    if (hiddenWord.charAt(i) == letter.charAt(0))
+                        word[2 * i] = letter.charAt(0);
+                }
+            } else --life;
         }
         gallowsState();
         System.out.println("You lose");
@@ -118,6 +130,7 @@ public class Gallows {
                     case "n" -> System.exit(0);
                     default -> System.out.println("You have entered the wrong answer try again");
                 }
+                System.out.println("Do you want to start game?\nYes - y\nExit - n");
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
