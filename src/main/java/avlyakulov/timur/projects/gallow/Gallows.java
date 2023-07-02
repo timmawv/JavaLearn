@@ -10,10 +10,6 @@ public class Gallows {
     private int life;
     private List<String> usedWords = new ArrayList<>();
 
-    public Gallows() {
-        this.life = 5;
-    }
-
     public void gallowsState() {
         switch (life) {
             case 5 -> {
@@ -81,6 +77,8 @@ public class Gallows {
     }
 
     public void startGame(BufferedReader reader) throws IOException {
+        life = 5;
+        usedWords.clear();
         String hiddenWord = new Dictionary().chooseRandWord();
         char[] word = new char[hiddenWord.length()];
         for (int i = 0; i < hiddenWord.length(); ++i) {
@@ -113,25 +111,45 @@ public class Gallows {
                 System.out.println("It contains this letter");
                 for (int i = 0; i < hiddenWord.length(); ++i) {
                     if (hiddenWord.charAt(i) == letter.charAt(0))
-                        word[2 * i] = letter.charAt(0);
+                        word[i] = letter.charAt(0);
                 }
             } else --life;
+            if (!String.valueOf(word).contains("_")) {
+                System.out.println("\u001B[32mYou win this game\u001B[0m");
+                gallowsState();
+                System.out.print("Hidden word ");
+                for (int i = 0; i < word.length; ++i)
+                    System.out.print(word[i] + " ");
+                System.out.println();
+                System.out.println("Used words " + usedWords);
+                System.out.println("\n\n\n\n\n");
+                break;
+            }
+            if (life == 0) {
+                System.out.println("\u001B[31mYou lost\u001B[0m");
+                gallowsState();
+                System.out.print("Hidden word ");
+                for (int i = 0; i < word.length; ++i)
+                    System.out.print(word[i] + " ");
+                System.out.println();
+                System.out.println("Used words " + usedWords);
+                System.out.println("\n\n\n\n\n");
+                break;
+            }
         }
-        gallowsState();
-        System.out.println("You lose");
     }
 
     public void mainMenu() {
-        String state;
-        System.out.println("Do you want to start game?\nYes - y\nExit - n");
+        String state = "";
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
-            while (!(state = reader.readLine()).equals("0")) {
+            while (!state.equals("0")) {
+                System.out.println("Do you want to start game?\nYes - д\nExit - н");
+                state = reader.readLine();
                 switch (state) {
-                    case "y" -> startGame(reader);
-                    case "n" -> System.exit(0);
+                    case "д" -> startGame(reader);
+                    case "н" -> System.exit(0);
                     default -> System.out.println("You have entered the wrong answer try again");
                 }
-                System.out.println("Do you want to start game?\nYes - y\nExit - n");
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
