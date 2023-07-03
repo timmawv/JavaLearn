@@ -1,5 +1,7 @@
 package avlyakulov.timur.projects.gallow;
 
+import avlyakulov.timur.projects.gallow.model.GallowsModel;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,73 +10,9 @@ import java.util.List;
 
 public class Gallows {
     private int life;
+    private GallowsModel gallowsModel = new GallowsModel();
     private List<String> usedWords = new ArrayList<>();
 
-    public void gallowsState() {
-        switch (life) {
-            case 5 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-            case 4 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("  \tO\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-            case 3 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("  \tO\t|");
-                System.out.println("  \t|\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-            case 2 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("  \tO\t|");
-                System.out.println("   _|_\t|");
-                System.out.println("\t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-            case 1 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("   _O_\t|");
-                System.out.println("   \t|\t|");
-                System.out.println("   / \t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-            case 0 -> {
-                System.out.println("\t----|");
-                System.out.println("\t|\t|");
-                System.out.println("   _O_\t|");
-                System.out.println("   \t|\t|");
-                System.out.println("   / \\\t|");
-                System.out.println("  \t\t|");
-                System.out.println("  \t\t|");
-                System.out.println("\t-------");
-            }
-        }
-
-    }
 
     public void startGame(BufferedReader reader) throws IOException {
         life = 5;
@@ -85,7 +23,7 @@ public class Gallows {
             word[i] = '_';
         }
         while (life > 0) {
-            gallowsState();
+            gallowsModel.gallowsState(life);
             System.out.println("Used words " + usedWords);
             System.out.print("Hidden word ");
             for (int i = 0; i < word.length; ++i)
@@ -116,18 +54,12 @@ public class Gallows {
             } else --life;
             if (!String.valueOf(word).contains("_")) {
                 System.out.println("\u001B[32mYou win this game\u001B[0m");
-                gallowsState();
-                System.out.print("Hidden word ");
-                for (int i = 0; i < word.length; ++i)
-                    System.out.print(word[i] + " ");
-                System.out.println();
-                System.out.println("Used words " + usedWords);
+
                 System.out.println("\n\n\n\n\n");
                 break;
-            }
-            if (life == 0) {
+            } else if (life == 0) {
                 System.out.println("\u001B[31mYou lost\u001B[0m");
-                gallowsState();
+                gallowsModel.gallowsState(life);
                 System.out.print("Hidden word ");
                 for (int i = 0; i < word.length; ++i)
                     System.out.print(word[i] + " ");
