@@ -4,7 +4,6 @@ import java.util.List;
 
 public class GallowsModel {
 
-
     public void gallowsState(int life) {
         switch (life) {
             case 5 -> {
@@ -78,6 +77,4 @@ public class GallowsModel {
         System.out.println();
         System.out.println("Used words " + usedWords);
     }
-
-
 }

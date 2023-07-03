@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gallows {
-    private GallowsModel gallowsModel = new GallowsModel();
-    private List<String> usedWords = new ArrayList<>();
+    private final GallowsModel gallowsModel = new GallowsModel();
+    private final List<String> usedWords = new ArrayList<>();
 
 
     public void startGame(BufferedReader reader) throws IOException {
@@ -44,10 +44,10 @@ public class Gallows {
                 }
             }
             if (!String.valueOf(word).contains("_")) {
-                winCondition(life, word);
+                gameFinishCondition(true,life, word);
                 break;
             } else if (life == 0) {
-                loseCondition(life, word);
+                gameFinishCondition(false,life, word);
             }
         }
     }
@@ -69,15 +69,13 @@ public class Gallows {
         }
     }
 
-    public void winCondition(int life, char[] word) {
-        System.out.println("\u001B[32mYou win this game\u001B[0m");
-        System.out.println("Number of mistakes " + (5 - life));
-        gallowsModel.printGallows(life, word, usedWords);
-        System.out.println("\n\n\n\n\n");
-    }
-
-    public void loseCondition(int life, char[] word) {
-        System.out.println("\u001B[31mYou lost\u001B[0m");
+    public void gameFinishCondition(boolean condition, int life, char[] word) {
+        if (condition) {
+            System.out.println("\u001B[32mYou win this game\u001B[0m");
+            System.out.println("Number of mistakes " + (5 - life));
+        } else {
+            System.out.println("\u001B[31mYou lost\u001B[0m");
+        }
         gallowsModel.printGallows(life, word, usedWords);
         System.out.println("\n\n\n\n\n");
     }
