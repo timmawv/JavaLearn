@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Gallows {
-    private int life;
     private GallowsModel gallowsModel = new GallowsModel();
     private List<String> usedWords = new ArrayList<>();
 
 
     public void startGame(BufferedReader reader) throws IOException {
-        life = 5;
+        int life = 5;
         usedWords.clear();
         String hiddenWord = new Dictionary().chooseRandWord();
         char[] word = new char[hiddenWord.length()];
@@ -23,50 +22,32 @@ public class Gallows {
             word[i] = '_';
         }
         while (life > 0) {
-            gallowsModel.gallowsState(life);
-            System.out.println("Used words " + usedWords);
-            System.out.print("Hidden word ");
-            for (int i = 0; i < word.length; ++i)
-                System.out.print(word[i] + " ");
+            gallowsModel.printGallows(life, word, usedWords);
             System.out.println();
-            String letter = "";
+            String letter;
             boolean checkLetter = false;
             while (!checkLetter) {
                 System.out.println("Enter the letter to guess the word");
                 letter = reader.readLine();
-                if (letter.length() > 1)
-                    System.out.println("You have entered more than 1 letter");
+                if (letter.length() > 1 || usedWords.contains(letter))
+                    System.out.println("You have entered more than 1 letter or this letter was used");
                 else {
-                    if (usedWords.contains(letter)) {
-                        System.out.println("This letter was used");
-                    } else {
-                        usedWords.add(letter);
-                        checkLetter = true;
-                    }
+                    usedWords.add(letter);
+                    checkLetter = true;
+                    if (hiddenWord.contains(letter)) {
+                        System.out.println("It contains this letter");
+                        for (int i = 0; i < hiddenWord.length(); ++i) {
+                            if (hiddenWord.charAt(i) == letter.charAt(0))
+                                word[i] = letter.charAt(0);
+                        }
+                    } else --life;
                 }
             }
-            if (hiddenWord.contains(letter)) {
-                System.out.println("It contains this letter");
-                for (int i = 0; i < hiddenWord.length(); ++i) {
-                    if (hiddenWord.charAt(i) == letter.charAt(0))
-                        word[i] = letter.charAt(0);
-                }
-            } else --life;
             if (!String.valueOf(word).contains("_")) {
-                System.out.println("\u001B[32mYou win this game\u001B[0m");
-
-                System.out.println("\n\n\n\n\n");
+                winCondition(life, word);
                 break;
             } else if (life == 0) {
-                System.out.println("\u001B[31mYou lost\u001B[0m");
-                gallowsModel.gallowsState(life);
-                System.out.print("Hidden word ");
-                for (int i = 0; i < word.length; ++i)
-                    System.out.print(word[i] + " ");
-                System.out.println();
-                System.out.println("Used words " + usedWords);
-                System.out.println("\n\n\n\n\n");
-                break;
+                loseCondition(life, word);
             }
         }
     }
@@ -86,5 +67,18 @@ public class Gallows {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void winCondition(int life, char[] word) {
+        System.out.println("\u001B[32mYou win this game\u001B[0m");
+        System.out.println("Number of mistakes " + (5 - life));
+        gallowsModel.printGallows(life, word, usedWords);
+        System.out.println("\n\n\n\n\n");
+    }
+
+    public void loseCondition(int life, char[] word) {
+        System.out.println("\u001B[31mYou lost\u001B[0m");
+        gallowsModel.printGallows(life, word, usedWords);
+        System.out.println("\n\n\n\n\n");
     }
 }

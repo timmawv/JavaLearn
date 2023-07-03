@@ -71,11 +71,13 @@ public class GallowsModel {
     }
 
     public void printGallows(int life, char[] word, List<String> usedWords) {
-       gallowsState(life);
+        gallowsState(life);
         System.out.print("Hidden word ");
-        for (int i = 0; i < word.length; ++i)
-            System.out.print(word[i] + " ");
+        for (char w : word)
+            System.out.print(w + " ");
         System.out.println();
         System.out.println("Used words " + usedWords);
     }
+
+
 }
