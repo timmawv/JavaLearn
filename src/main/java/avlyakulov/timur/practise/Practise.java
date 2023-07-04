@@ -1,8 +1,6 @@
 package avlyakulov.timur.practise;
 
 
-import java.util.Arrays;
-
 public class Practise {
 
     public int prefixCount(String[] words, String pref) {
