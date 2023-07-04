@@ -1,19 +1,24 @@
 package avlyakulov.timur.practise;
 
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class Practise {
 
-    public int prefixCount(String[] words, String pref) {
-        int counter = 0;
-        for (String w : words)
-            if (w.startsWith(pref))
-                ++counter;
-        return counter;
+    public String destCity(List<List<String>> paths) {
+        Set<String> set = new HashSet<>();
+        System.out.println(set);
+        for (List<String> p : paths) set.add(p.get(1));
+        System.out.println(set);
+        for (List<String> p : paths) set.remove(p.get(0));
+        System.out.println(set);
+        return set.iterator().next();
     }
 
     public static void main(String[] args) {
-        String[] words = {"pay", "attention", "practice", "attend"};
-        String pref = "at";
-        System.out.println(new Practise().prefixCount(words, pref));
+        List<List<String>> list = List.of(List.of("B", "C"), List.of("D", "B"),List.of("C", "A"));
+        System.out.println(new Practise().destCity(list));
     }
 }
