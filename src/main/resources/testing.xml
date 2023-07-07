@@ -1,0 +1,13 @@
+<suite name="SuiteParam" verbose="1">
+    <parameter name="celsius" value="10"/>
+    <parameter name="expectedFahrenheit" value="50"/>
+    <test name="TestParam">
+        <classes>
+            <class name="ConverterParameterizedTest">
+                <methods>
+                    <include name="testConvertWithParam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
