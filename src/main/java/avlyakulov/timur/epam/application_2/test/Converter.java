@@ -6,7 +6,7 @@ public class Converter {
 
     public double convertCelsiusToFahrenheit(double celsius) {
         if (celsius < ABSOLUTE_ZERO) {
-            throw new IllegalArgumentException("Error data");
+            throw new IllegalArgumentException("error data");
         }
         double fahrenheit = celsius * 1.8 + 32;
         return fahrenheit;
