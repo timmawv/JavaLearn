@@ -1,3 +1,5 @@
+package converter_test;
+
 import avlyakulov.timur.epam.application_2.test.Converter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

@@ -3,7 +3,7 @@
     <parameter name="expectedFahrenheit" value="50"/>
     <test name="TestParam">
         <classes>
-            <class name="ConverterParameterizedTest">
+            <class name="converter_test.ConverterParameterizedTest">
                 <methods>
                     <include name="testConvertWithParam"/>
                 </methods>
