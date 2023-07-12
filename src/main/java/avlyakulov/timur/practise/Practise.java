@@ -1,24 +1,24 @@
 package avlyakulov.timur.practise;
 
-
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 public class Practise {
 
-    public String destCity(List<List<String>> paths) {
-        Set<String> set = new HashSet<>();
-        System.out.println(set);
-        for (List<String> p : paths) set.add(p.get(1));
-        System.out.println(set);
-        for (List<String> p : paths) set.remove(p.get(0));
-        System.out.println(set);
-        return set.iterator().next();
+    public int findNumbers(int[] nums) {
+        int counter = 0;
+        for (int num : nums) {
+            if (digits(num) % 2 == 0)
+                ++counter;
+        }
+        return counter;
+    }
+
+
+    public static int digits(int n) {
+        if (n < 10) return 1;
+        return 1 + digits(n / 10);
     }
 
     public static void main(String[] args) {
-        List<List<String>> list = List.of(List.of("B", "C"), List.of("D", "B"),List.of("C", "A"));
-        System.out.println(new Practise().destCity(list));
+        int[] nums = {12, 345, 2, 6, 7896};
+        System.out.println(new Practise().findNumbers(nums));
     }
 }
