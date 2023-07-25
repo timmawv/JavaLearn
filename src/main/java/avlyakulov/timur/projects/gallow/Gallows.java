@@ -44,10 +44,10 @@ public class Gallows {
                 }
             }
             if (!String.valueOf(word).contains("_")) {
-                gameFinishCondition(true,life, word);
+                winCondition(life, word);
                 break;
             } else if (life == 0) {
-                gameFinishCondition(false,life, word);
+                loseCondition(life, word, hiddenWord);
             }
         }
     }
@@ -69,14 +69,18 @@ public class Gallows {
         }
     }
 
-    public void gameFinishCondition(boolean condition, int life, char[] word) {
-        if (condition) {
-            System.out.println("\u001B[32mYou win this game\u001B[0m");
-            System.out.println("Number of mistakes " + (5 - life));
-        } else {
-            System.out.println("\u001B[31mYou lost\u001B[0m");
-        }
+    public void winCondition(int life, char[] word) {
+        System.out.println("\u001B[32mYou win this game\u001B[0m");
+        System.out.println("Number of mistakes " + (5 - life));
         gallowsModel.printGallows(life, word, usedWords);
         System.out.println("\n\n\n\n\n");
+    }
+
+    public void loseCondition(int life, char[] word, String hiddenWord) {
+        System.out.println("\u001B[31mYou lost\u001B[0m");
+        gallowsModel.printGallows(life, word, usedWords);
+        System.out.println("\033[34mThe hidden word is " + hiddenWord + "\033[0m");
+        System.out.println("\n\n\n\n\n");
+
     }
 }
