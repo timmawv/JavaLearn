@@ -1,67 +1,31 @@
 package avlyakulov.timur.practise;
 
-import java.util.Arrays;
+
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Practise {
 
-    /*public boolean areOccurrencesEqual(String s) {
-        boolean checkGoodString = true;
-        char[] arr = s.toCharArray();
-        int mainCounter = 0;
-        for (int i = 1; i < arr.length; ++i) {
-            if (arr[0] == arr[i]) {
-                ++mainCounter;
-            }
-        }
-        for (int i = 0; i < arr.length; ++i) {
-            int counter = 0;
-            for (int j = 0; j < arr.length;++j) {
-                if (i!=j && arr[i] != arr[0]) {
-                    if (arr[i] == arr[j])
-                        ++counter;
-                }
-            }
-            if (counter != mainCounter) {
-                checkGoodString = false;
-                break;
-            }
-
-        }
-        return checkGoodString;
-    }*/
-    public boolean areOccurrencesEqual(String s) {
-        boolean checkGoodString = true;
-        Set<Character> set = new TreeSet<>();
-        char[] arr = s.toCharArray();
-        for (char c : arr)
-            set.add(c);
-        int[] hitLetters = new int[set.size()];
-        int posArr = 0;
-        for (char c : set) {
-            int counter = 0;
-            for (int i = 0; i < arr.length; ++i) {
-                if (c == arr[i])
-                    ++counter;
-            }
-            hitLetters[posArr] = counter;
-            ++posArr;
-        }
-        for (int i = 0; i < hitLetters.length; ++i) {
-            for (int j = i + 1; j < hitLetters.length; ++j) {
-                if (hitLetters[i] != hitLetters[j]) {
-                    checkGoodString = false;
-                    break;
-                }
-            }
-        }
-
-        return checkGoodString;
+    public String destCity(List<List<String>> paths) {
+        Set<String> set = new HashSet<>();
+        System.out.println(set);
+        for (List<String> p : paths) set.add(p.get(1));
+        System.out.println(set);
+        for (List<String> p : paths) set.remove(p.get(0));
+        System.out.println(set);
+        return set.iterator().next();
     }
 
     public static void main(String[] args) {
-        String s = "abacbc";
-        System.out.println(new Practise().areOccurrencesEqual(s));
+        int a = 12;
+        {
+            method(a);
+        }
+        System.out.println(a);
+    }
+
+    public static void method(int a) {
+        a = a + 1;
     }
 }

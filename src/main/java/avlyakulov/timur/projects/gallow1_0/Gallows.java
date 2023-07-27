@@ -1,6 +1,6 @@
-package avlyakulov.timur.projects.gallow;
+package avlyakulov.timur.projects.gallow1_0;
 
-import avlyakulov.timur.projects.gallow.model.GallowsModel;
+import avlyakulov.timur.projects.gallow1_0.model.GallowsModel;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -81,6 +81,6 @@ public class Gallows {
         gallowsModel.printGallows(life, word, usedWords);
         System.out.println("\033[34mThe hidden word is " + hiddenWord + "\033[0m");
         System.out.println("\n\n\n\n\n");
-
     }
+
 }
