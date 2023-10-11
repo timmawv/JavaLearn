@@ -1,8 +1,14 @@
 package avlyakulov.timur.practise;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.TimeUnit;
 
 public class Practise {
 
@@ -61,7 +67,8 @@ public class Practise {
     }
 
     public static void main(String[] args) {
-        String s = "abacbc";
-        System.out.println(new Practise().areOccurrencesEqual(s));
+        String s = " ";
+        System.out.println(s.isBlank());
+        System.out.println(s.isEmpty());
     }
 }
