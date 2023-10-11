@@ -1,4 +1,4 @@
-package avlyakulov.timur.projects.gallow.model;
+package avlyakulov.timur.projects.gallow1_0.model;
 
 import java.util.List;
 
