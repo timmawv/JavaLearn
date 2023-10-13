@@ -1,4 +1,4 @@
-package avlyakulov.timur.interview.arraylist;
+package avlyakulov.timur.interview.collections.arraylist;
 
 public class Car {
     private int number;

@@ -1,8 +1,6 @@
-package avlyakulov.timur.interview.arraylist;
+package avlyakulov.timur.interview.collections.arraylist;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class MyArrayList {
     private Car[] cars;
@@ -46,12 +44,8 @@ public class MyArrayList {
         cars = newGarage;
     }
 
-    public int numberCarsInGarage() {
-        int size = 0;
-        for (Car car : cars)
-            if (car != null)
-                ++size;
-        return size;
+    public int carsInGarage() {
+        return counter + 1;
     }
 
     public Car[] getCars() {
