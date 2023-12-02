@@ -18,4 +18,8 @@ public class OutputSpiralMatrix {
         }
         OutputMatrix.printMatrix(matrix);
     }
+
+    public static void main(String[] args) {
+        new OutputSpiralMatrix().fillMatrixSpiral();
+    }
 }
