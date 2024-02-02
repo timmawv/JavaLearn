@@ -1,6 +1,6 @@
 package avlyakulov.timur.practise;
 
-public class PractiseImprove extends Practise {
+public class PECSImprove extends PECS {
 
     public static void main(String[] args) {
         String s1 = new String("Java");

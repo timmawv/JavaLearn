@@ -19,15 +19,37 @@ public class ConvertBinaryNumberInALinkedListToInteger {
     }
 
     public ListNode middleNode(ListNode head) {
-        return null;
+        int length = countNumberOfElementsInListNode(head);
+
+        ListNode middleNode = new ListNode(10, head);
+        return middleNode;
+    }
+
+    private int countNumberOfElementsInListNode(ListNode listNode) {
+        int counter; //просчитать количество элементов в linked list
+        if (listNode != null)
+            counter = 1;
+        else
+            return 0;
+
+
+        if (listNode.next != null) {
+            ++counter;
+            counter += countNumberOfElementsInListNode(listNode.next);
+        }
+
+        return counter;
     }
 
 
     public static void main(String[] args) {
         ConvertBinaryNumberInALinkedListToInteger convertBinaryNumberInALinkedListToInteger = new ConvertBinaryNumberInALinkedListToInteger();
         ListNode listNode = new ListNode(12);
-        ListNode listNode2 = new ListNode(14, listNode);
-        System.out.println(listNode2);
+        ListNode listNode1 = new ListNode(13, listNode);
+        ListNode listNode2 = new ListNode(14, listNode1);
+        ListNode listNode3 = convertBinaryNumberInALinkedListToInteger.middleNode(listNode2);
+        System.out.println(listNode3);
+
     }
 }
 
@@ -45,5 +67,13 @@ class ListNode {
     ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return "ListNode{" +
+                "val=" + val +
+                ",\n next=" + next +
+                '}';
     }
 }

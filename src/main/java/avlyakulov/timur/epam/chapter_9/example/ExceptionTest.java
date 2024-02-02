@@ -1,8 +1,5 @@
 package avlyakulov.timur.epam.chapter_9.example;
 
-import avlyakulov.timur.practise.Practise;
-import avlyakulov.timur.practise.PractiseImprove;
-
 import java.io.IOException;
 
 
