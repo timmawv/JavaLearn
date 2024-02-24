@@ -15,7 +15,11 @@ public class ReadFile {
     public static void main(String[] args) {
         String filePath = "D:/Загрузки/file/10m.txt";
         File file = new File(filePath);
+        long startTime = System.currentTimeMillis();
         new ReadFile().findValuesInFile(file);
+        long endTime = System.currentTimeMillis();
+        long elapsedTime = endTime - startTime;
+        System.out.println("The elapsed time is " + elapsedTime / 1000);
     }
 
     public void findValuesInFile(File file) {
@@ -26,11 +30,12 @@ public class ReadFile {
         String line;
         long counter = 0;
         //Вибір був між Scanner та BufferedReader - обрав 2 так як воно має кращий performance
+
         try (BufferedReader fileReader = new BufferedReader(new FileReader(file))) {
             while ((line = fileReader.readLine()) != null) {
                 ++counter;
                 if (line.isBlank()) {
-                    System.out.println("Line is blank");
+                    System.out.println("The line is blank");
                 } else {
                     long number = Long.parseLong(line);
                     sum = sum.add(BigDecimal.valueOf(number));
