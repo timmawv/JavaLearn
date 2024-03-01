@@ -1,9 +1,9 @@
-package avlyakulov.timur.self_practise.other;
+package avlyakulov.timur.self_practise.other.hibernate;
 
 
-import avlyakulov.timur.self_practise.other.test.Human;
-import avlyakulov.timur.self_practise.other.util.DatabaseType;
-import avlyakulov.timur.self_practise.other.util.HibernateSingletonUtil;
+import avlyakulov.timur.self_practise.other.hibernate.test.Human;
+import avlyakulov.timur.self_practise.other.hibernate.util.DatabaseType;
+import avlyakulov.timur.self_practise.other.hibernate.util.HibernateSingletonUtil;
 import jakarta.persistence.NoResultException;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;

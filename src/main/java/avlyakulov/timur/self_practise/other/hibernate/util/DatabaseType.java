@@ -1,4 +1,4 @@
-package avlyakulov.timur.self_practise.other.util;
+package avlyakulov.timur.self_practise.other.hibernate.util;
 
 public enum DatabaseType {
     H2("h2.properties"),

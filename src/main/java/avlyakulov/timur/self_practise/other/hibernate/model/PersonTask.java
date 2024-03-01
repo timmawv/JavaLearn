@@ -1,4 +1,4 @@
-package avlyakulov.timur.self_practise.other.model;
+package avlyakulov.timur.self_practise.other.hibernate.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package avlyakulov.timur.self_practise.other.test;
+package avlyakulov.timur.self_practise.other.hibernate.test;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

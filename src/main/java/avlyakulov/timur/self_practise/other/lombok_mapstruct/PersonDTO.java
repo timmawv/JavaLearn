@@ -1,6 +1,6 @@
 package avlyakulov.timur.self_practise.other.lombok_mapstruct;
 
-import avlyakulov.timur.self_practise.other.model.Phone;
+import avlyakulov.timur.self_practise.other.hibernate.model.Phone;
 import lombok.*;
 
 @NoArgsConstructor

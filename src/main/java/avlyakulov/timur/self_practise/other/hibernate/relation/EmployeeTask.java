@@ -1,12 +1,9 @@
-package avlyakulov.timur.self_practise.other.relation;
+package avlyakulov.timur.self_practise.other.hibernate.relation;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "employee_task")
