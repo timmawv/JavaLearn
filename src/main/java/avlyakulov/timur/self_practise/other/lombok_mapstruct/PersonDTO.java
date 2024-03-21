@@ -1,6 +1,5 @@
 package avlyakulov.timur.self_practise.other.lombok_mapstruct;
 
-import avlyakulov.timur.self_practise.other.hibernate.model.Phone;
 import lombok.*;
 
 @NoArgsConstructor
@@ -11,8 +10,6 @@ import lombok.*;
 public class PersonDTO {
 
     private String personName;
-
-    private Phone personPhone;
 
     private AddressDTO addressDTO;
 }

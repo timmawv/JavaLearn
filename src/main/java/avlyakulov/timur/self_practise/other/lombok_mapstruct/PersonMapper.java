@@ -13,7 +13,6 @@ public interface PersonMapper {
     PersonMapper INSTANCE = Mappers.getMapper(PersonMapper.class);
 
     @Mapping(target = "personName", source = "person.name")
-    @Mapping(target = "personPhone", source = "person.phone")
     @Mapping(target = "addressDTO", source = "person.address")
     PersonDTO mapToPersonResponse(Person person);
 

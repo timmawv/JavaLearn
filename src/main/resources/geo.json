@@ -1,0 +1,15 @@
+[
+  {
+    "name": "Kyiv",
+    "local_names": {
+      "uk": "Київ",
+      "en": "Kyiv",
+      "ru": "Киев",
+      "de": "Kyjiw"
+    },
+    "lat": 47.8671228,
+    "lon": 31.0179572,
+    "country": "UA",
+    "state": "Mykolaiv Oblast"
+  }
+]
