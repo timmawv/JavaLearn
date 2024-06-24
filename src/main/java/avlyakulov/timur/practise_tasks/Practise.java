@@ -60,6 +60,8 @@ class WeatherCityDto {
     @JsonProperty(value = "sys")
     private SolarCycle solarCycle;
 
+    private String country;
+
     private boolean favorite;
 
     @JsonProperty(value = "weather")
@@ -126,6 +128,8 @@ class Weather {
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 class SolarCycle {
+
+    private String country;
 
     @JsonDeserialize(converter = TimeMilliConverter.class)
     private String sunrise;
