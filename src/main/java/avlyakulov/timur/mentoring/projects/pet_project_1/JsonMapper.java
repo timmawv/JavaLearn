@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class JsonMapper {
 
-    public static Object readFromString(String raw, Class<?> clazz) {
+    public static <T> T readFromString(String raw, Class<T> clazz) {
         String rawString = raw.replace("{", "").replace("}", "").trim();
         String[] split = rawString.split("\n");
         Map<String, String> map = new HashMap<>();
@@ -24,7 +24,7 @@ public class JsonMapper {
                 map.put(split1[0].trim(), split1[1].trim());
             }
         }
-        Object obj;
+        T obj;
         try {
             obj = clazz.getDeclaredConstructor().newInstance();
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException |
@@ -64,7 +64,7 @@ public class JsonMapper {
                 }
                                 """;
 
-        User user = (User) JsonMapper.readFromString(rawString, User.class);
+        User user = JsonMapper.readFromString(rawString, User.class);
         System.out.println(user);
     }
 }
