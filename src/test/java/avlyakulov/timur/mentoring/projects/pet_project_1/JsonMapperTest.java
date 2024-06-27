@@ -18,7 +18,7 @@ class JsonMapperTest {
 
     @Test
     void readFromString_objectWasCreated() {
-        User maybeUser = (User) JsonMapper.readFromString(rawString, User.class);
+        User maybeUser = JsonMapper.readFromString(rawString, User.class);
 
         assertThat(maybeUser).isEqualTo(user);
     }
