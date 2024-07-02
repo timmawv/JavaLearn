@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class JsonMapperTest {
 
-    private final String rawString = """
+    private final String json = """
             {
               "name": "Timur",
               "year": 22,
@@ -18,7 +18,7 @@ class JsonMapperTest {
 
     @Test
     void readFromString_objectWasCreated() {
-        User maybeUser = JsonMapper.readFromString(rawString, User.class);
+        User maybeUser = JsonMapper.readFromString(json, User.class);
 
         assertThat(maybeUser).isEqualTo(user);
     }
